@@ -1,0 +1,47 @@
+:root {
+    --desktop-primary-color: #181818;
+    --accent-color: #a236c9;
+    --side-color: #444444;
+}
+
+/* navbar itself */
+.navbar {
+    background-color: transparent;
+}
+/* navbar anchor link tags */
+
+.navLink {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.navLink:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    content: "";
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+}
+
+.navLink:hover {
+    color: #ffffff;
+}
+
+.navLink:hover:after {
+    width: 100%;
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 767px) {
+    .navLink:hover:after {
+        width: 7.9%;
+    }
+}

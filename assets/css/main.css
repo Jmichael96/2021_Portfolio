@@ -1,0 +1,13 @@
+:root {
+    --desktop-primary-color: #181818;
+    --accent-color: #a236c9;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--desktop-primary-color);
+}
+

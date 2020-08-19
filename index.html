@@ -1,11 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jeffrey VanHorn's portfolio! Currently available for a full time position" />
+    <meta name="author" content="Jeffrey VanHorn" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="black">
+    <meta name="msapplication-navbutton-color" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Jeffrey VanHorn</title>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Jeffrey VanHorn">
+    <meta itemprop="description" content="Jeffrey VanHorn's portfolio! Currently available for a full time position">
+    <meta itemprop="image" content="./assets/images/favicons/favicon.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://codevh.com">
+    <meta name="twitter:title" content="Jeffrey VanHorn">
+    <meta name="twitter:description"
+        content="Jeffrey VanHorn's portfolio! Currently available for a full time position">
+    <meta name="twitter:creator" content="Jeffrey VanHorn">
+
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="./assets/images/favicons/favicon.png">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Jeffrey VanHorn" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:url" content="https://codevh.com" />
+    <meta property="og:image" content="./assets/images/favicons/favicon.png" />
+    <meta property="og:description"
+        content="Jeffrey VanHorn's portfolio! Currently available for a full time position" />
+    <meta property="og:site_name" content="Code VH" />
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="./assets/images/favicons/favicon.png" />
+    <!-- Safari favicon -->
+    <link rel="apple-touch-icon" href="./assets/images/favicons/favicon.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+
+    <!-- CUSTOM CSS LINKS -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/introPage.css" />
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
 </head>
+
 <body>
-    
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#"></a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="navLink">
+                            HOME
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="navLink">
+                            PROJECTS
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span class="navLink">
+                            EXPERIENCE
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- desktop view -->
+    <main id="desktop-site">
+        <article id="homePageWrap">
+            <section id="introText1">
+                <p>HI I'M JEFFREY VANHORN</p>
+            </section>
+            <section id="introText2">
+                <p>A FULL-STACK WEB DEVELOPER</p>
+            </section>
+            <section id="introText3">
+                <div id="innerIntroText3Wrap">
+                    <div id="mediaTextWrap">
+                        <p>
+                            FEEL FREE TO LOOK THROUGH MY WEBSITE AND ADD ME ON SOCIAL MEDIA
+                        </p>
+                    </div>
+                    <div id="socialMediaWrap">
+                        <span>
+                            <a class="icon" target="_blank" data-toggle="tooltip" title="Facebook"
+                                href="https://www.facebook.com/JVHWebDevelopment/?modal=admin_todo_tour"><i
+                                    class="fab mediaIcon fa-facebook fa-2x"></i></a>
+                            <a class="icon" target="_blank" data-toggle="tooltip" title="Code Wars"
+                                href="https://www.codewars.com/users/JeffreyD196"><i class="fas mediaIcon fa-code fa-2x"></i></a>
+                            <a class="icon" target="_blank" data-toggle="tooltip" title="Github"
+                                href="https://github.com/Jmichael96"><i class="fab mediaIcon fa-github fa-2x"></i></a>
+                            <a class="icon" target="_blank" data-toggle="tooltip" title="LinkedIn"
+                                href="https://www.linkedin.com/in/jvh96/"><i class="fab mediaIcon fa-linkedin fa-2x"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <!-- mobile view -->
+    <main id="mobile-site">
+        <h1>mobile version</h1>
+    </main>
+
+
+    <!-- JQUERY -->
+    <script src="./assets/libs/jquery-3.4.1.min.js"></script>
+    <!-- CUSTOM JS LINKS -->
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/projects.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="./assets/js/mdb.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149535987-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149535987-1');
+    </script>
 </body>
+
 </html>
