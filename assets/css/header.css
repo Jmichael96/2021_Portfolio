@@ -1,0 +1,135 @@
+#header_section {
+    overflow: hidden;
+}
+
+/* wrapper of the contents inside the header */
+
+.headerContentWrap {
+    position: relative;
+    height: 35rem;
+}
+
+/* background for the planet Neptune */
+
+.neptuneBg {
+    position: relative;
+    z-index: 2;
+    width: 82rem;
+    height: 25rem;
+}
+
+/* neptune image */
+
+.neptuneImg {
+    width: 100%;
+    max-width: 40rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 3;
+    overflow: hidden;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translateX(-50%, -50%);
+    -o-transform: translateX(-50%, -50%);
+    -ms-transform: translateX(-50%, -50%);
+    transform: translateX(-50%, -50%);
+}
+
+/* wrapper surrounding the name video */
+
+#videoName {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* intro name video */
+
+#introNameVid {
+    width: 85rem;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1300px) {
+    /* intro name video */
+    #introNameVid {
+        width: 75rem;
+        top: 37%;
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    /* intro name video */
+    #introNameVid {
+        width: 65rem;
+        top: 43%;
+    }
+}
+
+@media only screen and (max-width: 975px) {
+    /* intro name video */
+    #introNameVid {
+        width: 55rem;
+        top: 47%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    /* background for the planet Neptune */
+    .neptuneBg {
+        height: 22rem;
+    }
+    /* intro name video */
+    #introNameVid {
+        width: 55rem;
+        top: 38%;
+    }
+}
+
+@media only screen and (max-width: 538px) {
+    /* background for the planet Neptune */
+    .neptuneBg {
+        height: 20rem;
+    }
+    /* intro name video */
+    #introNameVid {
+        width: 48rem;
+        top: 36%;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    /* background for the planet Neptune */
+    .neptuneBg {
+        height: 18rem;
+    }
+    /* intro name video */
+    #introNameVid {
+        width: 43rem;
+        top: 32%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    /* background for the planet Neptune */
+    .neptuneBg {
+        height: 16rem;
+    }
+    /* intro name video */
+    #introNameVid {
+        width: 40rem;
+        top: 27%;
+    }
+}
+
+@media only screen and (max-width: 325px) {}

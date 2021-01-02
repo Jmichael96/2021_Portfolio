@@ -1,0 +1,44 @@
+/* project section */
+
+#projectSection {
+    margin-top: 3rem;
+    height: 100%;
+    position: relative;
+}
+
+/* the planet */
+
+.projectPlanet {
+    position: absolute;
+    bottom: -13rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 35rem;
+    z-index: 1;
+}
+
+/* wrapper around the projects */
+
+.projectWrap {
+    width: 100%;
+    background-color: rgba(97, 97, 97, 0);
+    height: 100%;
+    min-height: 30rem;
+    z-index: 2;
+    align-items: center;
+}
+
+/* card */
+
+.projectCard {
+    width: 100%;
+    max-width: 17rem;
+    height: 21rem;
+    background-color: purple;
+    margin: 1rem;
+    z-index: 3;
+}

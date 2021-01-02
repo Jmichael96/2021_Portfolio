@@ -1,29 +1,27 @@
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    document.getElementById('desktop-site').style.display = 'none';
-} else {
-    document.getElementById('mobile-site').style.display = 'none';
-}
-// calling all functions that need to load on window load
-window.onload = function () {
-    setSVG();
-}
+// for the spinner to render waiting on all html content to be fully loaded
+document.onreadystatechange = function () {
+  if (document.readyState !== 'complete') {
+    document.querySelector('body').style.visibility = 'hidden';
+    document.querySelector('nav').style.display = 'none';
+    document.querySelector('#loader').style.visibility = 'visible';
+    // document.getElementById('introNameVid').style.display = 'none';
+  } else {
+    setTimeout(() => {
+      document.querySelector('#loader').style.display = 'none';
+      document.querySelector('nav').style.display = 'flex';
+      document.querySelector('body').style.visibility = 'visible';
+      // document.getElementById('introNameVid').style.display = 'block';
+      document.getElementById('videoName').innerHTML = `<video id="introNameVid" defaultMuted autoplay="autoplay" muted><source src="./assets/images/bg/officialName.mp4" type="video/mp4">Your browser does not support the video tag.</video>`
+    }, 2000);
+  }
+};
 
-// functionality for the svg name 'jeffrey vanhorn'
-function setSVG() {
-    let windowWidth = window.innerWidth;
-    let svg = document.getElementById('svg');
-
-    if (windowWidth === 1920) {
-        svg.setAttribute('viewBox', '0 0 2520 300')
-    }
-    else if (windowWidth === 1600) {
-        svg.setAttribute('viewBox', '0 0 2520 300')
-    }
-    else if (windowWidth === 768) {
-        svg.setAttribute('viewBox', '0 0 1320 300')
-    }
-    else if (windowWidth < 768) {
-        svg.setAttribute('viewBox', '0 0 1320 300')
-    }
-}
-
+// smooth scroll function
+$('.js-link').click(function (e) {
+  e.preventDefault();
+  var target = $($(this).attr('href'));
+  if (target.length) {
+    var scrollTo = target.offset().top - 30;
+    $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
+  }
+});

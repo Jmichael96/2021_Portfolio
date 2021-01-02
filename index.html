@@ -42,117 +42,96 @@
     <link rel="apple-touch-icon" href="./assets/images/favicons/favicon.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
 
     <!-- CUSTOM CSS LINKS -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/navbar.css" />
-    <link rel="stylesheet" href="./assets/css/introPage.css" />
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/pageLoader.css" />
+    <link rel="stylesheet" href="./assets/css/projects.css" />
+    <link rel="stylesheet" href="./assets/css/about.css" />
 </head>
 
 <body>
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+    <noscript>
+        Make sure your browser has JavaScript turned on :)
+    </noscript>
 
-        <!-- Navbar brand -->
-        <a class="navbar-brand" href="#"></a>
+    <!-- ! SCREEN LOADER -->
+    <div id="loader" class="center">
+        <img id="loadingImg" alt="" src="./assets/images/bg/source.gif" />
+    </div>
 
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
-
-            <!-- Links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="navLink">
-                            HOME
-                        </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="navLink">
-                            PROJECTS
-                        </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="navLink">
-                            EXPERIENCE
-                        </span>
-                    </a>
-                </li>
-            </ul>
+    <nav id="nav">
+        <div id="desktopNav" class="navInnerContentWrap">
+            <!-- <img class="navLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
+            <section class="navLinkWrap">
+                <a href="#about_section" class="navLink js-link"><span class="navSpan">Portfolio</span></a>
+                <a href="#ourWork_section" class="navLink js-link"><span class="navSpan">About</span></a>
+                <a href="#contact_section" class="navLink js-link"><span class="navSpan">Contact</span></a>
+            </section>
+        </div>
+        <div id="mobileNav">
+            <!-- <img class="navLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
+            <a href="#!" class="menuIconWrap" onclick="openNav();">
+                <i class="menuIcon fas fa-bars"></i>
+            </a>
         </div>
     </nav>
-    <!-- desktop view -->
-    <main id="desktop-site">
-        <article id="homePageWrap">
-            <section id="introText1">
-                <p>HI I'M JEFFREY VANHORN</p>
-            </section>
-            <section id="introText2">
-                <p>A FULL-STACK WEB DEVELOPER</p>
-            </section>
-            <section id="introText3">
-                <div id="innerIntroText3Wrap">
-                    <div id="mediaTextWrap">
-                        <p>
-                            FEEL FREE TO LOOK THROUGH MY WEBSITE AND ADD ME ON SOCIAL MEDIA
-                        </p>
-                    </div>
-                    <div id="socialMediaWrap">
-                        <span>
-                            <a class="icon" target="_blank" data-toggle="tooltip" title="Facebook"
-                                href="https://www.facebook.com/JVHWebDevelopment/?modal=admin_todo_tour"><i
-                                    class="fab mediaIcon fa-facebook fa-2x"></i></a>
-                            <a class="icon" target="_blank" data-toggle="tooltip" title="Code Wars"
-                                href="https://www.codewars.com/users/JeffreyD196"><i class="fas mediaIcon fa-code fa-2x"></i></a>
-                            <a class="icon" target="_blank" data-toggle="tooltip" title="Github"
-                                href="https://github.com/Jmichael96"><i class="fab mediaIcon fa-github fa-2x"></i></a>
-                            <a class="icon" target="_blank" data-toggle="tooltip" title="LinkedIn"
-                                href="https://www.linkedin.com/in/jvh96/"><i class="fab mediaIcon fa-linkedin fa-2x"></i></a>
-                        </span>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </main>
-    <!-- mobile view -->
-    <main id="mobile-site">
-        <h1>mobile version</h1>
-    </main>
 
+    <div id="smOpenNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#about_section" class="mobileNavLink js-link" onclick="closeNav();">Portfolio</a>
+            <a href="#ourWork_section" class="mobileNavLink js-link" onclick="closeNav();">About</a>
+            <a href="#contact_section" class="mobileNavLink js-link" onclick="closeNav();">Contact</a>
+            <!-- <img class="mobileOverlayLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
+        </div>
+    </div>
+
+    <a href="#header_section" id="scrollTopIcon" class="js-link scrollTop"><i class="fas fa-arrow-circle-up"></i></a>
+
+    <header id="header_section">
+            <div class="headerContentWrap wrapper">
+                <img class="neptuneBg" alt="" src="./assets/images/bg/neptuneBg.png" />
+                <div id="videoName">
+                </div>
+                <img class="neptuneImg" alt="neptune" src="./assets/images/planets/neptune.gif" />
+            </div>
+    </header>
+
+    <!-- about -->
+    <article id="aboutSection">
+
+    </article>
+
+    <!-- projects section -->
+    <!-- <article id="projectSection" class="wrapper">
+        <section class="projectWrap wrapper">
+            <div class="projectCard">
+
+            </div>
+            <div class="projectCard">
+
+            </div>
+            <div class="projectCard">
+
+            </div>
+
+        </section>
+        <img class="projectPlanet" src="./assets/images/planets/mars.gif" alt="" />
+    </article> -->
 
     <!-- JQUERY -->
     <script src="./assets/libs/jquery-3.4.1.min.js"></script>
     <!-- CUSTOM JS LINKS -->
     <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/nav.js"></script>
     <script type="text/javascript" src="./assets/js/projects.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="./assets/js/mdb.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149535987-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
 
-        gtag('config', 'UA-149535987-1');
-    </script>
 </body>
 
 </html>

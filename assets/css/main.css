@@ -6,8 +6,20 @@
 html body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
-    background-color: var(--desktop-primary-color);
+    background-color: #00051a;
+    /* background-image: url('../images/bg/mainbg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
 }
 
+/* wrapper to surround flex elements */
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,16 @@
+/* the loader image */
+
+#loadingImg {
+    width: 100%;
+    max-width: 10rem;
+    margin: 1rem;
+}
+
+/* outer div surrounding the loading image */
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
