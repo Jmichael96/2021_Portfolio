@@ -9,6 +9,8 @@
     height: 31rem;
 }
 
+/* header name placement and text */
+
 #headerName {
     position: absolute;
     top: 46%;
@@ -30,10 +32,16 @@
 
 #headerName>.nameChar {
     position: relative;
-    margin: 0 .3rem;
+    margin: 0 .1rem;
     /* ! ADD CROSS BROWSER ANIMATION */
     animation: move-text .5s forwards;
     opacity: 0;
+}
+
+/* white space inside the header name */
+
+.whiteSpace {
+    margin: 0 1.5rem;
 }
 
 @keyframes move-text {
@@ -80,13 +88,9 @@
 
 @keyframes headerText-animation {
     0% {
-        /* -webkit-transform: scale(0);
-        transform: scale(0); */
         opacity: 0;
     }
     100% {
-        /* -webkit-transform: scale(1);
-        transform: scale(1); */
         opacity: 1;
     }
 }
@@ -96,7 +100,6 @@
 .headerTextDash {
     width: 15rem;
     height: .5rem;
-    margin: 0 1rem;
     border-top: 2px solid #d1d1d1;
     border-bottom: 2px solid #d1d1d1;
     border-right: none;
@@ -109,10 +112,11 @@
     font-size: 1.5rem;
     color: #d1d1d1;
     font-weight: 400;
-    letter-spacing: .2rem;
+    letter-spacing: .1rem;
+    margin: 0 1rem;
 }
 
-/* background for the planet Neptune */
+/* background for the plant Neptune */
 
 .neptuneBg {
     position: relative;
@@ -188,8 +192,8 @@
 }
 
 @media only screen and (max-width: 900px) {
-     /* wrapper of the contents inside the header */
-     .headerContentWrap {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
         height: 27rem;
     }
     /* the header name */
@@ -197,13 +201,263 @@
         font-size: 3.4rem;
         top: 53%;
     }
-    /* render id for the header text */
-    #headerTextRender {
-        bottom: 2rem;
-    }
     /* header text dashes */
     .headerTextDash {
         width: 11rem;
         height: .5rem;
+    }
+}
+
+@media only screen and (max-width: 779px) {
+    /* the header name */
+    #headerName {
+        font-size: 3rem;
+        top: 56%;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 10rem;
+        height: .4rem;
+    }
+    /* the text that says "full stack developer" */
+    #headerText {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    /* the header name */
+    #headerName {
+        font-size: 3rem;
+        top: 58%;
+    }
+    /* white space inside the header name */
+    .whiteSpace {
+        margin: 0 .5rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 8rem;
+    }
+}
+
+@media only screen and (max-width: 621px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 24rem;
+    }
+    /* background for neptune */
+    .neptuneBg {
+        height: 23rem;
+    }
+    /* the header name */
+    #headerName {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 572px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 22rem;
+    }
+    /* the header name */
+    #headerName {
+        font-size: 2.6rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 7rem;
+    }
+}
+
+@media only screen and (max-width: 542px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 21rem;
+    }
+    /* background image for neptune */
+    .neptuneBg {
+        height: 21rem;
+    }
+    /* header name */
+    #headerName {
+        top: 56%;
+    }
+    /* header text */
+    #headerText {
+        margin: 0 .5rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 6.8rem;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 19rem;
+    }
+    /* background image for neptune */
+    .neptuneBg {
+        height: 19rem;
+    }
+    /* the header name */
+    #headerName {
+        font-size: 2.4rem;
+    }
+    /* header text */
+    #headerText {
+        font-size: .9rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 6rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 19rem;
+    }
+    /* background image for neptune */
+    .neptuneBg {
+        height: 19rem;
+    }
+    /* header name placement and text */
+    #headerName {
+        top: 53%;
+        font-size: 2.4rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 18rem;
+    }
+    /* background image for neptune */
+    .neptuneBg {
+        height: 18rem;
+    }
+    /* header name placement and text */
+    #headerName {
+        font-size: 2.3rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 5.5rem;
+    }
+}
+
+@media only screen and (max-width: 466px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 3%;
+    }
+    /* header name placement and text */
+    #headerName {
+        font-size: 2.2rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 5rem;
+    }
+}
+
+@media only screen and (max-width: 445px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 5%;
+    }
+    /* header name placement and text */
+    #headerName {
+        font-size: 2.1rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 4.5rem;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 6%;
+    }
+    /* header name placement and text */
+    #headerName {
+        font-size: 2rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 4rem;
+    }
+}
+
+@media only screen and (max-width: 417px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 7%;
+    }
+    /* header name placement and text */
+    #headerName {
+        font-size: 1.9rem;
+    }
+}
+
+@media only screen and (max-width: 403px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 17rem;
+    }
+    /* background for neptune */
+    .neptuneBg {
+        height: 17rem;
+    }
+    /* neptune image */
+    .neptuneImg {
+        top: 8%;
+    }
+    /* header name placement and text */
+    #headerName {
+        top: 55%;
+        font-size: 1.8rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 3.5rem;
+    }
+}
+@media only screen and (max-width: 370px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 9%;
+    }
+    /* header name placement and text */
+    #headerName {
+        top: 51%;
+        font-size: 1.7rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 3.4rem;
+    }
+}
+@media only screen and (max-width: 358px) {
+    /* neptune image */
+    .neptuneImg {
+        top: 12%;
+    }
+    /* header name placement and text */
+    #headerName {
+        top: 51%;
+        font-size: 1.6rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 3.3rem;
     }
 }
