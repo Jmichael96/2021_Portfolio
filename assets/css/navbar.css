@@ -84,8 +84,6 @@
     -moz-transition: all .5s ease-out;
     transition: all .5s ease-out;
     color: white;
-    font-family: 'Mandatory Plaything';
-    src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
 }
 
 .navSpan {

@@ -3,15 +3,17 @@
     --accent-color: #a236c9;
 }
 
+@font-face {
+    font-family: 'Mandatory Plaything';
+    src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
+}
+
 html body {
     margin: 0;
     padding: 0;
     height: 100%;
     background-color: #00051a;
-    /* background-image: url('../images/bg/mainbg.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; */
+    font-family: 'Mandatory Plaything';
 }
 
 /* wrapper to surround flex elements */

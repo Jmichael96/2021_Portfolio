@@ -6,14 +6,117 @@
 
 .headerContentWrap {
     position: relative;
-    height: 35rem;
+    height: 31rem;
+}
+
+#headerName {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    z-index: 3;
+    font-size: 5rem;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: 'Mandatory Plaything';
+}
+
+#headerName>.nameChar {
+    position: relative;
+    margin: 0 .3rem;
+    /* ! ADD CROSS BROWSER ANIMATION */
+    animation: move-text .5s forwards;
+    opacity: 0;
+}
+
+@keyframes move-text {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* render id for the header text */
+
+#headerTextRender {
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    z-index: 3;
+    width: 100%;
+    -webkit-transform: translateX(-50%);
+    /* -moz-transform: translateX(-50%); */
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* wrapper surrounding the header text */
+
+#headerTextWrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+    -webkit-animation: headerText-animation 1s ease-in;
+    -moz-animation: headerText-animation 1s ease-in;
+    -o-animation: headerText-animation 1s ease-in;
+    animation: headerText-animation 1s ease-in;
+}
+
+@keyframes headerText-animation {
+    0% {
+        /* -webkit-transform: scale(0);
+        transform: scale(0); */
+        opacity: 0;
+    }
+    100% {
+        /* -webkit-transform: scale(1);
+        transform: scale(1); */
+        opacity: 1;
+    }
+}
+
+/* header text dashes */
+
+.headerTextDash {
+    width: 15rem;
+    height: .5rem;
+    margin: 0 1rem;
+    border-top: 2px solid #d1d1d1;
+    border-bottom: 2px solid #d1d1d1;
+    border-right: none;
+    border-left: none;
+}
+
+/* the text that says "full stack developer" */
+
+#headerText {
+    font-size: 1.5rem;
+    color: #d1d1d1;
+    font-weight: 400;
+    letter-spacing: .2rem;
 }
 
 /* background for the planet Neptune */
 
 .neptuneBg {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 82rem;
     height: 25rem;
 }
@@ -26,7 +129,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    z-index: 3;
+    z-index: 2;
     overflow: hidden;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translateX(-50%, -50%);
@@ -60,76 +163,47 @@
 
 /* ! MEDIA QUERIES */
 
-@media only screen and (max-width: 1300px) {
-    /* intro name video */
-    #introNameVid {
-        width: 75rem;
-        top: 37%;
+@media only screen and (max-width: 1080px) {
+    /* wrapper of the contents inside the header */
+    .headerContentWrap {
+        height: 30rem;
+    }
+    /* the header name */
+    #headerName {
+        font-size: 4rem;
+    }
+    /* render id for the header text */
+    #headerTextRender {
+        bottom: 2rem;
+    }
+    /* the text that says "full stack developer" */
+    #headerText {
+        font-size: 1.2rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 14rem;
+        height: .5rem;
     }
 }
 
-@media only screen and (max-width: 1130px) {
-    /* intro name video */
-    #introNameVid {
-        width: 65rem;
-        top: 43%;
+@media only screen and (max-width: 900px) {
+     /* wrapper of the contents inside the header */
+     .headerContentWrap {
+        height: 27rem;
+    }
+    /* the header name */
+    #headerName {
+        font-size: 3.4rem;
+        top: 53%;
+    }
+    /* render id for the header text */
+    #headerTextRender {
+        bottom: 2rem;
+    }
+    /* header text dashes */
+    .headerTextDash {
+        width: 11rem;
+        height: .5rem;
     }
 }
-
-@media only screen and (max-width: 975px) {
-    /* intro name video */
-    #introNameVid {
-        width: 55rem;
-        top: 47%;
-    }
-}
-
-@media only screen and (max-width: 580px) {
-    /* background for the planet Neptune */
-    .neptuneBg {
-        height: 22rem;
-    }
-    /* intro name video */
-    #introNameVid {
-        width: 55rem;
-        top: 38%;
-    }
-}
-
-@media only screen and (max-width: 538px) {
-    /* background for the planet Neptune */
-    .neptuneBg {
-        height: 20rem;
-    }
-    /* intro name video */
-    #introNameVid {
-        width: 48rem;
-        top: 36%;
-    }
-}
-
-@media only screen and (max-width: 490px) {
-    /* background for the planet Neptune */
-    .neptuneBg {
-        height: 18rem;
-    }
-    /* intro name video */
-    #introNameVid {
-        width: 43rem;
-        top: 32%;
-    }
-}
-
-@media only screen and (max-width: 420px) {
-    /* background for the planet Neptune */
-    .neptuneBg {
-        height: 16rem;
-    }
-    /* intro name video */
-    #introNameVid {
-        width: 40rem;
-        top: 27%;
-    }
-}
-
-@media only screen and (max-width: 325px) {}
