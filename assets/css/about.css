@@ -1,5 +1,90 @@
 /* about section */
 
 #aboutSection {
-    margin-top: 17rem;
+    margin-top: 20rem;
+}
+
+/* about card */
+
+#aboutCard {
+    border: 1px solid orange;
+    width: 100%;
+    max-width: 60rem;
+    position: relative;
+    padding: 1rem;
+    height: 20rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* image of my head inside a space helmet */
+
+#personalImg {
+    display: none;
+    width: 100%;
+    max-width: 12rem;
+}
+
+/* the about text p tag */
+
+.aboutTxt {
+    color: white;
+    width: 100%;
+    max-width: 27rem;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.cursorBlinker {
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-moz-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #a74300;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #a74300;
+    }
+}
+
+@-ms-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #a74300;
+    }
+}
+
+@-o-keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #a74300;
+    }
 }

@@ -1,10 +1,12 @@
-window.onload = function (e) {
-    e.preventDefault();
+$(window).on('load', function () {
+    // resizing the nav to the appropriate specs
     resizeNavHandler();
-};
+})
 
+// call this function when the window is resizing
 window.onresize = function (e) {
     e.preventDefault();
+    // resizing the nav to the appropriate specs
     resizeNavHandler();
 }
 
