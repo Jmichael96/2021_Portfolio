@@ -1,3 +1,5 @@
+/* header section id */
+
 #header_section {
     overflow: hidden;
 }
@@ -33,7 +35,9 @@
 #headerName>.nameChar {
     position: relative;
     margin: 0 .1rem;
-    /* ! ADD CROSS BROWSER ANIMATION */
+    -webkit-animation: move-text .5s forwards;
+    -moz-animation: move-text .5s forwards;
+    -o-animation: move-text .5s forwards;
     animation: move-text .5s forwards;
     opacity: 0;
 }
@@ -66,7 +70,6 @@
     z-index: 3;
     width: 100%;
     -webkit-transform: translateX(-50%);
-    /* -moz-transform: translateX(-50%); */
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -431,6 +434,7 @@
         width: 3.5rem;
     }
 }
+
 @media only screen and (max-width: 370px) {
     /* neptune image */
     .neptuneImg {
@@ -446,6 +450,7 @@
         width: 3.4rem;
     }
 }
+
 @media only screen and (max-width: 358px) {
     /* neptune image */
     .neptuneImg {

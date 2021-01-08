@@ -44,3 +44,19 @@ window.onscroll = () => {
         scrollBtn.style.display = 'block';
     };
 };
+
+// toggle the mobile menu button
+$('#mobileNavBtn').click(function () {
+    $(this).toggleClass('open');
+});
+
+// toggle the side nav sliding in
+$('#mobileNavBtn').click(function () {
+    $('#sideNav').toggleClass('activeNav');
+});
+
+// toggle the nav and mobile menu button when clicking on a button inside the side nav
+$('.mobileLink').click(function () {
+    $('#mobileNavBtn').toggleClass('open');
+    $('#sideNav').toggleClass('activeNav');
+});

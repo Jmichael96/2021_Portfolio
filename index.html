@@ -67,26 +67,27 @@
         <div id="desktopNav" class="navInnerContentWrap">
             <!-- <img class="navLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
             <section class="navLinkWrap">
-                <a href="#about_section" class="navLink js-link"><span class="navSpan">Portfolio</span></a>
                 <a href="#ourWork_section" class="navLink js-link"><span class="navSpan">About</span></a>
+                <a href="#ourWork_section" class="navLink js-link"><span class="navSpan">Specialties</span></a>
+                <a href="#about_section" class="navLink js-link"><span class="navSpan">My Work</span></a>
                 <a href="#contact_section" class="navLink js-link"><span class="navSpan">Contact</span></a>
             </section>
         </div>
         <div id="mobileNav">
-            <!-- <img class="navLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
-            <a href="#!" class="menuIconWrap" onclick="openNav();">
-                <i class="menuIcon fas fa-bars"></i>
-            </a>
+            <div id="mobileNavBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
-
-    <div id="smOpenNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <a href="#about_section" class="mobileNavLink js-link" onclick="closeNav();">Portfolio</a>
-            <a href="#ourWork_section" class="mobileNavLink js-link" onclick="closeNav();">About</a>
-            <a href="#contact_section" class="mobileNavLink js-link" onclick="closeNav();">Contact</a>
-            <!-- <img class="mobileOverlayLogo" src="./assets/images/logos/clearLogo.png" alt="logo" /> -->
+    <!-- side nav -->
+    <div id="sideNav" class="menu">
+        <div id="mobileLinkWrap">
+            <a href="#ourWork_section" class="mobileLink js-link">About</a>
+            <a href="#ourWork_section" class="mobileLink js-link">Specialties</a>
+            <a href="#about_section" class="mobileLink js-link">My Work</a>
+            <a href="#contact_section" class="mobileLink js-link">Contact</a>
         </div>
     </div>
 

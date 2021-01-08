@@ -16,15 +16,10 @@ document.onreadystatechange = function () {
       nameString.split('').map(function (char, index) {
         // check if there is a white space char in the string
         if (char.indexOf(' ') >= 0) {
-          // if (window.innerWidth <= 625) {
-          //   $('#headerName').append(`<span class="whiteSpace" style="margin: 0 .5rem;">${char}</span>`);
-          //   return;
-          // }
           $('#headerName').append(`<span class="whiteSpace">${char}</span>`);
           return;
         }
         $('#headerName').append(`<span class="nameChar" style="animation-delay: ${.5 + index / 5.5}s;">${char}</span>`);
-
       });
 
       // ! RENDERING THE HEADER TEXT
