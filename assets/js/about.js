@@ -47,7 +47,7 @@ TxtRotate.prototype.tick = function () {
     }, delta);
 };
 // for handling the start of the typing in the about section
-function initiateTyping () {
+function initiateTyping() {
     let elements = document.getElementsByClassName('txt-rotate');
     for (let i = 0; i < elements.length; i++) {
         let toRotate = elements[i].getAttribute('data-rotate');
@@ -62,8 +62,12 @@ function initiateTyping () {
     css.innerHTML = ".txt-rotate > .typeWrap { border-right: 2px solid #a74300; padding-right: .2rem; }";
     document.body.appendChild(css);
 }
-$(window).on('load', function () {
+// getting the bottom coordinates to the element
+let $el = $('#aboutCard');  //record the elem so you don't crawl the DOM everytime  
+let bottom = $el.position().top + $el.outerHeight(true); // passing "true" will also include the top and bottom margin
 
+// console.log(bottom);
+$(window).on('load', function () {
     $(window).on('scroll', function () {
         let windowBottom = $(this).scrollTop() + $(this).innerHeight();
         // let image = document.getElementById('personalImg');
@@ -74,9 +78,9 @@ $(window).on('load', function () {
             /* If the element is completely within bounds of the window, fade it in */
             if (objectBottom < windowBottom - 100) {
                 // image.style.display = 'block';
-                textTag.style.display = 'block';
-            } else  {
-            }
-        })
-    })
+                initiateTyping();
+                $(window).off('scroll');
+            } 
+        })        
+    });
 });

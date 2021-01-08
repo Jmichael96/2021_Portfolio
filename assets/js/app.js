@@ -32,7 +32,7 @@ document.onreadystatechange = function () {
       // document.getElementById('videoName').innerHTML = `<video id="introNameVid" defaultMuted autoplay="autoplay" muted><source src="./assets/images/bg/officialName.mp4" type="video/mp4">Your browser does not support the video tag.</video>`
 
       // ! STRICTLY FOR THE ABOUT TEXT TYPING TO START ONCE PAGE HAS FINISHED LOADING
-      initiateTyping();
+      // initiateTyping();
     }, 2000);
 
     // about section
