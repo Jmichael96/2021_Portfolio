@@ -46,8 +46,10 @@ TxtRotate.prototype.tick = function () {
         that.tick();
     }, delta);
 };
+
 // for handling the start of the typing in the about section
-function initiateTyping() {
+function initAboutContent() {
+    // start typing out the about text
     let elements = document.getElementsByClassName('txt-rotate');
     for (let i = 0; i < elements.length; i++) {
         let toRotate = elements[i].getAttribute('data-rotate');
@@ -61,10 +63,16 @@ function initiateTyping() {
     // css.type = "text/css";
     css.innerHTML = ".txt-rotate > .typeWrap { border-right: 2px solid #a74300; padding-right: .2rem; }";
     document.body.appendChild(css);
+
+    // fade in the about image
+    document.getElementById('personalImg').style.opacity = 1;
 }
+
 // getting the bottom coordinates to the element
-let $el = $('#aboutCard');  //record the elem so you don't crawl the DOM everytime  
-let bottom = $el.position().top + $el.outerHeight(true); // passing "true" will also include the top and bottom margin
+//record the elem so you don't crawl the DOM everytime 
+let $el = $('#aboutCard');   
+// passing "true" will also include the top and bottom margin
+let bottom = $el.position().top + $el.outerHeight(true); 
 
 // console.log(bottom);
 $(window).on('load', function () {
@@ -78,7 +86,7 @@ $(window).on('load', function () {
             /* If the element is completely within bounds of the window, fade it in */
             if (objectBottom < windowBottom - 100) {
                 // image.style.display = 'block';
-                initiateTyping();
+                initAboutContent();
                 $(window).off('scroll');
             } 
         })        

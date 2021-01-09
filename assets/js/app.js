@@ -4,10 +4,8 @@ document.onreadystatechange = function () {
     document.querySelector('body').style.visibility = 'hidden';
     // the navbar
     document.querySelector('nav').style.display = 'none';
+    // page loader
     document.querySelector('#loader').style.visibility = 'visible';
-    // about section
-    // document.querySelector('#aboutTxt').style.display = 'none';
-    // document.getElementById('introNameVid').style.display = 'none';
   } else {
     setTimeout(() => {
       document.querySelector('#loader').style.display = 'none';
@@ -28,15 +26,7 @@ document.onreadystatechange = function () {
       setTimeout(() => {
         renderHeaderText();
       }, 3500);
-      // document.getElementById('introNameVid').style.display = 'block';
-      // document.getElementById('videoName').innerHTML = `<video id="introNameVid" defaultMuted autoplay="autoplay" muted><source src="./assets/images/bg/officialName.mp4" type="video/mp4">Your browser does not support the video tag.</video>`
-
-      // ! STRICTLY FOR THE ABOUT TEXT TYPING TO START ONCE PAGE HAS FINISHED LOADING
-      // initiateTyping();
     }, 2000);
-
-    // about section
-    // document.querySelector('#aboutTxt').style.display = 'flex';
   }
 };
 

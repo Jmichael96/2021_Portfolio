@@ -1,9 +1,35 @@
 /* about section */
 
 #aboutSection {
-    margin-top: 20rem;
+    margin-top: 14rem;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    height: 45rem;
 }
 
+/* mars image */
+#marsImg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    z-index: 2;
+    top: 12rem;
+    right: 3rem;
+    opacity: .9;
+    filter: brightness(90%);
+}
+
+/* mars/about background */
+#marsBg {
+    z-index: 1;
+    width: 90rem;
+    height: 31rem;
+    position: absolute;
+    top: 0;
+    right: -13rem;
+}
 /* about card */
 
 #aboutCard {
@@ -15,6 +41,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-flow: row wrap;
+    z-index: 3;
 }
 
 /* image of my head inside a space helmet */
@@ -23,6 +51,11 @@
     display: block;
     width: 100%;
     max-width: 12rem;
+    opacity: 0;
+    -webkit-transition: .5s all ease-in;
+    -moz-transition: .5s all ease-in;
+    -o-transition: .5s all ease-in;
+    transition: .5s all ease-in;
 }
 
 /* the about text p tag */
