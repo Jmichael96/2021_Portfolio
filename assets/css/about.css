@@ -7,7 +7,6 @@
 /* about card */
 
 #aboutCard {
-    border: 1px solid orange;
     width: 100%;
     max-width: 60rem;
     position: relative;
@@ -21,7 +20,7 @@
 /* image of my head inside a space helmet */
 
 #personalImg {
-    display: none;
+    display: block;
     width: 100%;
     max-width: 12rem;
 }
@@ -55,36 +54,36 @@
 
 @-moz-keyframes blink {
     from, to {
-        color: transparent;
+        border-color: transparent;
     }
     50% {
-        color: #a74300;
+        border-color: #a74300;
     }
 }
 
 @-webkit-keyframes blink {
     from, to {
-        color: transparent;
+        border-color: transparent;
     }
     50% {
-        color: #a74300;
+        border-color: #a74300;
     }
 }
 
 @-ms-keyframes blink {
     from, to {
-        color: transparent;
+        border-color: transparent;
     }
     50% {
-        color: #a74300;
+        border-color: #a74300;
     }
 }
 
 @-o-keyframes blink {
     from, to {
-        color: transparent;
+        border-color: transparent;
     }
     50% {
-        color: #a74300;
+        border-color: #a74300;
     }
 }
