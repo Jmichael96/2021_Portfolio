@@ -1,0 +1,31 @@
+/* specialty section */
+
+#specialtiesSection {
+    overflow: hidden;
+    align-items: center;
+    height: 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* inner wrap of cards */
+
+#specialtiesWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: 60rem;
+}
+
+/* each card for the specialties */
+.skillCard {
+    border: 2px solid orange;
+    width: 100%;
+    max-width: 15rem;
+    height: 15rem;
+    margin: 1rem;
+}

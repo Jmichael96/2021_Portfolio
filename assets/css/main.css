@@ -30,8 +30,4 @@ html body {
 
 .fade {
     opacity: 1;
-    /* display: flex; */
-    margin: 2rem;
-    padding: 12rem;
-    background-color: white;
 }
