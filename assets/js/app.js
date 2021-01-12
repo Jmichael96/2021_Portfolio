@@ -31,6 +31,7 @@ document.onreadystatechange = function () {
 };
 
 $(window).on("load", function () {
+
   window.onscroll = () => {
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     $(".fade").each(function () {

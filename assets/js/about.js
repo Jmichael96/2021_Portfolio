@@ -70,12 +70,31 @@ function initAboutContent() {
 
 // getting the bottom coordinates to the element
 //record the elem so you don't crawl the DOM everytime 
-let $el = $('#aboutCard');   
+let $el = $('#aboutCard');
 // passing "true" will also include the top and bottom margin
-let bottom = $el.position().top + $el.outerHeight(true); 
+let bottom = $el.position().top + $el.outerHeight(true);
 
-// console.log(bottom);
 $(window).on('load', function () {
+    //    3d canvas
+    try {
+        TagCanvas.Start('myCanvas', 'tags', {
+            textColour: 'white',
+            outlineColour: 'transparent',
+            bgOutlineThickness: 0,
+            reverse: true,
+            depth: 0.05,
+            decel: .98,
+            maxSpeed: 0.04,
+            initial: [0.1, -0.1],
+            pinchZoom: true,
+            zoomMax: 1,
+            shuffleTags: true,
+            zoom: .8
+        });
+    } catch (e) {
+        // something went wrong, hide the canvas container
+        document.getElementById('myCanvasContainer').style.display = 'none';
+    }
     $(window).on('scroll', function () {
         let windowBottom = $(this).scrollTop() + $(this).innerHeight();
         // let image = document.getElementById('personalImg');
@@ -88,7 +107,7 @@ $(window).on('load', function () {
                 // image.style.display = 'block';
                 initAboutContent();
                 $(window).off('scroll');
-            } 
-        })        
+            }
+        })
     });
 });

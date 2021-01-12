@@ -13,19 +13,22 @@
 /* inner wrap of cards */
 
 #specialtiesWrap {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-flow: row wrap; */
     width: 100%;
-    max-width: 60rem;
+    max-width: 70rem;
+    margin: 1rem;
 }
 
-/* each card for the specialties */
-.skillCard {
-    border: 2px solid orange;
-    width: 100%;
-    max-width: 15rem;
-    height: 15rem;
-    margin: 1rem;
+
+/* #myCanvas {
+    padding: 2rem;
+} */
+
+/* canvas image */
+.canvasImg {
+    width: 75px;
+    height: 75px;
 }
