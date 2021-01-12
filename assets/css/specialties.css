@@ -13,20 +13,21 @@
 /* inner wrap of cards */
 
 #specialtiesWrap {
-    /* display: flex;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    flex-flow: row wrap; */
+    flex-flow: row wrap;
     width: 100%;
-    max-width: 70rem;
     margin: 1rem;
 }
+/* wrap around the content and text of the specialties section (title, cards, etc...) */
+#specialtiesContent {
 
-
-/* #myCanvas {
-    padding: 2rem;
-} */
-
+}
+/* title */
+.specialtiesTitle {
+    
+}
 /* canvas image */
 .canvasImg {
     width: 75px;
