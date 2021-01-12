@@ -20,15 +20,20 @@
     width: 100%;
     margin: 1rem;
 }
-/* wrap around the content and text of the specialties section (title, cards, etc...) */
-#specialtiesContent {
 
-}
+/* wrap around the content and text of the specialties section (title, cards, etc...) */
+
+#specialtiesContent {}
+
 /* title */
+
 .specialtiesTitle {
-    
+    color: white;
+    font-size: 2rem;
 }
+
 /* canvas image */
+
 .canvasImg {
     width: 75px;
     height: 75px;
