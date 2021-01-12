@@ -66,6 +66,8 @@
     max-width: 27rem;
     font-size: 1.2rem;
     display: block;
+    letter-spacing: .05rem;
+    line-height: 1.7rem;
 }
 
 .cursorBlinker {

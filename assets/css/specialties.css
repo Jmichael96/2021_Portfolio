@@ -14,25 +14,61 @@
 
 #specialtiesWrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-flow: row wrap;
     width: 100%;
-    margin: 1rem;
 }
 
 /* wrap around the content and text of the specialties section (title, cards, etc...) */
 
-#specialtiesContent {}
+#specialtiesContent {
+    /* margin-left: auto;
+    margin-right: auto; */
+}
 
 /* title */
 
 .specialtiesTitle {
     color: white;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin: 0;
 }
 
-/* canvas image */
+/* unordered list for all my specialties */
+
+#specialtiesContent>ul {
+    list-style-type: none;
+    color: white;
+    margin-left: 2.5rem;
+}
+
+/* each list item */
+
+.specialtyList {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* icon for each list item */
+
+.fas {
+    color: #a74300;
+    font-size: 1.8rem;
+    margin-right: .5rem;
+}
+
+/* canvas container containing all the content for the canvas */
+
+#myCanvasContainer {
+    width: 100%;
+    max-width: 600px;
+    /* margin-left: auto; */
+}
+
+/* each image inside the canvas */
 
 .canvasImg {
     width: 75px;
