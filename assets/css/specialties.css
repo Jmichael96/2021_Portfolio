@@ -23,8 +23,7 @@
 /* wrap around the content and text of the specialties section (title, cards, etc...) */
 
 #specialtiesContent {
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin: 1rem;
 }
 
 /* title */
