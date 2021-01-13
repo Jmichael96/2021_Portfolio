@@ -22,7 +22,7 @@ TxtRotate.prototype.tick = function () {
 
     let that = this;
     // controls the speed of the typing
-    let delta = 100 - Math.random() * 100;
+    let delta = 100 - Math.random() * 200;
 
     if (this.isDeleting) { delta /= 2; }
 
@@ -75,26 +75,6 @@ let $el = $('#aboutCard');
 let bottom = $el.position().top + $el.outerHeight(true);
 
 $(window).on('load', function () {
-    //    3d canvas
-    try {
-        TagCanvas.Start('myCanvas', 'tags', {
-            textColour: 'white',
-            outlineColour: 'transparent',
-            bgOutlineThickness: 0,
-            reverse: true,
-            depth: 0.05,
-            decel: .98,
-            maxSpeed: 0.04,
-            initial: [0.1, -0.1],
-            pinchZoom: true,
-            zoomMax: 1,
-            shuffleTags: true,
-            zoom: .8
-        });
-    } catch (e) {
-        // something went wrong, hide the canvas container
-        document.getElementById('myCanvasContainer').style.display = 'none';
-    }
     $(window).on('scroll', function () {
         let windowBottom = $(this).scrollTop() + $(this).innerHeight();
         // let image = document.getElementById('personalImg');
