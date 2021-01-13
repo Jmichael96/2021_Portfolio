@@ -61,14 +61,12 @@
 
 /* canvas container containing all the content for the canvas */
 
-#myCanvasContainer {
-    /* width: 100%;
-    max-width: 600px; */
-    /* margin-left: auto; */
-}
+#myCanvasContainer {}
+
 #myCanvas {
     width: 100%;
 }
+
 /* each image inside the canvas */
 
 .canvasImg {
