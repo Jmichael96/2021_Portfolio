@@ -13,7 +13,7 @@ $(window).on('load', function () {
             pinchZoom: true,
             zoomMax: 1,
             shuffleTags: true,
-            zoom: .8
+            zoom: .85
         });
     } catch (e) {
         // something went wrong, hide the canvas container

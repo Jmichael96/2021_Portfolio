@@ -8,6 +8,32 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    position: relative;
+}
+
+/* moon background image */
+
+#moonBg {
+    position: absolute;
+    bottom: 0;
+    left: -6rem;
+    z-index: 1;
+    width: 90rem;
+    height: 31rem;
+}
+
+/* moon image */
+
+#moonImg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    z-index: 2;
+    left: 3rem;
+    bottom: 4rem;
+    opacity: .9;
+    filter: brightness(80%);
 }
 
 /* inner wrap of cards */
@@ -18,6 +44,7 @@
     align-items: center;
     flex-flow: row wrap;
     width: 100%;
+    z-index: 3;
 }
 
 /* wrap around the content and text of the specialties section (title, cards, etc...) */
@@ -61,7 +88,7 @@
 
 /* canvas container containing all the content for the canvas */
 
-#myCanvasContainer {}
+/* #myCanvasContainer {} */
 
 #myCanvas {
     width: 100%;
@@ -72,4 +99,17 @@
 .canvasImg {
     width: 75px;
     height: 75px;
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1147px) {
+    /* moon background image */
+    #moonBg {
+        bottom: 19rem;
+    }
+    /* moon image */
+    #moonImg {
+        bottom: 24rem;
+    }
 }
