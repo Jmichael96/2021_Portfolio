@@ -20,7 +20,7 @@
     width: 90rem;
     height: 31rem;
     bottom: 0;
-    right: -3rem;
+    right: -3.5rem;
 }
 
 /* image of jupiter */
@@ -55,7 +55,7 @@
     width: 100%;
     width: 20rem;
     height: 26rem;
-    margin: 1rem;
+    margin: 2rem 1rem 1rem 1rem;
     cursor: pointer;
     perspective: 100vw;
     perspective-origin: 50% 50%;
@@ -201,12 +201,14 @@ svg .polygon {
 }
 
 /* more project button wrapper */
+
 #moreProjectsWrap {
     width: 100%;
     margin-top: 1rem;
 }
 
 /* view more projects button */
+
 #moreProjectsBtn {
     font-family: 'Mandatory Plaything';
     font-size: 1.2rem;
@@ -218,8 +220,33 @@ svg .polygon {
     background-color: white;
     cursor: pointer;
 }
+
 #moreProjectsBtn:focus {
     outline: none;
 }
 
 /* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1055px) {
+    /* jupiter background */
+    #jupiterBg {
+        bottom: 12rem;
+    }
+    /* image of jupiter */
+    #jupiterImg {
+        bottom: 17rem;
+    }
+}
+
+@media only screen and (max-width: 703px) {
+    /* jupiter background */
+    #jupiterBg {
+        right: -10rem;
+        bottom: 32rem;
+    }
+    /* image of jupiter */
+    #jupiterImg {
+        right: -2rem;
+        bottom: 36rem;
+    }
+}
