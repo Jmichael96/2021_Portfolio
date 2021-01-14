@@ -200,4 +200,26 @@ svg .polygon {
     letter-spacing: .1rem;
 }
 
+/* more project button wrapper */
+#moreProjectsWrap {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* view more projects button */
+#moreProjectsBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 9rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+#moreProjectsBtn:focus {
+    outline: none;
+}
+
 /* ! MEDIA QUERIES */
