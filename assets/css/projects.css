@@ -52,7 +52,6 @@
 
 .projectCard {
     position: relative;
-    width: 100%;
     width: 20rem;
     height: 26rem;
     margin: 2rem 1rem 1rem 1rem;
@@ -60,7 +59,6 @@
     perspective: 100vw;
     perspective-origin: 50% 50%;
     transform-style: preserve-3d;
-    position: relative;
 }
 
 /* the card cover which contains the glare and hover animation */
@@ -88,6 +86,8 @@
     /* ! to remove the jagged lines on edge of card when the angle is changed */
     outline: 1px solid transparent;
 }
+
+/* the lighting effect */
 
 .cardCover::after {
     display: block;
@@ -228,6 +228,20 @@ svg .polygon {
 /* ! MEDIA QUERIES */
 
 @media only screen and (max-width: 1055px) {
+    /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
+    /* the lighting effect */
+    .cardCover::after {
+        background: none;
+    }
+    .projectCard::before {
+        display: none;
+    }
+    .projectCard:hover .cardCover {
+        -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+        transform: none;
+    }
     /* jupiter background */
     #jupiterBg {
         bottom: 12rem;
