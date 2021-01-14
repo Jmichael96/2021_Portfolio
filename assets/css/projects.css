@@ -39,11 +39,10 @@
 
 .projectCard {
     position: relative;
-    width: 315px;
-    /* Remove for full width */
-    height: 450px;
-    /* Remove for full width */
-    margin: 30px auto;
+    width: 100%;
+    width: 20rem;
+    height: 26rem;
+    margin: 1rem;
     cursor: pointer;
 }
 
@@ -140,7 +139,7 @@ svg .polygon {
 
 .projectCardSlant {
     position: absolute;
-    bottom: -3px;
+    bottom: -4px;
     z-index: 1;
     width: 100%;
     right: 0;
@@ -151,16 +150,17 @@ svg .polygon {
 
 .projectCardBody {
     text-align: center;
-    padding-left: 10px;
+    padding: .5rem;
 }
 
 /* title for each card */
 
 .cardTitle {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 900;
     margin: 0 auto;
     color: white;
+    letter-spacing: .1rem;
 }
 
 /* card description text */
@@ -171,4 +171,5 @@ svg .polygon {
     font-weight: 300;
     margin: 10px auto;
     line-height: 20px;
+    letter-spacing: .1rem;
 }
