@@ -1,3 +1,4 @@
+
 /* specialty section */
 
 #specialtiesSection {
@@ -81,7 +82,7 @@
 /* icon for each list item */
 
 .fas {
-    color: #a74300;
+    color: #c75000;
     font-size: 1.8rem;
     margin-right: .5rem;
 }
@@ -93,6 +94,10 @@
 #myCanvas {
     width: 100%;
 }
+
+/* a tag around each image */
+
+/* .specialtyAnchor {} */
 
 /* each image inside the canvas */
 

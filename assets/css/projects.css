@@ -1,3 +1,6 @@
+:root {
+    --cardBg: #3b4e74;
+}
 /* project section */
 
 #projectSection {
@@ -32,13 +35,140 @@
     align-items: center;
 }
 
-/* card */
+/* card for each project */
 
 .projectCard {
+    position: relative;
+    width: 315px;
+    /* Remove for full width */
+    height: 450px;
+    /* Remove for full width */
+    margin: 30px auto;
+    cursor: pointer;
+}
+
+/* the card cover which contains the glare and hover animation */
+
+.cardCover {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 17rem;
-    height: 21rem;
-    background-color: purple;
-    margin: 1rem;
-    z-index: 3;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(120deg, var(--cardBg) 0%, var(--cardBg) 100%);
+    background-size: cover;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    will-change: transform;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out;
+    border-radius: 3px;
+    /* ! to remove the jagged lines on edge of card when the angle is changed */
+    outline: 1px solid transparent;
+}
+
+.cardCover::after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(226deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.3) 35%, rgba(255, 255, 255, 0.1) 42%, rgba(255, 255, 255, 0) 60%);
+    transform: translateY(-20%);
+    will-change: transform;
+    transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+
+.projectCard:hover .cardCover {
+    transform: rotateX(7deg) translateY(-6px);
+}
+
+.projectCard:hover .cardCover::after {
+    transform: translateY(0%);
+}
+
+.projectCard::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+    will-change: opacity;
+    transform-origin: top center;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.projectCard:hover::before {
+    opacity: 0.6;
+    transform: rotateX(7deg) translateY(-6px) scale(1.05);
+}
+
+/* header of each card */
+
+.projectCardHeader {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: top;
+}
+
+.projectCardHeader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* change the color of the slant */
+
+svg .polygon {
+    fill: var(--cardBg);
+}
+
+/* div tag surrounding the svg slant */
+
+.projectCardSlant {
+    position: absolute;
+    bottom: -3px;
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
+/* card body */
+
+.projectCardBody {
+    text-align: center;
+    padding-left: 10px;
+}
+
+/* title for each card */
+
+.cardTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+    color: white;
+}
+
+/* card description text */
+
+.cardDesc {
+    font-size: 14px;
+    color: #afafaf;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
 }
