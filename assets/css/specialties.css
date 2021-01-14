@@ -3,12 +3,10 @@
 
 #specialtiesSection {
     overflow: hidden;
-    align-items: center;
     height: 58rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     position: relative;
 }
 
