@@ -1,6 +1,8 @@
 :root {
     --iconColor: #3b4e74;
     --emailColor: #c75000;
+    --tooltipBg: #c75000;
+    --tooltipText: #000000;
 }
 
 /* contact section article tag */
@@ -124,7 +126,77 @@
 
 .socialIcon {
     font-size: 2rem;
-    color: var(--iconColor)
+    color: var(--iconColor);
+    cursor: pointer;
+}
+
+/* span tag for the tooltip*/
+
+.tool {
+    position: relative;
+}
+
+/* common styles for both parts of tool tip */
+
+.tool::before, .tool::after {
+    left: 56%;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.tool:hover::before, .tool:focus::before, .tool:hover::after, .tool:focus::after {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 100;
+}
+
+/* pointer tip */
+
+.tool::before {
+    border-style: solid;
+    border-width: 1em 0.75em 0 0.75em;
+    border-color: var(--tooltipBg) transparent transparent transparent;
+    bottom: 140%;
+    content: "";
+    margin-left: -0.85rem;
+    transition: all .4s cubic-bezier(.84, -0.18, .31, 1.26), opacity .2s .2s;
+    transform: scale(.6) translateY(-90%);
+}
+
+.tool:hover::before, .tool:focus::before {
+    transition: all .4s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
+}
+
+/* speech bubble */
+
+.tool::after {
+    background: var(--tooltipBg);
+    border-radius: 5px;
+    bottom: 216%;
+    color: var(--tooltipText);
+    content: attr(data-tip);
+    margin-left: -3.7rem;
+    padding: .2rem;
+    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
+    transform: scale(.6) translateY(50%);
+    width: 7rem;
+}
+
+.tool:hover::after, .tool:focus::after {
+    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26);
+}
+
+@media (max-width: 760px) {
+    .tool::after {
+        font-size: .75em;
+        margin-left: -5em;
+        width: 10em;
+    }
 }
 
 /* wrapper around the map */
@@ -146,3 +218,5 @@
 .mapboxgl-ctrl-bottom-right {
     opacity: 0;
 }
+
+/* ! TESTING */
