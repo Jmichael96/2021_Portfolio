@@ -52,6 +52,11 @@
     <link rel="stylesheet" href="./assets/css/projects.css" />
     <link rel="stylesheet" href="./assets/css/about.css" />
     <link rel="stylesheet" href="./assets/css/specialties.css" />
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+
+    <!-- Tom Tom map cdn -->
+    <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.68.0/maps/maps.css" />
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.68.0/maps/maps-web.min.js"></script>
 </head>
 
 <body>
@@ -202,11 +207,12 @@
         <img id="jupiterImg" alt="Jupiter" src="./assets/images/planets/jupiter.gif" />
         <section class="projectWrap wrapper">
             <!-- UPDATE WITH CAIT -->
-            <a style="outline: none;" href="https://updatewithcait.com" rel="noreferrer noopener" target="_blank">
+            <a style="outline: none;" class="fade" href="https://updatewithcait.com" rel="noreferrer noopener"
+                target="_blank">
                 <div class="projectCard">
                     <div class="cardCover">
                         <div class="projectCardHeader"
-                            style="background-image: url(./assets/images/projects/UpdateWithCait.PNG)">
+                            style="background-image: url(./assets/images/projects/UWCNavLogo.PNG)">
                             <div class="projectCardSlant">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
                                     <path class="polygon" d="M-20,200,1000,0V200Z" />
@@ -223,7 +229,8 @@
                 </div>
             </a>
             <!-- JAYS IRON WORKS -->
-            <a style="outline: none;" href="https://jays-ironworks.com" rel="noreferrer noopener" target="_blank">
+            <a style="outline: none;" class="fade" href="https://jays-ironworks.com" rel="noreferrer noopener"
+                target="_blank">
                 <div class="projectCard">
                     <div class="cardCover">
                         <div class="projectCardHeader" style="background-image: url(./assets/images/projects/logo.png)">
@@ -241,11 +248,13 @@
                     </div>
                 </div>
             </a>
-            <!-- TOPTAL -->
-            <a style="outline: none;" href="https://toptaldumpsters.com" rel="noreferrer noopener" target="_blank">
-                <div class="projectCard">
+            <!-- TOPLINE -->
+            <a style="outline: none;" class="fade" href="https://toplinedumpsters.com" rel="noreferrer noopener"
+                target="_blank">
+                <div class="projectCard ">
                     <div class="cardCover">
-                        <div class="projectCardHeader" style="background-image: url()">
+                        <div class="projectCardHeader"
+                            style="background-image: url(./assets/images/projects/topline.jpeg)">
                             <div class="projectCardSlant">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
                                     <path class="polygon" d="M-20,200,1000,0V200Z" />
@@ -253,7 +262,7 @@
                             </div>
                         </div>
                         <div class="projectCardBody">
-                            <h2 class="cardTitle">Toptal</h2>
+                            <h2 class="cardTitle">Topline</h2>
                             <div class="cardDesc">
                                 Commercial business for dumpster rentals
                             </div>
@@ -262,19 +271,38 @@
                 </div>
             </a>
             <div id="moreProjectsWrap" class="wrapper">
-                <button id="moreProjectsBtn" href="/projects">View More</button>
+                <a style="outline: none;" href="/projects.html">
+                    <button id="moreProjectsBtn">View More</button>
+                </a>
             </div>
         </section>
     </article>
+
+    <!-- CONTACT -->
+    <article id="contactSection" class="wrapper">
+        <form id="contactForm">
+            <div>
+                <input id="nameInput" class="input" type="text" name="name" placeholder="Full Name" />
+                <!-- <input id="emailInput" class="input" type="text" name="email" placeholder="E-mail" /> -->
+                <textarea id="messageInput" class="input" name="message" placeholder="Your message to me..."></textarea>
+            </div>
+        </form>
+        <section id="mapWrapper">
+            <div id="map"></div>
+        </section>
+    </article>
+
     <!-- JQUERY -->
     <script src="./assets/libs/jquery-3.4.1.min.js"></script>
     <script src="./assets/libs/tagCanvas.js"></script>
+
     <!-- CUSTOM JS LINKS -->
     <script type="text/javascript" src="./assets/js/app.js"></script>
     <script type="text/javascript" src="./assets/js/nav.js"></script>
     <script type="text/javascript" src="./assets/js/projects.js"></script>
     <script type="text/javascript" src="./assets/js/about.js"></script>
     <script type="text/javascript" src="./assets/js/specialties.js"></script>
+    <script type="text/javascript" src="./assets/js/contact.js"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
 

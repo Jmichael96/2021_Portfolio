@@ -144,8 +144,10 @@
 .projectCardHeader {
     position: relative;
     height: 220px;
-    background-size: cover;
-    background-position: top;
+    background-color: black;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .projectCardHeader:after {

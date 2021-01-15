@@ -1,0 +1,51 @@
+:root {}
+
+/* contact section article tag */
+
+#contactSection {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* contact form */
+
+#contactForm {
+    width: 100%;
+    max-width: 20rem;
+    height: 21rem;
+    border-radius: 3px;
+    background-color: teal;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+/* general contact input class */
+
+.input {
+    width: 100%;
+    padding: .8rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input:focus {
+    outline: none;
+}
+
+/* wrapper around the map */
+
+#mapWrapper {
+    height: 28rem;
+    width: 30rem;
+}
+
+/* map tag */
+#map {
+    height: 100%; 
+    width: 100%;
+}
