@@ -1,7 +1,8 @@
 :root {
     --desktop-primary-color: #181818;
     --accent-color: #a236c9;
-    --side-color: #444444;
+    --side-color: #3b4e74;
+    --sideNavBg: #3b4e74;
 }
 
 /* scroll to top icon button wrapper */
@@ -274,7 +275,7 @@
     transform: translateX(-50%);
     z-index: 999;
     box-shadow: 0 0 8px rgb(0, 0, 0);
-    background-color: #008cffb3;
+    background-color: var(--sideNavBg);
 }
 
 .activeNav {

@@ -1,5 +1,6 @@
 :root {
-    --iconColor: #c75000;
+    --iconColor: #3b4e74;
+    --emailColor: #c75000;
 }
 
 /* contact section article tag */
@@ -18,22 +19,35 @@
     max-width: 35rem;
     height: auto;
     border-radius: 3px;
-    background-color: teal;
+    /* background-color: rgba(32, 32, 32, 0.205); */
     padding: 1rem;
     margin: 1rem;
     text-align: center;
 }
 
 /* form title */
+
 #formTitle {
     font-size: 2.2rem;
-    color: black;
+    color: white;
+    margin: 1.5rem 0;
 }
+
 /* form text for the direct contact p tag */
+
 .formText {
     font-size: .9rem;
-    color: #383838
+    color: #afafaf;
+    font-weight: 500;
 }
+
+/* anchor tag for the direct email */
+
+#formEmail {
+    color: var(--emailColor);
+    text-decoration: none;
+}
+
 /* general contact input class */
 
 .input {
@@ -42,8 +56,8 @@
     border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
     font-family: 'Mandatory Plaything';
     color: black;
@@ -53,10 +67,33 @@
     outline: none;
 }
 
-/* submit button */
-#submitFormBtn {
+/* submit button wrapper */
 
+.submitWrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1.5rem 0;
 }
+
+/* submit button */
+
+#submitFormBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 9rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#submitFormBtn {
+    outline: none;
+}
+
 /* social media icon wrap */
 
 #socialIconWrap {
@@ -66,11 +103,30 @@
     align-items: center;
 }
 
+/* text above the social icons */
+
+.socialText {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* the divider line between the social media content */
+
+.divider {
+    width: 100%;
+    border: 1px solid #c75000;
+    margin: 1.5rem 0;
+    border-radius: 3px;
+}
+
 /* the social icons */
+
 .socialIcon {
     font-size: 2rem;
     color: var(--iconColor)
 }
+
 /* wrapper around the map */
 
 #mapWrapper {
