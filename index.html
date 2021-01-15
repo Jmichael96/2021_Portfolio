@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="./assets/css/about.css" />
     <link rel="stylesheet" href="./assets/css/specialties.css" />
     <link rel="stylesheet" href="./assets/css/contact.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
 
     <!-- Tom Tom map cdn -->
     <link rel="stylesheet" href="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.68.0/maps/maps.css" />
@@ -281,10 +282,22 @@
     <!-- CONTACT -->
     <article id="contactSection" class="wrapper">
         <form id="contactForm">
+            <h3>Send A Message</h3>
+            <p>Or contact me directly <a target="_blank" rel="noreferrer noopener" href="mailto:jeffrey.vanhorn@yahoo.com">myemail@codevh.com</a></p>
             <div>
                 <input id="nameInput" class="input" type="text" name="name" placeholder="Full Name" />
-                <!-- <input id="emailInput" class="input" type="text" name="email" placeholder="E-mail" /> -->
+                <input id="emailInput" class="input" type="text" name="email" placeholder="E-mail" />
                 <textarea id="messageInput" class="input" name="message" placeholder="Your message to me..."></textarea>
+            </div>
+            <button id="submitFormBtn" type="button">Submit</button>
+            <p>Lets get social!</p>
+            <div id="socialIconWrap">
+                <i class="fab fa-instagram socialIcon"></i>
+                <i class="fab fa-facebook-square socialIcon"></i>
+                <i class="fas fa-terminal socialIcon"></i>
+                <i class="fab fa-linkedin socialIcon"></i>
+                <i class="fab fa-codepen socialIcon"></i>
+                <i class="fab fa-github-square socialIcon"></i>
             </div>
         </form>
         <section id="mapWrapper">
@@ -292,6 +305,9 @@
         </section>
     </article>
 
+    <footer>
+        <p id="footerDate"></p>
+    </footer>
     <!-- JQUERY -->
     <script src="./assets/libs/jquery-3.4.1.min.js"></script>
     <script src="./assets/libs/tagCanvas.js"></script>
@@ -303,6 +319,7 @@
     <script type="text/javascript" src="./assets/js/about.js"></script>
     <script type="text/javascript" src="./assets/js/specialties.js"></script>
     <script type="text/javascript" src="./assets/js/contact.js"></script>
+    <script type="text/javascript" src="./assets/js/footer.js"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
 
