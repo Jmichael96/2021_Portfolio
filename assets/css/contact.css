@@ -12,6 +12,10 @@
     overflow: hidden;
     height: 100%;
     height: 45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
 }
 
 /* contact form */
@@ -21,7 +25,6 @@
     max-width: 35rem;
     height: auto;
     border-radius: 3px;
-    /* background-color: rgba(32, 32, 32, 0.205); */
     padding: 1rem;
     margin: 1rem;
     text-align: center;
@@ -202,8 +205,10 @@
 /* wrapper around the map */
 
 #mapWrapper {
-    height: 28rem;
-    width: 30rem;
+    height: 40rem;
+    width: 100%;
+    max-width: 40rem;
+    position: relative;
 }
 
 /* map tag */
@@ -212,11 +217,32 @@
     height: 100%;
     width: 100%;
 }
-
+/* box that shows where i live */
+#locationBox {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 12rem;
+    height: 7rem;
+    background-color: #3b4e74;
+}
 /* changing the transparency of the tom tom copyright */
 
 .mapboxgl-ctrl-bottom-right {
     opacity: 0;
 }
 
-/* ! TESTING */
+/* marker icon */
+
+.mapboxgl-marker>div {
+    display: none;
+}
+
+/* point marker */
+
+.mapboxgl-marker>svg {
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    fill: var(--iconColor)
+}

@@ -4,6 +4,24 @@ var map = tt.map({
     container: 'map',
     basePath: '/',
     style: '/custommap.json',
-    source: 'vector'
+    source: 'vector',
+    center: [-97, 29],
+    zoom: 4
 });
-//tomtom://vector/1/basic-main
+
+function createMarker(position, color, popupText) {
+    let markerElement = document.createElement('div');
+    markerElement.className = 'marker';
+
+    let markerContentElement = document.createElement('div');
+    markerContentElement.className = 'marker-content';
+    markerContentElement.style.backgroundColor = color;
+    markerElement.appendChild(markerContentElement);
+
+    // add marker to map
+    new tt.Marker({ scale: 1.3 })
+        .setLngLat(position)
+        .addTo(map);
+}
+
+createMarker([-95.461195, 30.168032], '#3b4e74', 'The Woodlands, TX');
