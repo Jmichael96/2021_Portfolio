@@ -15,7 +15,7 @@
 
 #contactForm {
     width: 100%;
-    max-width: 20rem;
+    max-width: 35rem;
     height: auto;
     border-radius: 3px;
     background-color: teal;
@@ -24,6 +24,16 @@
     text-align: center;
 }
 
+/* form title */
+#formTitle {
+    font-size: 2.2rem;
+    color: black;
+}
+/* form text for the direct contact p tag */
+.formText {
+    font-size: .9rem;
+    color: #383838
+}
 /* general contact input class */
 
 .input {
@@ -34,6 +44,9 @@
     box-sizing: border-box;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Mandatory Plaything';
+    color: black;
 }
 
 .input:focus {
@@ -42,7 +55,7 @@
 
 /* submit button */
 #submitFormBtn {
-    
+
 }
 /* social media icon wrap */
 
