@@ -3,6 +3,9 @@
     --emailColor: #c75000;
     --tooltipBg: #c75000;
     --tooltipText: #000000;
+    --inputBorderBefore: #3b4e74;
+    --inputBorderAfter: #c75000;
+    --inputLabel: #3b4e74;
 }
 
 /* contact section article tag */
@@ -27,7 +30,7 @@
     border-radius: 3px;
     padding: 1rem;
     margin: 1rem;
-    text-align: center;
+    /* text-align: center; */
 }
 
 /* form title */
@@ -36,7 +39,131 @@
     font-size: 2.2rem;
     color: white;
     margin: 1.5rem 0;
+    text-align: center;
 }
+
+/* ! TESTING INPUT */
+
+.group {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.inputMaterial {
+    font-size: 1.2rem;
+    font-family: 'Mandatory Plaything';
+    padding: .8rem 0;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--inputBorderBefore);
+    background-color: transparent;
+    color: white;
+}
+
+/* removing the resize box option for the message box */
+
+textarea {
+    resize: none;
+}
+
+/* to remove the red border around the input element since its required */
+
+.inputMaterial:required {
+    box-shadow: none;
+}
+
+.inputMaterial:focus {
+    outline: none;
+}
+
+/* label for inputs */
+
+label {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 20px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+
+.inputMaterial:focus~label, .inputMaterial:valid~label {
+    top: -10px;
+    font-size: 1rem;
+    color: var(--inputLabel);
+}
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: var(--inputBorderAfter);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+
+.inputMaterial:focus~.bar:before, .inputMaterial:focus~.bar:after {
+    width: 50%;
+}
+
+/* Error Text*/
+
+.error-txt {
+    position: absolute;
+    font-family: arial;
+    color: red;
+    font-size: 14px;
+    bottom: -18px;
+    display: none;
+}
+
+.error input {
+    border-bottom: 1px solid red;
+}
+
+.error .error-txt {
+    display: block;
+}
+
+/*hide and show classes css*/
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* ! TESTING INPUT */
 
 /* general contact input class */
 
@@ -99,6 +226,7 @@
     color: white;
     font-size: 1.2rem;
     margin-top: 1rem;
+    text-align: center;
 }
 
 /* the divider line between the social media content */
