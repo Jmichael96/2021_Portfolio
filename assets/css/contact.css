@@ -38,21 +38,6 @@
     margin: 1.5rem 0;
 }
 
-/* form text for the direct contact p tag */
-
-.formText {
-    font-size: .9rem;
-    color: #afafaf;
-    font-weight: 500;
-}
-
-/* anchor tag for the direct email */
-
-#formEmail {
-    color: var(--emailColor);
-    text-decoration: none;
-}
-
 /* general contact input class */
 
 .input {
@@ -217,15 +202,46 @@
     height: 100%;
     width: 100%;
 }
+
 /* box that shows where i live */
+
 #locationBox {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    width: 12rem;
-    height: 7rem;
+    width: 14rem;
+    height: 6rem;
+    padding: .5rem;
     background-color: #3b4e74;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* location text stating the city */
+
+.locationText {
+    color: white;
+    margin: 1rem 0;
+    font-size: .9rem;
+    width: 100%;
+}
+
+/* email text inside the location box */
+
+.locationEmailText {
+    width: 100%;
+    color: white;
+    margin: 1rem 0;
+    font-size: .9rem;
+}
+
+/* the email address attached to the anchor tag */
+
+.locationEmail {
+    color: var(--emailColor);
+}
+
 /* changing the transparency of the tom tom copyright */
 
 .mapboxgl-ctrl-bottom-right {
