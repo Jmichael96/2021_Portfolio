@@ -285,34 +285,21 @@
             <h3 id="formTitle">Send A Message</h3>
             <!-- <p class="formText">Or contact me directly <a id="formEmail" target="_blank" rel="noreferrer noopener" href="mailto:jeffrey.vanhorn@yahoo.com">myemail@codevh.com</a></p> -->
             <div>
-                <div class="group">
-                    <input class="inputMaterial" name="name" type="text" required />
-                    <span class="bar"></span>
+                <div class="inputWrap">
+                    <input id="nameInput" class="input" name="name" type="text" required />
+                    <span class="inputBar"></span>
                     <label>Full Name</label>
-                    <div class="error-txt">
-                        Error Text
-                    </div>
                 </div>
-                <div class="group">
-                    <input class="inputMaterial" name="email" type="text" required />
-                    <span class="bar"></span>
+                <div class="inputWrap">
+                    <input id="emailInput" class="input" name="email" type="text" required />
+                    <span class="inputBar"></span>
                     <label>Email</label>
-                    <div class="error-txt">
-                        Error Text
-                    </div>
                 </div>
-                <div class="group">
-                    <textarea rows="4" class="inputMaterial" name="email" type="text" required></textarea>
-                    <span class="bar"></span>
+                <div class="inputWrap">
+                    <textarea id="messageInput" rows="4" class="input" name="email" type="text" required></textarea>
+                    <span class="inputBar"></span>
                     <label>Message</label>
-                    <div class="error-txt">
-                        Error Text
-                    </div>
                 </div>
-                <!-- <input id="nameInput" class="input" type="text" name="name" placeholder="Full Name" />
-                <input id="emailInput" class="input" type="text" name="email" placeholder="E-mail" />
-                <textarea id="messageInput" class="input" name="message" placeholder="Your message to me..."
-                    rows="4"></textarea> -->
             </div>
             <div class="submitWrap">
                 <button id="submitFormBtn" type="button">Submit</button>
@@ -342,7 +329,7 @@
             <div id="locationBox">
                 <div>
                     <p class="locationText">Spring, TX</p>
-                    <p class="locationEmailText">DM: <a class="locationEmail">myemail@codevh.com</a></p>
+                    <p class="locationEmailText">DM: <a href="mailto:jeffrey.vanhorn@yahoo.com" class="locationEmail">myemail@codevh.com</a></p>
                 </div>
             </div>
         </section>
