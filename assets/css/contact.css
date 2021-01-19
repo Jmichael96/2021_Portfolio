@@ -20,6 +20,31 @@
     flex-flow: row wrap;
 }
 
+/* callisto background image for section */
+
+#callistoBg {
+    position: absolute;
+    bottom: -1rem;
+    left: -10rem;
+    z-index: 1;
+    width: 90rem;
+    height: 31rem;
+}
+
+/* image of callisto */
+
+#calistoImg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    z-index: 2;
+    left: 5rem;
+    bottom: 2rem;
+    opacity: .9;
+    filter: brightness(80%);
+}
+
 /* contact form */
 
 #contactForm {
@@ -29,6 +54,7 @@
     border-radius: 3px;
     padding: 1rem;
     margin: 1rem;
+    z-index: 3;
     /* text-align: center; */
 }
 
@@ -275,6 +301,7 @@ label {
     width: 100%;
     max-width: 40rem;
     position: relative;
+    z-index: 3;
 }
 
 /* map tag */
@@ -356,6 +383,14 @@ label {
     /* wrapper around the map */
     #mapWrapper {
         margin: 5rem 0 3rem 0;
+    }
+    /* callisto background image for section */
+    #callistoBg {
+        bottom: 42rem;
+    }
+    /* image of callisto */
+    #calistoImg {
+        bottom: 45rem;
     }
 }
 
