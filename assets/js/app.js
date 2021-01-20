@@ -4,6 +4,14 @@ document.onreadystatechange = function () {
     document.querySelector('body').style.visibility = 'hidden';
     // the navbar
     document.querySelector('nav').style.display = 'none';
+    // about
+    document.getElementById('aboutSection').style.display = 'none';
+    // project
+    document.getElementById('projectSection').style.display = 'none';
+    // specialties
+    // document.querySelector('#specialtiesSection').style.visibility = 'hidden';
+    // contact
+    document.getElementById('contactSection').style.display = 'none';
     // page loader
     document.querySelector('#loader').style.visibility = 'visible';
   } else {
@@ -11,6 +19,16 @@ document.onreadystatechange = function () {
       document.querySelector('#loader').style.display = 'none';
       document.querySelector('nav').style.display = 'flex';
       document.querySelector('body').style.visibility = 'visible';
+      // about
+      document.getElementById('aboutSection').style.display = 'flex';
+      // project
+      document.getElementById('projectSection').style.display = 'flex';
+      // specialties
+      // document.getElementById('specialtiesSection').style.display = 'flex';
+    // document.querySelector('#specialtiesSection').style.visibility = 'visible';
+      // contact
+      document.getElementById('contactSection').style.display = 'flex';
+      
       // ! RENDERING THE NAME
       let nameString = 'jeffrey vanhorn';
       nameString.split('').map(function (char, index) {

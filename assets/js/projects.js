@@ -1,9 +1,22 @@
-$(window).on('load', function () {
-    filterProjects();
-});
+// for the spinner to render waiting on all html content to be fully loaded
+document.onreadystatechange = function () {
+    if (document.readyState !== 'complete') {
+        document.querySelector('body').style.visibility = 'hidden';
+        // the navbar
+        document.querySelector('nav').style.display = 'none';
+        // page loader
+        document.querySelector('#loader').style.visibility = 'visible';
+    } else {
+        setTimeout(() => {
+            document.querySelector('#loader').style.display = 'none';
+            document.querySelector('nav').style.display = 'flex';
+            document.querySelector('body').style.visibility = 'visible';
+        }, 2000);
+    }
+};
 
 const projects = [
-    {// ! ADD APOSTROPHE
+    {
         id: 12,
         name: 'Lynns Auto Repair',
         link: 'https://lynnsautorepairmagnolia.com',
@@ -113,14 +126,28 @@ const projects = [
         client: false,
     }
 ];
+
+$(window).on('load', function () {
+    // make a copy of the projects array
+    for (let obj in projects) {
+        filteredArr.push(projects[obj]);
+    }
+    renderProjects();
+});
+
+// ! CONSTANTS
 // getting location where projects will be rendered
 const projLocation = document.getElementById('projectRender');
 // getting location for project amount being rendered
 const amountLocation = document.getElementById('projectAmountRender');
+// assigning an empty array
+let filteredArr = [];
+// to search for the newest to oldest of projects
+let isLatest = true;
 
 // render the projects function
-const renderProject = (proj) => {
-    projLocation.innerHTML = proj.map((item, i) => {
+const renderProjects = () => {
+    projLocation.innerHTML = filteredArr.map((item, i) => {
         return `
                 <a key="${i + 1}" style="outline: none;" class="fade" href="${item.link}" rel="noreferrer noopener"target="_blank">
                     <div class="projectCard">
@@ -153,111 +180,87 @@ const renderAmount = (num, text) => {
     amountLocation.innerHTML = `Showing ${num} projects for your search ${text}`;
 };
 
-// the search and filter projects function
-const filterProjects = (searchName) => {
-    let filteredProjects = [];
-    // filtering through projects array with the given parameter
-    for (let obj in projects) {
-        let str = JSON.stringify(projects[obj]);
-        if (str.indexOf(searchName)) {
-            filteredProjects.push(projects[obj]);
-        }
-    }
-
-    switch (searchName) {
-        case 'AllProjects':
-            renderAmount.innerHTML = '';
-            document.getElementById('allProjectsBtn').className += ' selectedBtn'
-            renderProject(projects);
-            renderAmount(projects.length, 'all projects');
-            break;
-        case 'HTML5':
-            renderAmount.innerHTML = '';
-            document.getElementById('htmlBtn').className += ' selectedBtn'
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'HTML5');
-            break;
-        case 'React.Js':
-            renderAmount.innerHTML = '';
-            // document.getElementById('reactBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'React.Js');
-            break;
-        case 'JavaScript':
-            renderAmount.innerHTML = '';
-            document.getElementById('jsBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'JavaScript');
-            break;
-        case 'PHP':
-            renderAmount.innerHTML = '';
-            document.getElementById('phpBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'PHP');
-            break;
-        case 'Node.Js':
-            renderAmount.innerHTML = '';
-            document.getElementById('nodeBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'Node.Js');
-            break;
-        case 'MongoDB':
-            renderAmount.innerHTML = '';
-            document.getElementById('mongoBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'MongoDB');
-            break;
-        case 'Firebase':
-            renderAmount.innerHTML = '';
-            document.getElementById('firebaseBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'Firebase');
-            break;
-        case 'MySQL':
-            renderAmount.innerHTML = '';
-            document.getElementById('mysqlBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'MySQL');
-            break;
-        case 'Bootstrap':
-            renderAmount.innerHTML = '';
-            document.getElementById('bootstrapBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'Bootstrap');
-            break;
-        case 'Materialize':
-            renderAmount.innerHTML = '';
-            document.getElementById('materializeBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'Materialize');
-            break;
-        case 'MaterialUI':
-            renderAmount.innerHTML = '';
-            document.getElementById('materialUIBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'MaterialUI');
-            break;
-        case 'CSS3':
-            renderAmount.innerHTML = '';
-            document.getElementById('cssBtn').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'CSS3');
-            break;
-        // true if there are professional work projects to return
-        case true:
-            renderAmount.innerHTML = '';
-            document.getElementById('proWork').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'my Professional Work');
-            break;
-        // false to render all side projects
-        case false:
-            renderAmount.innerHTML = '';
-            document.getElementById('funProjects').className += ' selectedBtn';
-            renderProject(filteredProjects);
-            renderAmount(filteredProjects.length, 'Side Projects');
-            break;
-        default:
-            filterProjects('React.Js')
-    }
+// filter the array of projects
+const filterProj = (filterName) => {
+    // replacing contents of the array and inserting the temporary filtered elements
+    filteredArr.splice(0, filteredArr.length, ...filteredArr.filter((obj) => (obj.techStack.indexOf(filterName)) >= 0));
+    renderProjects();
 };
+
+// the search and filter projects function
+// const filterProjects = (searchName) => {
+//     let filteredProjects = [];
+//     // filtering through projects array with the given parameter
+//     for (let obj in projects) {
+//         let str = JSON.stringify(projects[obj]);
+//         if (str.indexOf(searchName)) {
+//             filteredProjects.push(projects[obj]);
+//         }
+//     }
+    // switch (searchName) {
+    //     case 'AllProjects':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(projects);
+    //         renderAmount(projects.length, 'all projects');
+    //     case 'HTML5':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'HTML5');
+    //     case 'React.Js':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'React.Js');
+    //     case 'JavaScript':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'JavaScript');
+    //     case 'PHP':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'PHP');
+    //     case 'Node.Js':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'Node.Js');
+    //     case 'MongoDB':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'MongoDB');
+    //     case 'Firebase':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'Firebase');
+    //     case 'MySQL':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'MySQL');
+    //     case 'Bootstrap':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'Bootstrap');
+    //     case 'Materialize':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'Materialize');
+    //     case 'MaterialUI':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'MaterialUI');
+    //     case 'CSS3':
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'CSS3');
+    //     // true if there are professional work projects to return
+    //     case true:
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'my Professional Work');
+    //     // false to render all side projects
+    //     case false:
+    //         renderAmount.innerHTML = '';
+    //         renderProject(filteredProjects);
+    //         renderAmount(filteredProjects.length, 'Side Projects');
+    //     default:
+    //         filterProjects('AllProjects')
+    // }
+// };

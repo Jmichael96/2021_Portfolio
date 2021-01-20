@@ -1,0 +1,7 @@
+/* the article tag surround all of the project content and filters */
+#projectLayout {
+    margin-top: 6rem;
+}
+/* the wrapper around the rendered projects */
+#projectRender {
+}
