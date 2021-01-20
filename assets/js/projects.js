@@ -1,4 +1,4 @@
-// for the spinner to render waiting on all html content to be fully loaded
+// for the spinner to render waiting on All html content to be fully loaded
 document.onreadystatechange = function () {
     if (document.readyState !== 'complete') {
         document.querySelector('body').style.visibility = 'hidden';
@@ -21,7 +21,7 @@ const projects = [
         name: 'Lynns Auto Repair',
         link: 'https://lynnsautorepairmagnolia.com',
         imageName: 'lynnsautorepair.jpeg',
-        techStack: ['Wordpress', 'PHP'],
+        techStack: ['All', 'Wordpress', 'PHP'],
         desc: '',
         client: true,
     },
@@ -30,16 +30,16 @@ const projects = [
         name: 'Topline',
         link: 'https://toplinedumpsters.com',
         imageName: 'topline.jpeg',
-        techStack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP'],
+        techStack: ['All', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP'],
         desc: 'Commercial business for dumpster rentals',
         client: true,
     },
     {
         id: 5,
         name: 'Update With Cait',
-        link: 'updatewithcait.com',
+        link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
-        techStack: ['React.Js', 'JavaScript', 'MongoDB', 'CSS3', 'Node.Js', 'React-Quill'],
+        techStack: ['All', 'React.Js', 'JavaScript', 'MongoDB', 'CSS3', 'Node.Js', 'React-Quill'],
         desc: '',
         client: true,
     },
@@ -48,7 +48,7 @@ const projects = [
         name: 'Jays Iron Works',
         link: 'https://jays-ironworks.com',
         imageName: 'jaysironworks.png',
-        techStack: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
+        techStack: ['All', 'HTML5', 'CSS3', 'JavaScript', 'PHP'],
         desc: 'Commercial company that does wrought iron fence painting and repairs.',
         client: true,
         for: 'me'
@@ -58,7 +58,7 @@ const projects = [
         name: 'React Graph',
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.jpg',
-        techStack: ['React.Js', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly.Js', 'CSS3'],
+        techStack: ['All', 'React.Js', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly.Js', 'CSS3'],
         desc: '',
         client: false,
     },
@@ -67,7 +67,7 @@ const projects = [
         name: 'Google Books',
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
-        techStack: ['React.Js', 'MongoDB', 'Bootstrap', 'Node.Js', 'CSS3'],
+        techStack: ['All', 'React.Js', 'MongoDB', 'Bootstrap', 'Node.Js', 'CSS3'],
         desc: '',
         client: false,
     },
@@ -76,7 +76,7 @@ const projects = [
         name: 'Snake Game',
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
-        techStack: ['HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node.Js'],
+        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node.Js'],
         desc: '',
         client: false,
     },
@@ -85,7 +85,7 @@ const projects = [
         name: 'Rock Paper Scissors',
         link: 'https://jmichael96.github.io/RPS-MULTIPLAYER/',
         imageName: 'rock.jpg',
-        techStack: ['HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
+        techStack: ['All', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
         desc: '',
         client: false,
     },
@@ -94,7 +94,7 @@ const projects = [
         name: 'Clicky Game',
         link: 'https://lit-wildwood-52008.herokuapp.com/',
         imageName: 'clickygame.gif',
-        techStack: ['React.Js', 'Materialize', 'CSS3', 'JavaScript'],
+        techStack: ['All', 'React.Js', 'Materialize', 'CSS3', 'JavaScript'],
         desc: '',
         client: false,
     },
@@ -103,7 +103,7 @@ const projects = [
         name: 'Sequelize Burger',
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
-        techStack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node.Js', 'MySQL', 'Handlebars'],
+        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node.Js', 'MySQL', 'Handlebars'],
         desc: '',
         client: false,
     },
@@ -112,7 +112,7 @@ const projects = [
         name: 'Star Wars RPG',
         link: 'https://jmichael96.github.io/Unit4-StarWarsRPG/',
         imageName: 'starwars.png',
-        techStack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
         desc: '',
         client: false,
     },
@@ -121,7 +121,7 @@ const projects = [
         name: 'Supercross Trivia',
         link: 'https://jmichael96.github.io/TriviaGame/',
         imageName: 'supercross.png',
-        techStack: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
         desc: '',
         client: false,
     }
@@ -144,6 +144,8 @@ const amountLocation = document.getElementById('projectAmountRender');
 let filteredArr = [];
 // to search for the newest to oldest of projects
 let isLatest = true;
+// set truthy or falsey according to if a filter is being selected or searched for
+let isFiltering = false;
 
 // render the projects function
 const renderProjects = () => {
@@ -177,90 +179,27 @@ const renderAmount = (num, text) => {
         amountLocation.innerHTML = 'Oops! couldnt find any projects!';
         return;
     }
-    amountLocation.innerHTML = `Showing ${num} projects for your search ${text}`;
+    if (num === 1) {
+        amountLocation.innerHTML = `Showing ${num} project filtered by ${text}`;
+        return;
+    }
+    amountLocation.innerHTML = `Showing ${num} projects filtered by ${text}`;
 };
 
 // filter the array of projects
 const filterProj = (filterName) => {
+    isFiltering = true;
     // replacing contents of the array and inserting the temporary filtered elements
     filteredArr.splice(0, filteredArr.length, ...filteredArr.filter((obj) => (obj.techStack.indexOf(filterName)) >= 0));
+    renderAmount(filteredArr.length, filterName);
     renderProjects();
 };
 
-// the search and filter projects function
-// const filterProjects = (searchName) => {
-//     let filteredProjects = [];
-//     // filtering through projects array with the given parameter
-//     for (let obj in projects) {
-//         let str = JSON.stringify(projects[obj]);
-//         if (str.indexOf(searchName)) {
-//             filteredProjects.push(projects[obj]);
-//         }
-//     }
-    // switch (searchName) {
-    //     case 'AllProjects':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(projects);
-    //         renderAmount(projects.length, 'all projects');
-    //     case 'HTML5':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'HTML5');
-    //     case 'React.Js':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'React.Js');
-    //     case 'JavaScript':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'JavaScript');
-    //     case 'PHP':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'PHP');
-    //     case 'Node.Js':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'Node.Js');
-    //     case 'MongoDB':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'MongoDB');
-    //     case 'Firebase':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'Firebase');
-    //     case 'MySQL':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'MySQL');
-    //     case 'Bootstrap':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'Bootstrap');
-    //     case 'Materialize':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'Materialize');
-    //     case 'MaterialUI':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'MaterialUI');
-    //     case 'CSS3':
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'CSS3');
-    //     // true if there are professional work projects to return
-    //     case true:
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'my Professional Work');
-    //     // false to render all side projects
-    //     case false:
-    //         renderAmount.innerHTML = '';
-    //         renderProject(filteredProjects);
-    //         renderAmount(filteredProjects.length, 'Side Projects');
-    //     default:
-    //         filterProjects('AllProjects')
-    // }
-// };
+// handle animations and data when is filtering is set to true
+const isFilteringHandler = () => {
+    
+};
+
+setTimeout(() => {
+    filterProj('React.Js');
+}, 4000);
