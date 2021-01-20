@@ -30,6 +30,7 @@
     height: 100%;
     position: relative;
     display: none;
+    overflow: hidden;
 }
 
 /* the wrapper of the filter loading content */
@@ -50,12 +51,125 @@
     color: white;
     font-size: 1rem;
     text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: 1s blink ease-in-out;
+    -moz-animation: 1s blink ease-in-out;
+    -ms-animation: 1s blink ease-in-out;
+    -o-animation: 1s blink ease-in-out;
+    animation: 1s blink ease-in-out;
 }
 
-/* the loader for when searching */
+@keyframes blink {
+    from {
+        transform: translateX(1000px);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
+}
 
-#loader {
-    font-size: 2rem;
-    text-align: center;
-    color: white;
+@-moz-keyframes blink {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes blink {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-ms-keyframes blink {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@-o-keyframes blink {
+    from {
+        transform: translateX(-1000px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.orbit, .star {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #333;
+    left: 50%;
+    top: 50%;
+    margin-left: -52px;
+    margin-top: -52px;
+    -webkit-animation: tick 5s infinite linear;
+}
+
+.star {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: -15px 0 0 -15px;
+    background: #c75000;
+}
+
+#planet {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    width: 30px;
+    height: 0;
+    margin: 0;
+    background: #fff;
+    transition: all 0.5s ease-out;
+    -webkit-animation: tick 1s infinite linear;
+}
+
+#planet:after, #planet:before {
+    padding: 2px;
+    background: #aaa;
+    display: block;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+}
+
+#planet:before {
+    padding: 10px;
+    left: 20%;
+    top: -10px;
+    background: #3b4e74;
+}
+
+@-webkit-keyframes tick {
+    0% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(360deg);
+    }
 }

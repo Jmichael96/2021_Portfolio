@@ -225,7 +225,7 @@ const isFilteringHandler = (filterName) => {
         filterSection.style.display = 'none';
         // rendering project section
         projectSection.style.display = 'block';
-    }, 3000);
+    }, 1000000);
 };
 
 // getting the select input
