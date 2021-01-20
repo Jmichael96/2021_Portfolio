@@ -1,7 +1,61 @@
 /* the article tag surround all of the project content and filters */
+
 #projectLayout {
     margin-top: 6rem;
+    display: block;
 }
+
+/* showing how many and what projects are being rendered text */
+
+#projectAmountRender {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem 0 0 0;
+}
+
+/* the name thats displayed in the project amount render */
+
+.techName {
+    color: #c75000;
+}
+
 /* the wrapper around the rendered projects */
-#projectRender {
+
+#projectRender {}
+
+/* strictly for when a filter is being selected it will render to the page */
+
+#filterLoading {
+    height: 100%;
+    position: relative;
+    display: none;
+}
+
+/* the wrapper of the filter loading content */
+
+#filterLoadingContentWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* searching for text when the filter loading content is displayed */
+
+#searchingForRender {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* the loader for when searching */
+
+#loader {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
 }

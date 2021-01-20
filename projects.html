@@ -77,13 +77,21 @@
     </div>
 
     <a href="#header_section" id="scrollTopIcon" class="js-link scrollTop"><i class="fas fa-arrow-circle-up"></i></a>
+
+    <article id="filterLoading">
+        <section id="filterLoadingContentWrap">
+            <span id="searchingForRender"></span>
+            <div id="loader">LOADING</div>
+        </section>
+    </article>
+
     <article id="projectLayout">
         <section id="projectfilterWrap" class="wrapper">
             <div>
-                <select class="select">
-                    <option value="AllProjects">All Projects</option>
-                    <option value="React.Js">React</option>
-                    <option value="Node.Js">Node</option>
+                <select id="select" class="select">
+                    <option value="All">All Projects</option>
+                    <option value="React">React</option>
+                    <option value="Node">Node</option>
                     <option value="Bootstrap">Bootstrap</option>
                   </select>
             </div>

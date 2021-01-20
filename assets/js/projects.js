@@ -39,7 +39,7 @@ const projects = [
         name: 'Update With Cait',
         link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
-        techStack: ['All', 'React.Js', 'JavaScript', 'MongoDB', 'CSS3', 'Node.Js', 'React-Quill'],
+        techStack: ['All', 'React', 'JavaScript', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
         desc: '',
         client: true,
     },
@@ -58,7 +58,7 @@ const projects = [
         name: 'React Graph',
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.jpg',
-        techStack: ['All', 'React.Js', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly.Js', 'CSS3'],
+        techStack: ['All', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS3'],
         desc: '',
         client: false,
     },
@@ -67,7 +67,7 @@ const projects = [
         name: 'Google Books',
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
-        techStack: ['All', 'React.Js', 'MongoDB', 'Bootstrap', 'Node.Js', 'CSS3'],
+        techStack: ['All', 'React', 'MongoDB', 'Bootstrap', 'Node', 'CSS3'],
         desc: '',
         client: false,
     },
@@ -76,7 +76,7 @@ const projects = [
         name: 'Snake Game',
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
-        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node.Js'],
+        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node'],
         desc: '',
         client: false,
     },
@@ -94,7 +94,7 @@ const projects = [
         name: 'Clicky Game',
         link: 'https://lit-wildwood-52008.herokuapp.com/',
         imageName: 'clickygame.gif',
-        techStack: ['All', 'React.Js', 'Materialize', 'CSS3', 'JavaScript'],
+        techStack: ['All', 'React', 'Materialize', 'CSS3', 'JavaScript'],
         desc: '',
         client: false,
     },
@@ -103,7 +103,7 @@ const projects = [
         name: 'Sequelize Burger',
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
-        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node.Js', 'MySQL', 'Handlebars'],
+        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
         desc: '',
         client: false,
     },
@@ -144,8 +144,8 @@ const amountLocation = document.getElementById('projectAmountRender');
 let filteredArr = [];
 // to search for the newest to oldest of projects
 let isLatest = true;
-// set truthy or falsey according to if a filter is being selected or searched for
-let isFiltering = false;
+// assigning the total amount of projects as an integer to render the filtered text accordingly
+const totalProjects = 12;
 
 // render the projects function
 const renderProjects = () => {
@@ -183,23 +183,53 @@ const renderAmount = (num, text) => {
         amountLocation.innerHTML = `Showing ${num} project filtered by ${text}`;
         return;
     }
-    amountLocation.innerHTML = `Showing ${num} projects filtered by ${text}`;
+    if (num === totalProjects) {
+        amountLocation.innerHTML = 'Showing all projects';
+        return;
+    }
+    amountLocation.innerHTML = `Showing ${num} projects filtered by <span class="techName">${text}</span>`;
 };
 
 // filter the array of projects
 const filterProj = (filterName) => {
-    isFiltering = true;
+    // handle the filter loading screen
+    isFilteringHandler(filterName);
+    // make sure all elements are added back into the copied array
+    filteredArr.splice(0, filteredArr.length, ...projects);
     // replacing contents of the array and inserting the temporary filtered elements
     filteredArr.splice(0, filteredArr.length, ...filteredArr.filter((obj) => (obj.techStack.indexOf(filterName)) >= 0));
+    // render the amount of projects and the filter name
     renderAmount(filteredArr.length, filterName);
+    // render the projects
     renderProjects();
+
 };
 
 // handle animations and data when is filtering is set to true
-const isFilteringHandler = () => {
-    
+const isFilteringHandler = (filterName) => {
+    // the whole filter loading section from "article" tag
+    const filterSection = document.getElementById('filterLoading');
+    // where the text is going to be rendered in order to tell user whats being searched for
+    const searchingFor = document.getElementById('searchingForRender');
+    // select the project section
+    const projectSection = document.getElementById('projectLayout');
+    // set the filter section to display the contents 
+    filterSection.style.display = 'block';
+    // remove the project section momentarily 
+    projectSection.style.display = 'none';
+    // assign a text value to the filter loading section
+    searchingFor.innerHTML = `Filtering ${filterName} projects`;
+
+    setTimeout(() => {
+        // removing  filter loading section
+        filterSection.style.display = 'none';
+        // rendering project section
+        projectSection.style.display = 'block';
+    }, 3000);
 };
 
-setTimeout(() => {
-    filterProj('React.Js');
-}, 4000);
+// getting the select input
+$('#select').on('change', (e) => {
+    // calling the filter projects method
+    filterProj(e.target.value);
+});
