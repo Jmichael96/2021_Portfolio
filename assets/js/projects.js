@@ -90,6 +90,15 @@ const projects = [
         client: false,
     },
     {
+        id: 14,
+        name: 'Giphy-API',
+        link: 'https://jmichael96.github.io/Giphy-API/',
+        imageName: 'giphyApi.jpg',
+        techStack: ['All', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS3'],
+        desc: 'Search and watch any animal gif you want!',
+        client: false,
+    },
+    {
         id: 6,
         name: 'Rock Paper Scissors',
         link: 'https://jmichael96.github.io/RPS-MULTIPLAYER/',
