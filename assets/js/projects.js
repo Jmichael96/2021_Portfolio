@@ -218,7 +218,7 @@ const isFilteringHandler = (filterName) => {
     // remove the project section momentarily 
     projectSection.style.display = 'none';
     // assign a text value to the filter loading section
-    searchingFor.innerHTML = `Looking for ${filterName} projects`;
+    searchingFor.innerHTML = `Analyzing Filter`;
 
     setTimeout(() => {
         // removing  filter loading section
