@@ -39,7 +39,7 @@ const projects = [
         name: 'Update With Cait',
         link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
-        techStack: ['All', 'React', 'JavaScript', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
+        techStack: ['All', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
         desc: 'Blog website for a personal client',
         client: true,
     },
@@ -67,7 +67,7 @@ const projects = [
         name: 'Google Books',
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
-        techStack: ['All', 'React', 'MongoDB', 'Bootstrap', 'Node', 'CSS3'],
+        techStack: ['All', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS3'],
         desc: 'Search for a book to buy or save it for later.',
         client: false,
     },
@@ -76,8 +76,17 @@ const projects = [
         name: 'Snake Game',
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
-        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node'],
+        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS3', 'Node'],
         desc: 'A classic snake game. Try and beat your high score!',
+        client: false,
+    },
+    {
+        id: 13,
+        name: 'Mongo-Scraper',
+        link: 'https://mongo-scraper-jvh.herokuapp.com/',
+        imageName: 'mongoScraper.jpg',
+        techStack: ['All', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS3', 'Node'],
+        desc: 'A web scraper used to gather data about supercross and render it as a pleasing UI.',
         client: false,
     },
     {
@@ -103,7 +112,7 @@ const projects = [
         name: 'Sequelize Burger',
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
-        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
+        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
         desc: 'Build your own burger.',
         client: false,
     },
@@ -145,7 +154,7 @@ let filteredArr = [];
 // to search for the newest to oldest of projects
 let isLatest = true;
 // assigning the total amount of projects as an integer to render the filtered text accordingly
-const totalProjects = 12;
+const totalProjects = 13;
 
 // render the projects function
 const renderProjects = () => {
