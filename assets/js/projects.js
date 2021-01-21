@@ -22,7 +22,7 @@ const projects = [
         link: 'https://lynnsautorepairmagnolia.com',
         imageName: 'lynnsautorepair.jpeg',
         techStack: ['All', 'Wordpress', 'PHP'],
-        desc: '',
+        desc: 'Auto shop in Magnolia, TX.',
         client: true,
     },
     {
@@ -40,7 +40,7 @@ const projects = [
         link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
         techStack: ['All', 'React', 'JavaScript', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
-        desc: '',
+        desc: 'Blog website for a personal client',
         client: true,
     },
     {
@@ -59,7 +59,7 @@ const projects = [
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.jpg',
         techStack: ['All', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS3'],
-        desc: '',
+        desc: 'Giving a visual representation from live oil and gas data',
         client: false,
     },
     {
@@ -68,7 +68,7 @@ const projects = [
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
         techStack: ['All', 'React', 'MongoDB', 'Bootstrap', 'Node', 'CSS3'],
-        desc: '',
+        desc: 'Search for a book to buy or save it for later.',
         client: false,
     },
     {
@@ -77,7 +77,7 @@ const projects = [
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
         techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Bootstrap', 'CSS3', 'Node'],
-        desc: '',
+        desc: 'A classic snake game. Try and beat your high score!',
         client: false,
     },
     {
@@ -86,7 +86,7 @@ const projects = [
         link: 'https://jmichael96.github.io/RPS-MULTIPLAYER/',
         imageName: 'rock.jpg',
         techStack: ['All', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
-        desc: '',
+        desc: 'Rock beats scissors, scissors beats paper, paper beats rock...',
         client: false,
     },
     {
@@ -95,7 +95,7 @@ const projects = [
         link: 'https://lit-wildwood-52008.herokuapp.com/',
         imageName: 'clickygame.gif',
         techStack: ['All', 'React', 'Materialize', 'CSS3', 'JavaScript'],
-        desc: '',
+        desc: 'A game of memory!',
         client: false,
     },
     {
@@ -104,7 +104,7 @@ const projects = [
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
         techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
-        desc: '',
+        desc: 'Build your own burger.',
         client: false,
     },
     {
@@ -113,7 +113,7 @@ const projects = [
         link: 'https://jmichael96.github.io/Unit4-StarWarsRPG/',
         imageName: 'starwars.png',
         techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
-        desc: '',
+        desc: 'Try and eliminate your components!',
         client: false,
     },
     {
@@ -122,7 +122,7 @@ const projects = [
         link: 'https://jmichael96.github.io/TriviaGame/',
         imageName: 'supercross.png',
         techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
-        desc: '',
+        desc: 'Test your knowledge on how much you know about supercross!',
         client: false,
     }
 ];
