@@ -49,21 +49,23 @@
 
 #searchingForRender {
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     z-index: 2;
+    letter-spacing: .1rem;
     position: absolute;
+    /* width: 95%; */
     top: 37%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: 4s textLeft forwards;
-    -moz-animation: 4s textLeft forwards;
-    -ms-animation: 4s textLeft forwards;
-    -o-animation: 4s textLeft forwards;
-    animation: 4s textLeft forwards;
+    -webkit-animation: 4.5s textLeft forwards;
+    -moz-animation: 4.5s textLeft forwards;
+    -ms-animation: 4.5s textLeft forwards;
+    -o-animation: 4.5s textLeft forwards;
+    animation: 4.5s textLeft forwards;
 }
 
 @keyframes textLeft {
@@ -151,11 +153,11 @@
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: 4s spinnerRight forwards;
-    -moz-animation: 4s spinnerRight forwards;
-    -ms-animation: 4s spinnerRight forwards;
-    -o-animation: 4s spinnerRight forwards;
-    animation: 4s spinnerRight forwards;
+    -webkit-animation: 4.5s spinnerRight forwards;
+    -moz-animation: 4.5s spinnerRight forwards;
+    -ms-animation: 4.5s spinnerRight forwards;
+    -o-animation: 4.5s spinnerRight forwards;
+    animation: 4.5s spinnerRight forwards;
 }
 
 @keyframes spinnerRight {
@@ -241,6 +243,10 @@
     border: 2px solid #333;
     left: 50%;
     top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     margin-left: -52px;
     margin-top: -52px;
     -webkit-animation: tick 5s infinite linear;

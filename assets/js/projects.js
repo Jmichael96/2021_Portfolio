@@ -180,14 +180,14 @@ const renderAmount = (num, text) => {
         return;
     }
     if (num === 1) {
-        amountLocation.innerHTML = `Showing ${num} project filtered by ${text}`;
+        amountLocation.innerHTML = `Displaying ${num} project filtered by ${text}`;
         return;
     }
     if (num === totalProjects) {
-        amountLocation.innerHTML = 'Showing all projects';
+        amountLocation.innerHTML = 'Displaying all projects';
         return;
     }
-    amountLocation.innerHTML = `Showing ${num} projects filtered by <span class="techName">${text}</span>`;
+    amountLocation.innerHTML = `Displaying ${num} projects filtered by <span class="techName">${text}</span>`;
 };
 
 // filter the array of projects
@@ -218,14 +218,14 @@ const isFilteringHandler = (filterName) => {
     // remove the project section momentarily 
     projectSection.style.display = 'none';
     // assign a text value to the filter loading section
-    searchingFor.innerHTML = `Filtering ${filterName} projects`;
+    searchingFor.innerHTML = `Looking for ${filterName} projects`;
 
     setTimeout(() => {
         // removing  filter loading section
         filterSection.style.display = 'none';
         // rendering project section
         projectSection.style.display = 'block';
-    }, 1000000);
+    }, 3900);
 };
 
 // getting the select input
