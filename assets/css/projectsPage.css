@@ -42,7 +42,7 @@
 
 .moonBg {
     position: absolute;
-    top: 120rem;
+    top: 27rem;
     left: -5rem;
     z-index: 2;
     height: 24rem;
@@ -50,13 +50,13 @@
 }
 
 .moonImg {
-    top: 135rem;
+    top: 42rem;
     left: 0rem;
 }
 
 .jupiterBg {
     position: absolute;
-    top: 234rem;
+    top: 52rem;
     right: -4rem;
     z-index: 2;
     height: 24rem;
@@ -64,13 +64,13 @@
 }
 
 .jupiterImg {
-    top: 250rem;
+    top: 68rem;
     right: 0;
 }
 
 .callistoBg {
     position: absolute;
-    top: 345rem;
+    top: 85rem;
     left: -8rem;
     z-index: 2;
     height: 24rem;
@@ -78,7 +78,7 @@
 }
 
 .callistoImg {
-    top: 362rem;
+    top: 102rem;
     left: -.5rem;
 }
 
@@ -760,6 +760,50 @@ svg .polygon {
 
 /* ! MEDIA QUERIES */
 
+@media only screen and (max-width: 1407px) {
+    .moonBg {
+        top: 42rem;
+    }
+    .moonImg {
+        top: 56rem;
+    }
+    .jupiterBg {
+        top: 78rem;
+    }
+    .jupiterImg {
+        top: 94rem;
+    }
+    .callistoBg {
+        top: 112rem;
+    }
+    .callistoImg {
+        top: 129rem;
+    }
+}
+
+@media only screen and (max-width: 1055) {
+    .moonBg {
+        top: 50rem;
+    }
+    .moonImg {
+        top: 66rem;
+    }
+    .jupiterBg {
+        top: 116rem;
+    }
+    .jupiterImg {
+        top: 132rem;
+    }
+    .callistoBg {
+        top: 170rem;
+    }
+    .callistoImg {
+        top: 188rem;
+    }
+}
+
+/* ! PLANETS & BACKGROUNDS  */
+
 @media only screen and (max-width: 852px) {
     /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
     /* the lighting effect */
@@ -919,5 +963,26 @@ svg .polygon {
         100% {
             transform: translateX(800px);
         }
+    }
+}
+
+@media only screen and (max-width: 703px) {
+    .moonBg {
+        top: 120rem;
+    }
+    .moonImg {
+        top: 135rem;
+    }
+    .jupiterBg {
+        top: 234rem;
+    }
+    .jupiterImg {
+        top: 250rem;
+    }
+    .callistoBg {
+        top: 345rem;
+    }
+    .callistoImg {
+        top: 362rem;
     }
 }
