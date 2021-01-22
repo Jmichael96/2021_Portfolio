@@ -21,7 +21,7 @@ const projects = [
         name: 'Lynns Auto Repair',
         link: 'https://lynnsautorepairmagnolia.com',
         imageName: 'lynnsautorepair.jpeg',
-        techStack: ['All', 'Wordpress', 'PHP'],
+        techStack: ['All Projects', 'Wordpress', 'PHP'],
         desc: 'Auto shop in Magnolia, TX.',
         client: true,
     },
@@ -30,7 +30,7 @@ const projects = [
         name: 'Topline',
         link: 'https://toplinedumpsters.com',
         imageName: 'topline.jpeg',
-        techStack: ['All', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP'],
+        techStack: ['All Projects', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP'],
         desc: 'Commercial business for dumpster rentals',
         client: true,
     },
@@ -39,7 +39,7 @@ const projects = [
         name: 'Update With Cait',
         link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
-        techStack: ['All', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
+        techStack: ['All Projects', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
         desc: 'Blog website for a personal client',
         client: true,
     },
@@ -48,7 +48,7 @@ const projects = [
         name: 'Jays Iron Works',
         link: 'https://jays-ironworks.com',
         imageName: 'jaysironworks.png',
-        techStack: ['All', 'HTML5', 'CSS3', 'JavaScript', 'PHP'],
+        techStack: ['All Projects', 'HTML5', 'CSS3', 'JavaScript', 'PHP'],
         desc: 'Commercial company that does wrought iron fence painting and repairs.',
         client: true,
         for: 'me'
@@ -58,7 +58,7 @@ const projects = [
         name: 'React Graph',
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.jpg',
-        techStack: ['All', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS3'],
+        techStack: ['All Projects', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS3'],
         desc: 'Giving a visual representation from live oil and gas data',
         client: false,
     },
@@ -67,7 +67,7 @@ const projects = [
         name: 'Google Books',
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
-        techStack: ['All', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS3'],
+        techStack: ['All Projects', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS3'],
         desc: 'Search for a book to buy or save it for later.',
         client: false,
     },
@@ -76,7 +76,7 @@ const projects = [
         name: 'Snake Game',
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
-        techStack: ['All', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS3', 'Node'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS3', 'Node'],
         desc: 'A classic snake game. Try and beat your high score!',
         client: false,
     },
@@ -85,7 +85,7 @@ const projects = [
         name: 'Mongo-Scraper',
         link: 'https://mongo-scraper-jvh.herokuapp.com/',
         imageName: 'mongoScraper.jpg',
-        techStack: ['All', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS3', 'Node'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS3', 'Node'],
         desc: 'A web scraper used to gather data about supercross and render it as a pleasing UI.',
         client: false,
     },
@@ -94,7 +94,7 @@ const projects = [
         name: 'Giphy-API',
         link: 'https://jmichael96.github.io/Giphy-API/',
         imageName: 'giphyApi.jpg',
-        techStack: ['All', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS3'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS3'],
         desc: 'Search and watch any animal gif you want!',
         client: false,
     },
@@ -103,7 +103,7 @@ const projects = [
         name: 'Rock Paper Scissors',
         link: 'https://jmichael96.github.io/RPS-MULTIPLAYER/',
         imageName: 'rock.jpg',
-        techStack: ['All', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
         desc: 'Rock beats scissors, scissors beats paper, paper beats rock...',
         client: false,
     },
@@ -112,7 +112,7 @@ const projects = [
         name: 'Clicky Game',
         link: 'https://lit-wildwood-52008.herokuapp.com/',
         imageName: 'clickygame.gif',
-        techStack: ['All', 'React', 'Materialize', 'CSS3', 'JavaScript'],
+        techStack: ['All Projects', 'React', 'Materialize', 'CSS3', 'JavaScript'],
         desc: 'A game of memory!',
         client: false,
     },
@@ -121,7 +121,7 @@ const projects = [
         name: 'Sequelize Burger',
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
-        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
+        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
         desc: 'Build your own burger.',
         client: false,
     },
@@ -130,7 +130,7 @@ const projects = [
         name: 'Star Wars RPG',
         link: 'https://jmichael96.github.io/Unit4-StarWarsRPG/',
         imageName: 'starwars.png',
-        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
         desc: 'Try and eliminate your components!',
         client: false,
     },
@@ -139,7 +139,7 @@ const projects = [
         name: 'Supercross Trivia',
         link: 'https://jmichael96.github.io/TriviaGame/',
         imageName: 'supercross.png',
-        techStack: ['All', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
         desc: 'Test your knowledge on how much you know about supercross!',
         client: false,
     }
@@ -153,7 +153,7 @@ $(window).on('load', function () {
     renderProjects();
 });
 
-// ! CONSTANTS
+// CONSTANTS
 // getting location where projects will be rendered
 const projLocation = document.getElementById('projectRender');
 // getting location for project amount being rendered
@@ -163,7 +163,8 @@ let filteredArr = [];
 // to search for the newest to oldest of projects
 let isLatest = true;
 // assigning the total amount of projects as an integer to render the filtered text accordingly
-const totalProjects = 13;
+// ! MUST CHANGE EVERY TIME A PROJECT IS ADDED ===========================
+const totalProjects = 14;
 
 // render the projects function
 const renderProjects = () => {
@@ -251,3 +252,19 @@ $('#select').on('change', (e) => {
     // calling the filter projects method
     filterProj(e.target.value);
 });
+
+
+// ! testing
+document.getElementById('selectInput').onclick = function () {
+
+    var className = ' ' + selectInput.className + ' ';
+
+    this.className = ~className.indexOf(' active ') ?
+        className.replace(' active ', ' ') :
+        this.className + ' active';
+}
+
+$('.selectValue').on('click', (e) => {
+    document.getElementById('selectTitle').innerHTML = `${e.target.textContent} <span class="arrow"></span>`;
+    filterProj(e.target.textContent);
+})
