@@ -1,4 +1,38 @@
 /* footer element */
+
 footer {
-    padding: 1rem 0;
+    margin-top: 1rem;
+    padding: .3rem 0;
+    width: 100%;
+    background-color: black;
+}
+
+/* p tag wrapper around the footer copyright and date */
+
+#footerDateWrapper {
+    margin: .5rem 0;
+    letter-spacing: .1rem;
+    text-align: center;
+    color: #3b4e74;
+}
+
+/* copy sign */
+
+#copySign {
+    color: #c75000;
+}
+
+/* footer name and text wrapper */
+
+#ownershipTextWrap {
+    margin: .5rem 0;
+    text-align: center;
+    color: #3b4e74;
+    letter-spacing: .1rem;
+}
+
+/* hear icon */
+
+.ownershipHeart {
+    color: #c75000;
 }

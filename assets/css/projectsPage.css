@@ -355,11 +355,6 @@ ul {
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    /* -webkit-animation: 4.5s spinnerRight forwards;
-    -moz-animation: 4.5s spinnerRight forwards;
-    -ms-animation: 4.5s spinnerRight forwards;
-    -o-animation: 4.5s spinnerRight forwards;
-    animation: 4.5s spinnerRight forwards; */
 }
 
 @keyframes spinnerRight {
@@ -679,8 +674,9 @@ svg .polygon {
 }
 
 /* ! MEDIA QUERIES */
+
 @media only screen and (max-width: 852px) {
-     /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
+    /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
     /* the lighting effect */
     .cardCover::after {
         background: none;
@@ -693,5 +689,150 @@ svg .polygon {
         -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
         -o-transform: rotateX(12deg) scale(.98) translateY(2px);
         transform: none;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    /* the text left animation for the filter loading page */
+    @keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-moz-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-webkit-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-ms-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-o-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    /* for the spinner right animation for the filter loading page */
+    @keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-moz-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-webkit-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-ms-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-o-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
     }
 }
