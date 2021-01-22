@@ -30,7 +30,7 @@ const projects = [
         name: 'Topline',
         link: 'https://toplinedumpsters.com',
         imageName: 'topline.jpeg',
-        techStack: ['All Projects', 'HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'PHP'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
         desc: 'Commercial business for dumpster rentals',
         client: true,
     },
@@ -39,7 +39,7 @@ const projects = [
         name: 'Update With Cait',
         link: 'https://updatewithcait.com',
         imageName: 'update_with_cait.png',
-        techStack: ['All Projects', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS3', 'Node', 'React-Quill'],
+        techStack: ['All Projects', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS', 'Node', 'React-Quill'],
         desc: 'Blog website for a personal client',
         client: true,
     },
@@ -48,7 +48,7 @@ const projects = [
         name: 'Jays Iron Works',
         link: 'https://jays-ironworks.com',
         imageName: 'jaysironworks.png',
-        techStack: ['All Projects', 'HTML5', 'CSS3', 'JavaScript', 'PHP'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript', 'PHP'],
         desc: 'Commercial company that does wrought iron fence painting and repairs.',
         client: true,
         for: 'me'
@@ -58,7 +58,7 @@ const projects = [
         name: 'React Graph',
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.jpg',
-        techStack: ['All Projects', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS3'],
+        techStack: ['All Projects', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS'],
         desc: 'Giving a visual representation from live oil and gas data',
         client: false,
     },
@@ -67,7 +67,7 @@ const projects = [
         name: 'Google Books',
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
-        techStack: ['All Projects', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS3'],
+        techStack: ['All Projects', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS'],
         desc: 'Search for a book to buy or save it for later.',
         client: false,
     },
@@ -76,7 +76,7 @@ const projects = [
         name: 'Snake Game',
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.gif',
-        techStack: ['All Projects', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS3', 'Node'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS', 'Node'],
         desc: 'A classic snake game. Try and beat your high score!',
         client: false,
     },
@@ -85,7 +85,7 @@ const projects = [
         name: 'Mongo-Scraper',
         link: 'https://mongo-scraper-jvh.herokuapp.com/',
         imageName: 'mongoScraper.jpg',
-        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS3', 'Node'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS', 'Node'],
         desc: 'A web scraper used to gather data about supercross and render it as a pleasing UI.',
         client: false,
     },
@@ -94,7 +94,7 @@ const projects = [
         name: 'Giphy-API',
         link: 'https://jmichael96.github.io/Giphy-API/',
         imageName: 'giphyApi.jpg',
-        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS3'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS'],
         desc: 'Search and watch any animal gif you want!',
         client: false,
     },
@@ -103,7 +103,7 @@ const projects = [
         name: 'Rock Paper Scissors',
         link: 'https://jmichael96.github.io/RPS-MULTIPLAYER/',
         imageName: 'rock.jpg',
-        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS3'],
+        techStack: ['All Projects', 'HTML5', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS'],
         desc: 'Rock beats scissors, scissors beats paper, paper beats rock...',
         client: false,
     },
@@ -112,7 +112,7 @@ const projects = [
         name: 'Clicky Game',
         link: 'https://lit-wildwood-52008.herokuapp.com/',
         imageName: 'clickygame.gif',
-        techStack: ['All Projects', 'React', 'Materialize', 'CSS3', 'JavaScript'],
+        techStack: ['All Projects', 'React', 'Materialize', 'CSS', 'JavaScript'],
         desc: 'A game of memory!',
         client: false,
     },
@@ -121,7 +121,7 @@ const projects = [
         name: 'Sequelize Burger',
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.gif',
-        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
         desc: 'Build your own burger.',
         client: false,
     },
@@ -130,7 +130,7 @@ const projects = [
         name: 'Star Wars RPG',
         link: 'https://jmichael96.github.io/Unit4-StarWarsRPG/',
         imageName: 'starwars.png',
-        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'Bootstrap', 'JavaScript'],
         desc: 'Try and eliminate your components!',
         client: false,
     },
@@ -139,7 +139,7 @@ const projects = [
         name: 'Supercross Trivia',
         link: 'https://jmichael96.github.io/TriviaGame/',
         imageName: 'supercross.png',
-        techStack: ['All Projects', 'HTML5', 'CSS3', 'Bootstrap', 'JavaScript'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'Bootstrap', 'JavaScript'],
         desc: 'Test your knowledge on how much you know about supercross!',
         client: false,
     }
@@ -172,7 +172,7 @@ const totalProjects = 14;
 const renderProjects = () => {
     projLocation.innerHTML = filteredArr.map((item, i) => {
         return `
-                <a key="${i + 1}" style="outline: none;" class="fade" href="${item.link}" rel="noreferrer noopener"target="_blank">
+                <a key="${i + 1}" style="outline: none;" class="projLink fade" href="${item.link}" rel="noreferrer noopener"target="_blank">
                     <div class="projectCard">
                         <div class="cardCover">
                             <div class="projectCardHeader" style="background-image: url(./assets/images/projects/${item.imageName})">
@@ -195,13 +195,12 @@ const renderProjects = () => {
 
 // render the number of projects selected through the filter
 const renderAmount = (num, text) => {
-    // ! ADD APOSTROPHE
     if (num <= 0) {
-        amountLocation.innerHTML = 'Oops! couldnt find any projects!';
+        amountLocation.innerHTML = 'Oops! couldn&#8217;t find any projects!';
         return;
     }
     if (num === 1) {
-        amountLocation.innerHTML = `Displaying ${num} project filtered by ${text}`;
+        amountLocation.innerHTML = `Displaying ${num} project filtered by <span class="techName">${text}</span>`;
         return;
     }
     if (num === totalProjects) {
@@ -247,17 +246,9 @@ const isFilteringHandler = (filterName) => {
         // rendering project section
         projectSection.style.display = 'block';
     }, 3900);
-    // perfect time is 3900
 };
 
-// getting the select input
-$('#select').on('change', (e) => {
-    // calling the filter projects method
-    filterProj(e.target.value);
-});
-
-
-// ! testing
+// the animation for the custom select input
 document.getElementById('selectInput').onclick = function () {
 
     var className = ' ' + selectInput.className + ' ';
@@ -268,6 +259,8 @@ document.getElementById('selectInput').onclick = function () {
 }
 
 $('.selectValue').on('click', (e) => {
+    // change the value of the custom input select label
     document.getElementById('selectTitle').innerHTML = `${e.target.textContent} <span class="arrow"></span>`;
+    // initiate filtering the projects
     filterProj(e.target.textContent);
 })

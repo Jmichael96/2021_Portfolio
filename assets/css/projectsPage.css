@@ -103,7 +103,6 @@
 .arrow {
     width: 13px;
     height: 13px;
-    display: inline-block;
     position: relative;
     bottom: 0;
     transition: 0.4s ease;
@@ -200,7 +199,7 @@ ul {
 
 /* the select around the rendered projects */
 
-#projectRender {}
+/* #projectRender {} */
 
 /* strictly for when a filter is being selected it will render to the page */
 
@@ -512,13 +511,16 @@ ul {
 
 /* ! PROJECT CARD */
 
+/* the link around each card */
+.projLink {
+    margin: 2rem 1rem 1rem 1rem;
+}
 /* card for each project */
 
 .projectCard {
     position: relative;
     width: 20rem;
     height: 26rem;
-    margin: 2rem 1rem 1rem 1rem;
     cursor: pointer;
     perspective: 100vw;
     perspective-origin: 50% 50%;
