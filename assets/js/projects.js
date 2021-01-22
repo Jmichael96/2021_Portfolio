@@ -245,7 +245,7 @@ const isFilteringHandler = (filterName) => {
         filterSection.style.display = 'none';
         // rendering project section
         projectSection.style.display = 'block';
-    }, 3900);
+    }, 3200);
 };
 
 // the animation for the custom select input

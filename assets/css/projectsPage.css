@@ -238,11 +238,11 @@ ul {
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: 4.5s textLeft forwards;
-    -moz-animation: 4.5s textLeft forwards;
-    -ms-animation: 4.5s textLeft forwards;
-    -o-animation: 4.5s textLeft forwards;
-    animation: 4.5s textLeft forwards;
+    -webkit-animation: 3.5s textLeft forwards;
+    -moz-animation: 3.5s textLeft forwards;
+    -ms-animation: 3.5s textLeft forwards;
+    -o-animation: 3.5s textLeft forwards;
+    animation: 3.5s textLeft forwards;
 }
 
 @keyframes textLeft {
@@ -330,11 +330,11 @@ ul {
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: 4.5s spinnerRight forwards;
-    -moz-animation: 4.5s spinnerRight forwards;
-    -ms-animation: 4.5s spinnerRight forwards;
-    -o-animation: 4.5s spinnerRight forwards;
-    animation: 4.5s spinnerRight forwards;
+    -webkit-animation: 3.5s spinnerRight forwards;
+    -moz-animation: 3.5s spinnerRight forwards;
+    -ms-animation: 3.5s spinnerRight forwards;
+    -o-animation: 3.5s spinnerRight forwards;
+    animation: 3.5s spinnerRight forwards;
 }
 
 /* select around the spinner */
@@ -347,11 +347,11 @@ ul {
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    -webkit-animation: 4.5s spinnerRight forwards;
+    /* -webkit-animation: 4.5s spinnerRight forwards;
     -moz-animation: 4.5s spinnerRight forwards;
     -ms-animation: 4.5s spinnerRight forwards;
     -o-animation: 4.5s spinnerRight forwards;
-    animation: 4.5s spinnerRight forwards;
+    animation: 4.5s spinnerRight forwards; */
 }
 
 @keyframes spinnerRight {
@@ -512,9 +512,11 @@ ul {
 /* ! PROJECT CARD */
 
 /* the link around each card */
+
 .projLink {
     margin: 2rem 1rem 1rem 1rem;
 }
+
 /* card for each project */
 
 .projectCard {
