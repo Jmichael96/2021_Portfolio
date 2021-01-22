@@ -34,7 +34,7 @@
 #nav {
     height: 4rem;
     width: 100%;
-    background-color: #000000c0;
+    background-color: #000000ec;
     position: fixed;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     transition: all .5s ease-out;
-    z-index: 7;
+    z-index: 999;
 }
 
 /* inner wrap surrounding all the content */
@@ -105,7 +105,7 @@
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #a74300;
+    background: #c75000;
     -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
     -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
     -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
