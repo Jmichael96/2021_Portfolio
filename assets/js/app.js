@@ -1,34 +1,34 @@
 // for the spinner to render waiting on all html content to be fully loaded
 document.onreadystatechange = function () {
+  const body = document.querySelector('body');
+  const nav = document.querySelector('nav');
+  const sideNav = document.getElementById('sideNav');
+  const aboutSection = document.getElementById('aboutSection');
+  const specialtiesSection = document.getElementById('specialtiesSection');
+  const projSection = document.getElementById('projectSection');
+  const contactSection = document.getElementById('contactSection');
+  const pageLoader = document.getElementById('loader');
+
   if (document.readyState !== 'complete') {
-    document.querySelector('body').style.visibility = 'hidden';
-    // the navbar
-    document.querySelector('nav').style.display = 'none';
-    // about
-    document.getElementById('aboutSection').style.display = 'none';
-    // project
-    document.getElementById('projectSection').style.display = 'none';
-    // specialties
-    // document.querySelector('#specialtiesSection').style.visibility = 'hidden';
-    // contact
-    document.getElementById('contactSection').style.display = 'none';
-    // page loader
-    document.querySelector('#loader').style.visibility = 'visible';
+    body.style.visibility = 'hidden';
+    nav.style.visibility = 'hidden';
+    sideNav.style.visibility = 'hidden';
+    aboutSection.style.visibility = 'hidden';
+    specialtiesSection.style.visibility = 'hidden';
+    projSection.style.visibility = 'hidden';
+    contactSection.style.visibility = 'hidden';
+    pageLoader.style.visibility = 'visible';
   } else {
     setTimeout(() => {
-      document.querySelector('#loader').style.display = 'none';
-      document.querySelector('nav').style.display = 'flex';
-      document.querySelector('body').style.visibility = 'visible';
-      // about
-      document.getElementById('aboutSection').style.display = 'flex';
-      // project
-      document.getElementById('projectSection').style.display = 'flex';
-      // specialties
-      // document.getElementById('specialtiesSection').style.display = 'flex';
-    // document.querySelector('#specialtiesSection').style.visibility = 'visible';
-      // contact
-      document.getElementById('contactSection').style.display = 'flex';
-      
+      body.style.visibility = 'visible';
+      nav.style.visibility = 'visible';
+      sideNav.style.visibility = 'visible';
+      aboutSection.style.visibility = 'visible';
+      specialtiesSection.style.visibility = 'visible';
+      projSection.style.visibility = 'visible';
+      contactSection.style.visibility = 'visible';
+      pageLoader.style.visibility = 'hidden';
+
       // ! RENDERING THE NAME
       let nameString = 'jeffrey vanhorn';
       nameString.split('').map(function (char, index) {
