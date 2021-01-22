@@ -11,6 +11,7 @@
 /* contact section article tag */
 
 #contactSection {
+    margin-top: 5rem;
     position: relative;
     overflow: hidden;
     height: 46rem;
