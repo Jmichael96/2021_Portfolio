@@ -81,6 +81,6 @@ $('.js-link').click(function (e) {
   let target = $($(this).attr('href'));
   if (target.length) {
     let scrollTo = target.offset().top - 30;
-    $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
+    $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
   }
 });
