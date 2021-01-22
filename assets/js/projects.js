@@ -1,25 +1,32 @@
 // for the spinner to render waiting on All html content to be fully loaded
 document.onreadystatechange = function () {
+    const body = document.querySelector('body');
+    const projectLayout = document.getElementById('projectLayout');
+    const nav = document.querySelector('nav');
+    const sideNav = document.getElementById('sideNav');
+    const pageLoader = document.querySelector('#loader');
+    // const footer = document.querySelector('footer');
+
     if (document.readyState !== 'complete') {
-        document.querySelector('body').style.visibility = 'hidden';
+        body.style.visibility = 'hidden';
         // project layout 
-        document.getElementById('projectLayout').style.display = 'none';
+        projectLayout.style.display = 'none';
         // the navbar
-        document.querySelector('nav').style.display = 'none';
-        document.getElementById('sideNav').style.display = 'none';
+        nav.style.display = 'none';
+        sideNav.style.display = 'none';
         // page loader
-        document.querySelector('#loader').style.visibility = 'visible';
+        pageLoader.style.visibility = 'visible';
         // footer
-        document.querySelector('footer').style.display = 'none';
+        // footer.style.display = 'none';
     } else {
         setTimeout(() => {
-            document.querySelector('#loader').style.display = 'none';
-            document.querySelector('nav').style.display = 'flex';
-            document.querySelector('body').style.visibility = 'visible';
-            document.getElementById('sideNav').style.display = 'flex';
-            document.querySelector('footer').style.display = 'block';
+            pageLoader.style.visibility = 'hidden';
+            nav.style.display = 'flex';
+            body.style.visibility = 'visible';
+            sideNav.style.display = 'flex';
+            // footer.style.display = 'block';
             // project layout 
-            document.getElementById('projectLayout').style.display = 'block';
+            projectLayout.style.display = 'block';
         }, 2000);
     }
 };
