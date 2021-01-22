@@ -14,6 +14,7 @@ footer {
     letter-spacing: .1rem;
     text-align: center;
     color: #3b4e74;
+    font-size: 1rem;
 }
 
 /* copy sign */
@@ -29,10 +30,13 @@ footer {
     text-align: center;
     color: #3b4e74;
     letter-spacing: .1rem;
+    font-size: 1rem;
 }
 
 /* hear icon */
 
 .ownershipHeart {
     color: #c75000;
+    font-size: 1rem;
+    margin: 0;
 }
