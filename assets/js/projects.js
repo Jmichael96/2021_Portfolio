@@ -151,6 +151,8 @@ $(window).on('load', function () {
         filteredArr.push(projects[obj]);
     }
     renderProjects();
+    // once window is refreshed show the message stating that all projects are rendered
+    renderAmount(projects.length)
 });
 
 // CONSTANTS
@@ -245,6 +247,7 @@ const isFilteringHandler = (filterName) => {
         // rendering project section
         projectSection.style.display = 'block';
     }, 3900);
+    // perfect time is 3900
 };
 
 // getting the select input

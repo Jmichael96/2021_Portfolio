@@ -15,7 +15,7 @@
     text-align: center;
     font-size: 1.2rem;
     color: white;
-    margin: 4rem 0 0 0;
+    margin: 5rem 0 0 0;
 }
 
 /* wrapper around the select input */
@@ -319,6 +319,23 @@ ul {
     100% {
         transform: translateX(-2000px);
     }
+}
+
+/* spinner wrapper */
+
+#spinnerWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: 4.5s spinnerRight forwards;
+    -moz-animation: 4.5s spinnerRight forwards;
+    -ms-animation: 4.5s spinnerRight forwards;
+    -o-animation: 4.5s spinnerRight forwards;
+    animation: 4.5s spinnerRight forwards;
 }
 
 /* select around the spinner */
