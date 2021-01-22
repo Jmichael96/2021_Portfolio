@@ -1,6 +1,6 @@
 :root {
     --desktop-primary-color: #181818;
-    --accent-color: #a236c9;
+    --navTextAccent: #c75000;
     --side-color: #3b4e74;
     --sideNavBg: #3b4e74;
 }
@@ -105,7 +105,7 @@
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #c75000;
+    background: var(--navTextAccent);
     -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
     -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
     -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
@@ -116,78 +116,6 @@
 .navSpan:hover:after {
     width: 100%;
     left: 0;
-}
-
-/* ! MOBILE NAV */
-
-/* wrapper around the menu icon */
-
-#mobileNav {
-    display: none;
-    align-items: center;
-    width: 100%;
-}
-
-/* wrapper around the menu icon */
-
-.menuIconWrap {
-    margin-left: auto;
-}
-
-/* menu icon for opening the mobile nav */
-
-.menuIcon {
-    color: #32af01;
-    font-size: 2.5rem;
-    margin: 0 1rem 0 0;
-}
-
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 11;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay-content {
-    position: relative;
-    text-align: center;
-    margin-top: 10rem;
-    width: 100%;
-    overflow: hidden;
-}
-
-.mobileNavLink {
-    margin: 1rem 0;
-    text-decoration: none;
-    font-size: 2rem;
-    color: #ffffff;
-    display: block;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.closebtn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 4rem;
-    color: #32af01;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-/* logo for the overlay content */
-
-.mobileOverlayLogo {
-    height: 10rem;
 }
 
 /* ! MOBILE NAV */
