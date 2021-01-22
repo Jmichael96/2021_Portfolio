@@ -13,7 +13,7 @@
 
 #projectAmountRender {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
     margin: 5rem 0 0 0;
 }
@@ -33,6 +33,7 @@
     top: 5rem;
     width: 16rem;
     display: block;
+    font-size: 1.1rem;
     text-align: center;
     -webkit-transition: all .15s ease;
     -moz-transition: all .15s ease;
@@ -59,6 +60,7 @@
     opacity: 1;
     height: 100%;
     background-color: #3b4e74;
+    /* font-size: 1rem; */
     box-shadow: 0 3px 12px rgba(0, 0, 0, .3);
 }
 
@@ -105,11 +107,14 @@
     height: 13px;
     position: relative;
     bottom: 0;
-    transition: 0.4s ease;
-    margin-top: 2px;
+    margin-top: 4px;
     text-align: left;
     transform: rotate(45deg);
     float: right;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 .arrow:before, .arrow:after {
@@ -119,7 +124,10 @@
     width: 12px;
     height: 3px;
     background-color: #fff;
-    transition: 0.4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all 0.4s ease;
 }
 
 .arrow:after {
@@ -668,4 +676,22 @@ svg .polygon {
     margin: 10px auto;
     line-height: 20px;
     letter-spacing: .1rem;
+}
+
+/* ! MEDIA QUERIES */
+@media only screen and (max-width: 852px) {
+     /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
+    /* the lighting effect */
+    .cardCover::after {
+        background: none;
+    }
+    .projectCard::before {
+        display: none;
+    }
+    .projectCard:hover .cardCover {
+        -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+        transform: none;
+    }
 }
