@@ -2,15 +2,24 @@
 document.onreadystatechange = function () {
     if (document.readyState !== 'complete') {
         document.querySelector('body').style.visibility = 'hidden';
+        // project layout 
+        document.getElementById('projectLayout').style.display = 'none';
         // the navbar
         document.querySelector('nav').style.display = 'none';
+        document.getElementById('sideNav').style.display = 'none';
         // page loader
         document.querySelector('#loader').style.visibility = 'visible';
+        // footer
+        document.querySelector('footer').style.display = 'none';
     } else {
         setTimeout(() => {
             document.querySelector('#loader').style.display = 'none';
             document.querySelector('nav').style.display = 'flex';
             document.querySelector('body').style.visibility = 'visible';
+            document.getElementById('sideNav').style.display = 'flex';
+            document.querySelector('footer').style.display = 'block';
+            // project layout 
+            document.getElementById('projectLayout').style.display = 'block';
         }, 2000);
     }
 };

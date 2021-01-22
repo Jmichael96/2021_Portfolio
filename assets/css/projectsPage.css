@@ -15,7 +15,7 @@
     text-align: center;
     font-size: 1rem;
     color: white;
-    margin: 5rem 0 0 0;
+    margin: 10rem 0 0 0;
 }
 
 /* wrapper around the select input */
@@ -26,11 +26,21 @@
     height: 5rem;
 }
 
+/* project filter wrapper */
+#projectfilterWrap {
+
+}
 /* ! ========== CUSTOM INPUT SELECT */
 
 .select {
     position: absolute;
     top: 5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
     width: 16rem;
     display: block;
     font-size: 1.1rem;
