@@ -132,29 +132,35 @@
 @media only screen and (max-width: 911px) {
     /* about section */
     #aboutSection {
-        margin-top: 8rem;
+        align-items: flex-start;
         height: 56rem;
+    }
+    /* about card */
+    #aboutCard {
+        align-items: flex-start;
     }
 }
 
 @media only screen and (max-width: 421px) {
     /* about section */
     #aboutSection {
-        margin-top: 8rem;
+        /* margin-top: 8rem; */
         height: 58rem;
     }
 }
+
 @media only screen and (max-width: 345px) {
     /* about section */
     #aboutSection {
-        margin-top: 8rem;
+        /* margin-top: 8rem; */
         height: 62rem;
     }
 }
+
 @media only screen and (max-width: 309px) {
     /* about section */
     #aboutSection {
-        margin-top: 8rem;
+        /* margin-top: 8rem; */
         height: 80rem;
     }
 }

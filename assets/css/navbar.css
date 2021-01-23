@@ -1,7 +1,7 @@
 :root {
     --desktop-primary-color: #181818;
     --navTextAccent: #c75000;
-    --side-color: #3b4e74;
+    --sideNavColor: #ffffff;
     --sideNavBg: #3b4e74;
 }
 
@@ -239,7 +239,7 @@
 
 .mobileLink {
     display: block;
-    color: black;
+    color: var(--sideNavColor);
     margin: 1.5rem 0 1.5rem .5rem;
     font-size: 1.7rem;
     font-weight: 900;

@@ -119,3 +119,10 @@
         bottom: 24rem;
     }
 }
+
+@media only screen and (max-width: 911px) {
+    /* specialty section */
+    #specialtiesSection {
+       margin-top: 3rem;
+    }
+}
