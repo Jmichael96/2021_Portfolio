@@ -50,7 +50,7 @@ TxtRotate.prototype.tick = function () {
 // for handling the start of the typing in the about section
 function initAboutContent() {
     // start typing out the about text
-    let elements = document.getElementsByClassName('txt-rotate');
+    let elements = document.getElementsByClassName('txt-rotate-about');
     for (let i = 0; i < elements.length; i++) {
         let toRotate = elements[i].getAttribute('data-rotate');
         let period = elements[i].getAttribute('data-period');
@@ -66,28 +66,30 @@ function initAboutContent() {
 
     // fade in the about image
     document.getElementById('personalImg').style.opacity = 1;
-}
+};
 
 // getting the bottom coordinates to the element
 //record the elem so you don't crawl the DOM everytime 
-let $el = $('#aboutCard');
+let $el = $('#specialtiesContent');
 // passing "true" will also include the top and bottom margin
 let bottom = $el.position().top + $el.outerHeight(true);
 
 $(window).on('load', function () {
+    // used to make sure the initiate function is only called once
+    let hasReached = false;
     $(window).on('scroll', function () {
         let windowBottom = $(this).scrollTop() + $(this).innerHeight();
-        // let image = document.getElementById('personalImg');
         $('#aboutCard').each(function () {
+            
             /* Check the location of each desired element */
             let objectBottom = $(this).offset().top + $(this).outerHeight();
-            let textTag = document.getElementById('aboutTxt');
+            // let textTag = document.getElementById('aboutTxt');
             /* If the element is completely within bounds of the window, fade it in */
-            if (objectBottom < windowBottom - 100) {
+            if (objectBottom < windowBottom - 100 && !hasReached) {
                 // image.style.display = 'block';
                 initAboutContent();
-                $(window).off('scroll');
+                hasReached = true;
             }
-        })
+        });
     });
 });

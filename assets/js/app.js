@@ -37,13 +37,13 @@ document.onreadystatechange = function () {
           $('#headerName').append(`<span class="whiteSpace">${char}</span>`);
           return;
         }
-        $('#headerName').append(`<span class="nameChar" style="animation-delay: ${.5 + index / 5.5}s;">${char}</span>`);
+        $('#headerName').append(`<span class="nameChar" style="animation-delay: ${.5 + index / 6}s;">${char}</span>`);
       });
 
       // ! RENDERING THE HEADER TEXT
       setTimeout(() => {
         renderHeaderText();
-      }, 3500);
+      }, 3000);
     }, 2000);
   }
 };
@@ -65,6 +65,7 @@ $(window).on("load", function () {
     });
   }
 });
+
 
 // render the header text html to the dom
 function renderHeaderText() {
