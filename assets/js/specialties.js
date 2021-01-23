@@ -18,7 +18,7 @@ SpecialtyTyper.prototype.tick = function () {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
-    this.el.innerHTML = '<span id="typerTest" class="typeTest">' + this.txt + '</span>';
+    this.el.innerHTML = '<span id="specialtyTyper" class="specialtyTyper">' + this.txt + '</span>';
 
     let that = this;
     // controls the speed of the typing
@@ -29,7 +29,7 @@ SpecialtyTyper.prototype.tick = function () {
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
         // adding class once the text has finished to create a blinking cursor
-        document.getElementById('typerTest').classList += ' cursorBlinker';
+        document.getElementById('specialtyTyper').classList += ' specialtyCursorBlinker';
         // ! turning off the deleting text
         // this.isDeleting = true;
     } else if (this.isDeleting && this.txt === '') {
@@ -61,7 +61,7 @@ function initSpecialtyContent() {
     // inject CSS
     let css = document.createElement("style");
     // css.type = "text/css";
-    css.innerHTML = ".txt-rotate-specialties > .typeTest { border-right: 2px solid #a74300; padding-right: .2rem; }";
+    css.innerHTML = ".txt-rotate-specialties > .specialtyTyper { border-right: 2px solid #a74300; padding-right: .2rem; }";
     document.body.appendChild(css);
 };
 

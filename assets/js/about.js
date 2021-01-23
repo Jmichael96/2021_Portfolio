@@ -68,11 +68,11 @@ function initAboutContent() {
     document.getElementById('personalImg').style.opacity = 1;
 };
 
-// getting the bottom coordinates to the element
-//record the elem so you don't crawl the DOM everytime 
-let $el = $('#specialtiesContent');
-// passing "true" will also include the top and bottom margin
-let bottom = $el.position().top + $el.outerHeight(true);
+// // getting the bottom coordinates to the element
+// //record the elem so you don't crawl the DOM everytime 
+// let $el = $('#specialtiesContent');
+// // passing "true" will also include the top and bottom margin
+// let bottom = $el.position().top + $el.outerHeight(true);
 
 $(window).on('load', function () {
     // used to make sure the initiate function is only called once

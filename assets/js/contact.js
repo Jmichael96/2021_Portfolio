@@ -1,4 +1,3 @@
-// idwJh8J0x9cq7vGdT0SgaIkuv0Gdb1pM
 var map = tt.map({
     key: 'idwJh8J0x9cq7vGdT0SgaIkuv0Gdb1pM',
     container: 'map',
@@ -22,6 +21,6 @@ function createMarker(position, color, popupText) {
     new tt.Marker({ scale: 1.3 })
         .setLngLat(position)
         .addTo(map);
-}
+};
 
 createMarker([-95.461195, 30.168032], '#3b4e74', 'The Woodlands, TX');

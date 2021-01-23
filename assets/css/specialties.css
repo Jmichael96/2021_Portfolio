@@ -49,6 +49,8 @@
 
 #specialtiesContent {
     margin: 1rem;
+    width: 100%;
+    max-width: 32rem;
 }
 
 /* title */
@@ -101,6 +103,60 @@
 .canvasImg {
     width: 75px;
     height: 75px;
+}
+
+/* cursor for the title */
+.specialtyCursorBlinker {
+    -webkit-animation: 1s specialtyCursor step-end infinite;
+    -moz-animation: 1s specialtyCursor step-end infinite;
+    -ms-animation: 1s specialtyCursor step-end infinite;
+    -o-animation: 1s specialtyCursor step-end infinite;
+    animation: 1s specialtyCursor step-end infinite;
+}
+
+@keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-moz-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-webkit-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-ms-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-o-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
 }
 
 /* ! MEDIA QUERIES */
