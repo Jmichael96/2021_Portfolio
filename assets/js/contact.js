@@ -91,6 +91,12 @@ $(window).on('load', function () {
             }
         });
     });
+    // adding these to keep bots away
+    let email1 = 'jeffrey.';
+    let email2 = 'vanhorn';
+    let email3 = '@yahoo.com';
+
+    $('.locationEmail').attr('href', `mailto:${email1}${email2}${email3}`);
 });
 
 function createMarker(position, color, popupText) {
