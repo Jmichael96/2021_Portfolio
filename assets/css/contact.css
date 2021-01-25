@@ -340,13 +340,13 @@ label {
     transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26);
 }
 
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
     .tool::after {
         font-size: .75em;
         margin-left: -5em;
         width: 10em;
     }
-}
+} */
 
 /* wrapper around the map */
 
