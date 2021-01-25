@@ -279,4 +279,14 @@ $('.selectValue').on('click', (e) => {
     document.getElementById('selectTitle').innerHTML = `${e.target.textContent} <span class="arrow"></span>`;
     // initiate filtering the projects
     filterProj(e.target.textContent);
-})
+});
+
+// smooth scroll function
+$('.js-link').click(function (e) {
+    e.preventDefault();
+    let target = $($(this).attr('href'));
+    if (target.length) {
+        let scrollTo = target.offset().top - 30;
+        $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
+    }
+});

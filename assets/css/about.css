@@ -40,7 +40,7 @@
     max-width: 60rem;
     position: relative;
     padding: 1rem;
-    /* height: 20rem; */
+    margin-top: 3rem;
     display: flex;
     justify-content: space-evenly;
     /* align-items: center; */
@@ -52,10 +52,10 @@
 
 #personalImg {
     display: block;
-    width: 100%;
-    max-width: 28rem;
+    width: 110%;
+    max-width: 30rem;
     opacity: 0;
-    /* margin-top: 1.5rem; */
+    margin-top: -2rem;
     -webkit-transition: .5s all ease-in;
     -moz-transition: .5s all ease-in;
     -o-transition: .5s all ease-in;

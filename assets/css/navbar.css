@@ -16,6 +16,7 @@
     display: none;
     z-index: 6;
 }
+
 #scrollTopIcon:focus {
     outline: none;
 }
@@ -51,6 +52,7 @@
         transform: translateY(0px)
     }
 }
+
 #nav {
     height: 4rem;
     width: 100%;
