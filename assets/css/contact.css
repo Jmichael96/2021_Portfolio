@@ -68,7 +68,59 @@
     margin: 1.5rem 0;
     text-align: center;
 }
+/* cursor for the title */
+.contactCursorBlinker {
+    -webkit-animation: 1s contactCursor step-end infinite;
+    -moz-animation: 1s contactCursor step-end infinite;
+    -ms-animation: 1s contactCursor step-end infinite;
+    -o-animation: 1s contactCursor step-end infinite;
+    animation: 1s contactCursor step-end infinite;
+}
 
+@keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-moz-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-webkit-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-ms-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-o-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
 /* wrapper around the input tag, bar and errors */
 
 .inputWrap {

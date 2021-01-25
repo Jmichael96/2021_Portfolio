@@ -18,7 +18,7 @@ TxtRotate.prototype.tick = function () {
         this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
 
-    this.el.innerHTML = '<span id="typer" class="typeWrap">' + this.txt + '</span>';
+    this.el.innerHTML = '<span id="aboutTyper" class="aboutTyper">' + this.txt + '</span>';
 
     let that = this;
     // controls the speed of the typing
@@ -29,7 +29,7 @@ TxtRotate.prototype.tick = function () {
     if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
         // adding class once the text has finished to create a blinking cursor
-        document.getElementById('typer').classList += ' cursorBlinker';
+        document.getElementById('aboutTyper').classList += ' aboutCursorBlinker';
         // ! turning off the deleting text
         // this.isDeleting = true;
     } else if (this.isDeleting && this.txt === '') {
@@ -61,7 +61,7 @@ function initAboutContent() {
     // inject CSS
     let css = document.createElement("style");
     // css.type = "text/css";
-    css.innerHTML = ".txt-rotate > .typeWrap { border-right: 2px solid #a74300; padding-right: .2rem; }";
+    css.innerHTML = ".txt-rotate-about > .aboutTyper { border-right: 2px solid #c75000; padding-right: .2rem; }";
     document.body.appendChild(css);
 
     // fade in the about image

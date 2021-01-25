@@ -61,7 +61,7 @@ function initSpecialtyContent() {
     // inject CSS
     let css = document.createElement("style");
     // css.type = "text/css";
-    css.innerHTML = ".txt-rotate-specialties > .specialtyTyper { border-right: 2px solid #a74300; padding-right: .2rem; }";
+    css.innerHTML = ".txt-rotate-specialties > .specialtyTyper { border-right: 2px solid #c75000; padding-right: .2rem; }";
     document.body.appendChild(css);
 };
 
