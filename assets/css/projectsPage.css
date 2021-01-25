@@ -609,7 +609,7 @@ ul {
 .projectCard {
     position: relative;
     width: 20rem;
-    height: 26rem;
+    height: 22rem;
     cursor: pointer;
     perspective: 100vw;
     perspective-origin: 50% 50%;
@@ -699,7 +699,7 @@ ul {
 
 .projectCardHeader {
     position: relative;
-    height: 220px;
+    height: 174px;
     background-color: black;
     background-size: 100% auto;
     background-position: center;
