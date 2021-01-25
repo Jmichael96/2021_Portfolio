@@ -31,21 +31,21 @@ function closeNav() {
 };
 
 // adding navbar effect for changing color on scroll
-window.onscroll = () => {
+$(window).on('scroll', () => {
     const nav = document.getElementById('nav');
     const scrollBtn = document.getElementById('scrollTopIcon');
 
-    if (this.scrollY <= 300) {
+    if (this.scrollY <= 100) {
         nav.style.height = '4rem';
-        nav.style.boxShadow = 'none';
+        nav.style.backgroundColor = '#000000b0'
         scrollBtn.style.display = 'none';
     }
     else {
-        nav.style.height = '3.5rem';
-        nav.style.boxShadow = '0 5px 15px rgba(0,0,0,.1)';
+        nav.style.height = '3rem';
+        nav.style.backgroundColor = 'black';
         scrollBtn.style.display = 'block';
     };
-};
+});
 
 // toggle the mobile menu button
 $('#mobileNavBtn').click(function () {

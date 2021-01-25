@@ -3,38 +3,58 @@
     --navTextAccent: #c75000;
     --sideNavColor: #ffffff;
     --sideNavBg: #3b4e74;
+    --scrollTopBg: #c75000;
+    --navBg: #000000b0;
 }
 
 /* scroll to top icon button wrapper */
 
-.scrollTop {
+#scrollTopIcon {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
     display: none;
     z-index: 6;
 }
+#scrollTopIcon:focus {
+    outline: none;
+}
 
 /* the scroll top icon itself */
 
-.scrollTop>i {
+#scrollTopIcon>i {
     font-size: 3rem;
     opacity: .5;
-    color: black;
+    color: var(--scrollTopBg);
     -o-transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
     transition: all .3s ease-out;
+    -webkit-animation: fadeUp .5s ease;
+    -moz-animation: fadeUp .5s ease;
+    -ms-animation: fadeUp .5s ease;
+    -o-animation: fadeUp .5s ease;
+    animation: fadeUp .5s ease;
 }
 
-.scrollTop>i:hover {
+#scrollTopIcon>i:hover {
     opacity: 1;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    to {
+        opacity: .5;
+        transform: translateY(0px)
+    }
+}
 #nav {
     height: 4rem;
     width: 100%;
-    background-color: #000000ec;
+    background-color: var(--navBg);
     position: fixed;
     display: flex;
     align-items: center;
@@ -124,7 +144,7 @@
 
 #mobileNavBtn {
     width: 60px;
-    height: 45px;
+    height: 35px;
     position: relative;
     margin-left: auto;
     margin-right: .5rem;
@@ -142,8 +162,8 @@
 #mobileNavBtn span {
     display: block;
     position: absolute;
-    height: 6px;
-    width: 100%;
+    height: 5px;
+    width: 74%;
     background: #ffffff;
     border-radius: 9px;
     opacity: 1;
@@ -163,15 +183,15 @@
 }
 
 #mobileNavBtn span:nth-child(2) {
-    top: 18px;
+    top: 13px;
 }
 
 #mobileNavBtn span:nth-child(3) {
-    top: 36px;
+    top: 26px;
 }
 
 #mobileNavBtn.open span:nth-child(1) {
-    top: 18px;
+    top: 15px;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
@@ -184,7 +204,7 @@
 }
 
 #mobileNavBtn.open span:nth-child(3) {
-    top: 18px;
+    top: 15px;
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
