@@ -222,7 +222,7 @@
     left: 0;
     visibility: hidden;
     transition: all 0.25s ease;
-    transform: translateX(-50%);
+    transform: translateX(-100%);
     z-index: 999;
     box-shadow: 0 0 8px rgb(0, 0, 0);
     background-color: var(--sideNavBg);
