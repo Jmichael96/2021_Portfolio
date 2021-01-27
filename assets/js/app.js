@@ -49,14 +49,15 @@ document.onreadystatechange = function () {
 };
 
 $(window).on("load", function () {
-
+  // initMars();
+  // initMoon();
   window.onscroll = () => {
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     $(".fade").each(function () {
       /* Check the location of each desired element */
       let objectBottom = $(this).offset().top + $(this).outerHeight();
       /* If the element is completely within bounds of the window, fade it in */
-      if (objectBottom < windowBottom - 5) {
+      if (objectBottom < windowBottom - 0) {
         //object comes into view (scrolling down)
         if ($(this).css("opacity") == 0) { $(this).fadeTo(500, 1); }
       } else { //object goes out of view (scrolling up)
@@ -85,3 +86,6 @@ $('.js-link').click(function (e) {
     $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
   }
 });
+// $(function () {
+//   $('img').Lazy();
+// });

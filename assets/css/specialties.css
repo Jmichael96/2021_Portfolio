@@ -22,16 +22,15 @@
 
 /* moon image */
 
-#moonImg {
+#moonCanvas {
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 10rem;
+    max-width: 12rem;
     z-index: 2;
     left: 3rem;
     bottom: 4rem;
     opacity: .9;
-    filter: brightness(90%);
 }
 
 /* inner wrap of cards */

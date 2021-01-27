@@ -10,16 +10,15 @@
 
 /* mars image */
 
-#marsImg {
+#marsCanvas {
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 10rem;
+    max-width: 12rem;
     z-index: 2;
     top: 12rem;
     right: 3rem;
     opacity: .9;
-    filter: brightness(90%);
 }
 
 /* mars/about background */
