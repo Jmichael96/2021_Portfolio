@@ -35,16 +35,15 @@
 
 /* image of callisto */
 
-#calistoImg {
+#callistoCanvas {
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 10rem;
+    max-width: 12rem;
     z-index: 2;
     left: 5rem;
     bottom: 2rem;
     opacity: .9;
-    filter: brightness(90%);
 }
 
 /* contact form */

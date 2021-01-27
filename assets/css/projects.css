@@ -29,11 +29,10 @@
     z-index: 2;
     display: block;
     width: 100%;
-    max-width: 10rem;
+    max-width: 12rem;
     right: 4rem;
     bottom: 3rem;
     opacity: .9;
-    /* filter: brightness(90%); */
 }
 
 /* wrapper around the projects */
