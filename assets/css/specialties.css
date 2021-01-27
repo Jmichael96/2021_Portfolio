@@ -14,9 +14,9 @@
 #moonBg {
     position: absolute;
     bottom: 0;
-    left: -6rem;
+    left: -4rem;
     z-index: 1;
-    width: 90rem;
+    width: 34rem;
     height: 31rem;
 }
 
@@ -26,10 +26,10 @@
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     z-index: 2;
-    left: 3rem;
-    bottom: 4rem;
+    left: 4rem;
+    bottom: 5rem;
     opacity: .9;
 }
 

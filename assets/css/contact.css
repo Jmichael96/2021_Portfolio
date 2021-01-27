@@ -27,10 +27,10 @@
 #callistoBg {
     position: absolute;
     bottom: -1rem;
-    left: -10rem;
+    left: -2rem;
     z-index: 1;
-    width: 90rem;
-    height: 31rem;
+    width: 36rem;
+    height: 30rem;
 }
 
 /* image of callisto */
@@ -39,10 +39,10 @@
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     z-index: 2;
     left: 5rem;
-    bottom: 2rem;
+    bottom: 3rem;
     opacity: .9;
 }
 

@@ -14,10 +14,10 @@
     position: absolute;
     display: block;
     width: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     z-index: 2;
-    top: 12rem;
-    right: 3rem;
+    top: 13rem;
+    right: 4rem;
     opacity: .9;
 }
 
@@ -25,11 +25,11 @@
 
 #marsBg {
     z-index: 1;
-    width: 90rem;
+    width: 34rem;
     height: 31rem;
     position: absolute;
     top: 0;
-    right: -13rem;
+    right: -5rem;
 }
 
 /* about card */
