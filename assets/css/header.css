@@ -121,7 +121,7 @@
 
 /* background for the plant Neptune */
 
-.neptuneBg {
+#neptuneBg {
     position: absolute;
     z-index: 1;
     width: 87rem;

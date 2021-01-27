@@ -8,6 +8,7 @@ document.onreadystatechange = function () {
   const projSection = document.getElementById('projectSection');
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('loader');
+  const planetBg = document.querySelector('.planetBg');
 
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
@@ -18,6 +19,7 @@ document.onreadystatechange = function () {
     projSection.style.visibility = 'hidden';
     contactSection.style.visibility = 'hidden';
     pageLoader.style.visibility = 'visible';
+    planetBg.style.display = 'none';
   } else {
     setTimeout(() => {
       body.style.visibility = 'visible';
@@ -28,6 +30,7 @@ document.onreadystatechange = function () {
       projSection.style.visibility = 'visible';
       contactSection.style.visibility = 'visible';
       pageLoader.style.visibility = 'hidden';
+      planetBg.style.display = 'block';
 
       // ! RENDERING THE NAME
       let nameString = 'jeffrey vanhorn';
