@@ -137,7 +137,7 @@
 
 /* neptune image */
 
-.neptuneImg {
+#neptuneCanvas {
     /* width: 100%;
     max-width: 40rem; */
     width: 40rem;
@@ -249,7 +249,7 @@
         width: 72rem;
     }
     /* neptune image */
-    .neptuneImg {
+    #neptuneCanvas {
         width: 37rem;
     }
     /* wrapper of the contents inside the header */
@@ -287,7 +287,7 @@
         height: auto;
     }
     /* neptune image */
-    .neptuneImg {
+    #neptuneCanvas {
         width: 34rem;
         top: 1rem;
     }
@@ -312,7 +312,7 @@
         top: 0rem;
     }
     /* neptune image */
-    .neptuneImg {
+    #neptuneCanvas {
         width: 29rem;
     }
     /* wrapper of the contents inside the header */
@@ -345,7 +345,7 @@
         top: 0rem;
     }
     /* neptune image */
-    .neptuneImg {
+    #neptuneCanvas {
         width: 26rem;
         top: 1rem;
     }
