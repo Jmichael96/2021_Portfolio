@@ -244,10 +244,6 @@
 }
 
 @media only screen and (max-width: 561px) {
-    /* background for the plant Neptune */
-    .neptuneBg {
-        width: 72rem;
-    }
     /* neptune image */
     #neptuneCanvas {
         width: 37rem;
@@ -281,10 +277,8 @@
 
 @media only screen and (max-width: 471px) {
     /* background for the plant Neptune */
-    .neptuneBg {
-        width: 80rem;
-        top: 1rem;
-        height: auto;
+    #neptuneBg {
+        top: -2rem;
     }
     /* neptune image */
     #neptuneCanvas {
@@ -307,9 +301,8 @@
 
 @media only screen and (max-width: 449px) {
     /* background for the plant Neptune */
-    .neptuneBg {
-        width: 74rem;
-        top: 0rem;
+    #neptuneBg {
+        top: -3rem;
     }
     /* neptune image */
     #neptuneCanvas {
@@ -340,9 +333,8 @@
 }
 @media only screen and (max-width: 390px) {
     /* background for the plant Neptune */
-    .neptuneBg {
-        width: 74rem;
-        top: 0rem;
+    #neptuneBg {
+        top: -5rem;
     }
     /* neptune image */
     #neptuneCanvas {
