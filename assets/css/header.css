@@ -124,9 +124,9 @@
 #neptuneBg {
     position: absolute;
     z-index: 1;
-    width: 87rem;
-    height: 30rem;
-    top: -2rem;
+    width: 66rem;
+    height: 28rem;
+    top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
