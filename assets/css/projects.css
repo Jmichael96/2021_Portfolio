@@ -247,7 +247,7 @@ svg .polygon {
         bottom: 12rem;
     }
     /* image of jupiter */
-    #jupiterImg {
+    #jupiterCanvas {
         bottom: 17rem;
     }
 }
@@ -259,7 +259,7 @@ svg .polygon {
         bottom: 32rem;
     }
     /* image of jupiter */
-    #jupiterImg {
+    #jupiterCanvas {
         right: -2rem;
         bottom: 36rem;
     }
