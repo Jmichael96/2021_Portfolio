@@ -16,11 +16,10 @@
 
 .marsBg {
     position: absolute;
-    top: 1rem;
-    right: -8rem;
+    top: 0;
+    right: -4rem;
     z-index: 1;
-    height: 20rem;
-    width: 42rem;
+    width: 34rem;
 }
 
 /* general styles for each planet */
@@ -35,10 +34,6 @@
     transform: translateY(-50%);
 }
 
-.marsImg {
-    top: 12rem;
-    right: -1rem;
-}
 
 .moonBg {
     position: absolute;
@@ -46,12 +41,7 @@
     left: -5rem;
     z-index: 2;
     height: 24rem;
-    width: 67rem;
-}
-
-.moonImg {
-    top: 42rem;
-    left: 0rem;
+    width: 41rem;
 }
 
 .jupiterBg {
@@ -60,12 +50,7 @@
     right: -4rem;
     z-index: 2;
     height: 24rem;
-    width: 67rem;
-}
-
-.jupiterImg {
-    top: 68rem;
-    right: 0;
+    width: 38rem;
 }
 
 .callistoBg {
@@ -74,12 +59,7 @@
     left: -8rem;
     z-index: 2;
     height: 24rem;
-    width: 67rem;
-}
-
-.callistoImg {
-    top: 102rem;
-    left: -.5rem;
+    width: 33rem;
 }
 
 /* showing how many and what projects are being rendered text */

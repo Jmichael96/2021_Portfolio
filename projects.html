@@ -43,6 +43,14 @@
 <link rel="stylesheet" href="./assets/css/pageLoader.css" />
 <!-- for the general layout of the page -->
 <link rel="stylesheet" href="./assets/css/projectsPage.css" />
+
+<!-- planet animations -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script type="text/javascript" src="./assets/js/mars.js"></script>
+<script type="text/javascript" src="./assets/js/moon.js"></script>
+<script type="text/javascript" src="./assets/js/neptune.js"></script>
+<script type="text/javascript" src="./assets/js/jupiter.js"></script>
+<script type="text/javascript" src="./assets/js/callisto.js"></script>
 </head>
 
 <body>
@@ -52,7 +60,7 @@
 
     <!-- ! SCREEN LOADER -->
     <div id="loader" class="center">
-        <img id="loadingImg" alt="" src="./assets/images/bg/source.gif" />
+        <img id="loadingImg" alt="" src="./assets/images/bg/loading.gif" />
     </div>
     <nav id="nav">
         <div id="desktopNav" class="navInnerContentWrap">
@@ -90,13 +98,9 @@
 
     <article id="projectLayout">
         <img class="marsBg" alt="" src="./assets/images/bg/marsBg.png" />
-        <!-- <img class="marsImg planetImg" alt="" src="./assets/images/planets/mars.gif" /> -->
         <img class="moonBg" alt="" src="./assets/images/bg/moonBg.png" />
-        <!-- <img class="moonImg planetImg" alt="" src="./assets/images/planets/moon.gif" /> -->
         <img class="jupiterBg" alt="" src="./assets/images/bg/jupiterBg.png" />
-        <!-- <img class="jupiterImg planetImg" alt="" src="./assets/images/planets/jupiter.gif" /> -->
         <img class="callistoBg" alt="" src="./assets/images/bg/callistoBg.png" />
-        <!-- <img class="callistoImg planetImg" alt="" src="./assets/images/planets/callisto.gif" /> -->
         
         <section id="projectfilterWrap">
             <div id="selectInput" class="select">
@@ -141,6 +145,7 @@
     <script type="text/javascript" src="./assets/js/nav.js"></script>
     <script type="text/javascript" src="./assets/js/projects.js"></script>
     <script type="text/javascript" src="./assets/js/footer.js"></script>
+    <script type="text/javascript" src="./assets/js/planets.js"></script>
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
 </body>
