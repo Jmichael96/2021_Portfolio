@@ -91,3 +91,18 @@ $('.js-link').click(function (e) {
     $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
   }
 });
+
+// for the typing animation to disperse to the different locations
+// let TxtRotate = function (el, toRotate, period) {
+//   this.toRotate = toRotate;
+//   this.el = el;
+//   this.loopNum = 0;
+//   this.period = parseInt(period, 10) || 2000;
+//   this.txt = '';
+//   this.startAbout();
+//   this.startSpecialties();
+//   this.startContact();
+// };
+
+
+// ! TESTING

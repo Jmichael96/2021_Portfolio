@@ -1,71 +1,3 @@
-let SpecialtyTyper = function (el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
-
-SpecialtyTyper.prototype.tick = function () {
-    let i = this.loopNum % this.toRotate.length;
-    let fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-    }
-
-    this.el.innerHTML = '<span id="specialtyTyper" class="specialtyTyper">' + this.txt + '</span>';
-
-    let that = this;
-    // controls the speed of the typing
-    let delta = 100 - Math.random() * 200;
-
-    if (this.isDeleting) { delta /= 2; }
-
-    if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        // adding class once the text has finished to create a blinking cursor
-        document.getElementById('specialtyTyper').classList += ' specialtyCursorBlinker';
-        // ! turning off the deleting text
-        // this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-
-        this.isDeleting = false;
-        this.loopNum++;
-        // controls the pause at the beginning of the empty string
-        // and dictates when it starts again
-        delta = 100;
-    }
-
-    // this is time it takes between each letter typed
-    setTimeout(function () {
-        that.tick();
-    }, delta);
-};
-
-// for handling the start of the typing in the about section
-function initSpecialtyContent() {
-    // start typing out the about text
-    let elements = document.getElementsByClassName('txt-rotate-specialties');
-    for (let i = 0; i < elements.length; i++) {
-        let toRotate = elements[i].getAttribute('data-rotate');
-        let period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-            new SpecialtyTyper(elements[i], JSON.parse(toRotate), period);
-        }
-    }
-    // inject CSS
-    let css = document.createElement("style");
-    // css.type = "text/css";
-    css.innerHTML = ".txt-rotate-specialties > .specialtyTyper { border-right: 2px solid #c75000; padding-right: .2rem; }";
-    document.body.appendChild(css);
-};
-
-
 $(window).on('load', function () {
     let hasReached = false;
     $(window).on('scroll', function () {
@@ -76,7 +8,30 @@ $(window).on('load', function () {
             /* If the element is completely within bounds of the window, fade it in */
             if (objectBottom < windowBottom - 100 && !hasReached) {
                 // image.style.display = 'block';
-                initSpecialtyContent();
+                // initSpecialtyContent();
+                let p = document.getElementById('specialtiesTitle');
+                p.innerHTML = '';
+                let n = 0;
+                let str = 'Specialties & Experience';
+                let typeSpecialty = setInterval(function () {
+                    n = n + 1;
+                    p.innerHTML = str.slice(0, n) + ' <span style="color: #c75000; font-size: 2.2rem;">|</span>';
+                    if (n === str.length) {
+                        clearInterval(typeSpecialty);
+                        p.innerHTML = str;
+                        n = 0;
+                        setInterval(function () {
+
+                            if (n === 0) {
+                                p.innerHTML = str + ' <span style="color: #c75000; font-size: 2.2rem;">|</span>';
+                                n = 1;
+                            } else {
+                                p.innerHTML = str + '<span style="color: transparent; font-size: 2.2rem;">|</span>';
+                                n = 0;
+                            };
+                        }, 500);
+                    };
+                }, 10)
                 hasReached = true;
             }
         });

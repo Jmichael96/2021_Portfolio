@@ -5,7 +5,6 @@ document.onreadystatechange = function () {
     const nav = document.querySelector('nav');
     const sideNav = document.getElementById('sideNav');
     const pageLoader = document.querySelector('#loader');
-    // const footer = document.querySelector('footer');
 
     if (document.readyState !== 'complete') {
         body.style.visibility = 'hidden';
@@ -16,8 +15,6 @@ document.onreadystatechange = function () {
         sideNav.style.display = 'none';
         // page loader
         pageLoader.style.visibility = 'visible';
-        // footer
-        // footer.style.display = 'none';
     } else {
         setTimeout(() => {
             pageLoader.style.visibility = 'hidden';
