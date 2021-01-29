@@ -3,6 +3,7 @@
 #loadingImg {
     width: 100%;
     max-width: 10rem;
+    height: auto;
     margin: 1rem;
 }
 

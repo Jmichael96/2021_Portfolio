@@ -12,7 +12,7 @@ document.onreadystatechange = function () {
 
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
-    nav.style.visibility = 'hidden';
+    nav.style.display = 'none';
     sideNav.style.visibility = 'hidden';
     aboutSection.style.visibility = 'hidden';
     specialtiesSection.style.visibility = 'hidden';
@@ -23,7 +23,7 @@ document.onreadystatechange = function () {
   } else {
     setTimeout(() => {
       body.style.visibility = 'visible';
-      nav.style.visibility = 'visible';
+      nav.style.display = 'flex';
       sideNav.style.visibility = 'visible';
       aboutSection.style.visibility = 'visible';
       specialtiesSection.style.visibility = 'visible';
@@ -52,8 +52,6 @@ document.onreadystatechange = function () {
 };
 
 $(window).on("load", function () {
-  // initMars();
-  // initMoon();
   window.onscroll = () => {
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     $(".fade").each(function () {
@@ -89,6 +87,3 @@ $('.js-link').click(function (e) {
     $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
   }
 });
-// $(function () {
-//   $('img').Lazy();
-// });

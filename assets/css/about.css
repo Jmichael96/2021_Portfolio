@@ -53,6 +53,7 @@
     display: block;
     width: 110%;
     max-width: 30rem;
+    height: auto;
     opacity: 0;
     margin-top: -2rem;
     -webkit-transition: .5s all ease-in;
