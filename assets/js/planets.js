@@ -1,4 +1,4 @@
-var canvas, canvas2, canvas3, canvas4, canvas5, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+var canvas, canvas2, canvas3, canvas4, canvas5, canvas6, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function initPlanets() {
 
     canvas = document.getElementById("moonCanvas");
@@ -57,9 +57,15 @@ function initPlanets() {
         loader5.addEventListener("fileload", function (evt) { handleCallistoFileLoad(evt, comp5) });
         loader5.addEventListener("complete", function (evt) { handleCallistoComplete(evt, comp5) });
     } else {
-        // neptune
-        loader3.addEventListener("fileload", function (evt) { handleNeptuneFileLoad(evt, comp3) });
-        loader3.addEventListener("complete", function (evt) { handleNeptuneComplete(evt, comp3) });
+        canvas6 = document.getElementById('mobileCanvas');
+        let comp6 = AdobeAn.getComposition('D7E3423B551E00458CD72DB4C211F4E1');
+        var lib6 = comp6.getLibrary();
+        let loader6 = new createjs.LoadQueue(false);
+        // mars
+        loader6.addEventListener("fileload", function (evt) { handleMobileFileLoad(evt, comp2) });
+        loader6.addEventListener("complete", function (evt) { handleMobileCanvasComplete(evt, comp2) });
+        var lib6 = comp6.getLibrary();
+        loader6.loadManifest(lib6.properties.manifest);
     }
 
     // moon
@@ -83,7 +89,6 @@ function initPlanets() {
     loader4.loadManifest(lib4.properties.manifest);
     // callisto
     loader5.loadManifest(lib5.properties.manifest);
-
 }
 
 // ! MOON
@@ -229,3 +234,33 @@ function handleCallistoComplete(evt, comp5) {
     AdobeAn.compositionLoaded(lib.properties.id);
     fnStartAnimation();
 }
+
+// ! MOBILE CANVAS
+function handleMobileFileLoad(evt, comp6) {
+    var images = comp6.getImages();
+    if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+}
+
+function handleMobileCanvasComplete(evt, comp6) {
+    //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+    var lib = comp6.getLibrary();
+    var ss = comp6.getSpriteSheet();
+    var queue = evt.target;
+    var ssMetadata = lib.ssMetadata;
+    for (i = 0; i < ssMetadata.length; i++) {
+        ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
+    }
+    exportRoot = new lib.savedAnMars_HTML5Canvas();
+    stage = new lib.Stage(canvas6);
+    //Registers the "tick" event listener.
+    fnStartAnimation = function () {
+        stage.addChild(exportRoot);
+        createjs.Ticker.framerate = lib.properties.fps;
+        createjs.Ticker.addEventListener("tick", stage);
+    }
+    //Code to support hidpi screens and responsive scaling.
+    AdobeAn.makeResponsive(false, 'both', false, 1, [canvas6, anim_container, dom_overlay_container]);
+    AdobeAn.compositionLoaded(lib.properties.id);
+    fnStartAnimation();
+}
+

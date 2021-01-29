@@ -9,6 +9,10 @@ document.onreadystatechange = function () {
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('loader');
   const planetBg = document.querySelector('.planetBg');
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.getElementById('mobileCanvas').style.display = 'none';
+  }
+
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
@@ -58,7 +62,7 @@ $(window).on("load", function () {
       /* Check the location of each desired element */
       let objectBottom = $(this).offset().top + $(this).outerHeight();
       /* If the element is completely within bounds of the window, fade it in */
-      if (objectBottom < windowBottom - 0) {
+      if (objectBottom < windowBottom + 200) {
         //object comes into view (scrolling down)
         if ($(this).css("opacity") == 0) { $(this).fadeTo(500, 1); }
       } else { //object goes out of view (scrolling up)
