@@ -5,7 +5,6 @@ document.onreadystatechange = function () {
     const nav = document.querySelector('nav');
     const sideNav = document.getElementById('sideNav');
     const pageLoader = document.querySelector('#loader');
-
     if (document.readyState !== 'complete') {
         body.style.visibility = 'hidden';
         // project layout 
@@ -157,7 +156,6 @@ const projects = [
         client: false,
     }
 ];
-
 $(window).on('load', function () {
     // make a copy of the projects array
     for (let obj in projects) {
@@ -167,7 +165,6 @@ $(window).on('load', function () {
     // once window is refreshed show the message stating that all projects are rendered
     renderAmount(projects.length)
 });
-
 // CONSTANTS
 // getting location where projects will be rendered
 const projLocation = document.getElementById('projectRender');
@@ -180,7 +177,6 @@ let isLatest = true;
 // assigning the total amount of projects as an integer to render the filtered text accordingly
 // ! MUST CHANGE EVERY TIME A PROJECT IS ADDED ===========================
 const totalProjects = 14;
-
 // render the projects function
 const renderProjects = () => {
     projLocation.innerHTML = filteredArr.map((item, i) => {
@@ -205,7 +201,6 @@ const renderProjects = () => {
                 `;
     }).join('');
 };
-
 // render the number of projects selected through the filter
 const renderAmount = (num, text) => {
     if (num <= 0) {
@@ -222,7 +217,6 @@ const renderAmount = (num, text) => {
     }
     amountLocation.innerHTML = `Displaying ${num} projects filtered by <span class="techName">${text}</span>`;
 };
-
 // filter the array of projects
 const filterProj = (filterName) => {
     // handle the filter loading screen
@@ -237,7 +231,6 @@ const filterProj = (filterName) => {
     renderProjects();
 
 };
-
 // handle animations and data when is filtering is set to true
 const isFilteringHandler = (filterName) => {
     // the whole filter loading section from "article" tag
@@ -260,24 +253,17 @@ const isFilteringHandler = (filterName) => {
         projectSection.style.display = 'block';
     }, 3200);
 };
-
 // the animation for the custom select input
 document.getElementById('selectInput').onclick = function () {
-
-    var className = ' ' + selectInput.className + ' ';
-
-    this.className = ~className.indexOf(' active ') ?
-        className.replace(' active ', ' ') :
-        this.className + ' active';
-}
-
+    let className = ' ' + selectInput.className + ' ';
+    this.className = ~className.indexOf(' active ') ?className.replace(' active ', ' ') : this.className + ' active';
+};
 $('.selectValue').on('click', (e) => {
     // change the value of the custom input select label
     document.getElementById('selectTitle').innerHTML = `${e.target.textContent} <span class="arrow"></span>`;
     // initiate filtering the projects
     filterProj(e.target.textContent);
 });
-
 // smooth scroll function
 $('.js-link').click(function (e) {
     e.preventDefault();

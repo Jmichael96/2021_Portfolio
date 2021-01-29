@@ -32,7 +32,7 @@ $(window).on('load', function () {
                             };
                         }, 500);
                     };
-                }, 10)
+                }, 60)
                 hasReached = true;
                 // fade in the about image
                 document.getElementById('personalImg').style.opacity = 1;

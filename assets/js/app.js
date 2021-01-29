@@ -9,7 +9,6 @@ document.onreadystatechange = function () {
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('loader');
   const planetBg = document.querySelector('.planetBg');
-
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
@@ -31,7 +30,6 @@ document.onreadystatechange = function () {
       contactSection.style.visibility = 'visible';
       pageLoader.style.visibility = 'hidden';
       planetBg.style.display = 'block';
-
       // ! RENDERING THE NAME
       let nameString = 'jeffrey vanhorn';
       nameString.split('').map(function (char, index) {
@@ -50,10 +48,11 @@ document.onreadystatechange = function () {
     }, 2000);
   }
 };
-
 $(window).on("load", function () {
-
+  // resizing the nav to the appropriate specs
+  resizeNavHandler();
   window.onscroll = () => {
+    //  ! FADE IN EFFECT
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     $(".fade").each(function () {
       /* Check the location of each desired element */
@@ -66,13 +65,28 @@ $(window).on("load", function () {
         if ($(this).css("opacity") == 1) { $(this).fadeTo(500, 0); }
       }
     });
+    // ! NAVBAR
+    const nav = document.getElementById('nav');
+    const scrollBtn = document.getElementById('scrollTopIcon');
+    if (this.scrollY <= 100) {
+      nav.style.height = '4rem';
+      nav.style.backgroundColor = '#000000b0'
+      scrollBtn.style.display = 'none';
+    }
+    else {
+      nav.style.height = '3rem';
+      nav.style.backgroundColor = 'black';
+      scrollBtn.style.display = 'block';
+    };
   };
-
   // footer date
   document.getElementById('footerDate').innerHTML = `${new Date().getFullYear()}`;
 });
-
-
+// call this function when the window is resizing
+window.onresize = function () {
+  // resizing the nav to the appropriate specs
+  resizeNavHandler();
+}
 // render the header text html to the dom
 function renderHeaderText() {
   document.getElementById('headerTextRender').innerHTML = `<div id="headerTextWrap">
@@ -81,7 +95,6 @@ function renderHeaderText() {
   <div class="headerTextDash"></div>
   </div>`;
 };
-
 // smooth scroll function
 $('.js-link').click(function (e) {
   e.preventDefault();
@@ -91,18 +104,28 @@ $('.js-link').click(function (e) {
     $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
   }
 });
-
-// for the typing animation to disperse to the different locations
-// let TxtRotate = function (el, toRotate, period) {
-//   this.toRotate = toRotate;
-//   this.el = el;
-//   this.loopNum = 0;
-//   this.period = parseInt(period, 10) || 2000;
-//   this.txt = '';
-//   this.startAbout();
-//   this.startSpecialties();
-//   this.startContact();
-// };
-
-
-// ! TESTING
+// navbar on window resize
+function resizeNavHandler() {
+  let desktopNav = document.getElementById('desktopNav');
+  let mobileNav = document.getElementById('mobileNav');
+  if (window.innerWidth >= 1025) {
+    desktopNav.style.display = 'flex';
+    mobileNav.style.display = 'none';
+  } else if (window.innerWidth <= 1024) {
+    desktopNav.style.display = 'none';
+    mobileNav.style.display = 'flex';
+  }
+};
+// toggle the mobile menu button
+$('#mobileNavBtn').click(function () {
+  $(this).toggleClass('open');
+});
+// toggle the side nav sliding in
+$('#mobileNavBtn').click(function () {
+  $('#sideNav').toggleClass('activeNav');
+});
+// toggle the nav and mobile menu button when clicking on a button inside the side nav
+$('.mobileLink').click(function () {
+  $('#mobileNavBtn').toggleClass('open');
+  $('#sideNav').toggleClass('activeNav');
+});
