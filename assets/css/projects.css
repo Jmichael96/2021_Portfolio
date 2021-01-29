@@ -51,7 +51,7 @@
 .projectCard {
     position: relative;
     width: 20rem;
-    height: 26rem;
+    height: 24rem;
     margin: 2rem 1rem 1rem 1rem;
     cursor: pointer;
     perspective: 100vw;
@@ -165,7 +165,7 @@ svg .polygon {
 
 .projectCardSlant {
     position: absolute;
-    bottom: -4px;
+    bottom: -5px;
     z-index: 1;
     width: 100%;
     right: 0;

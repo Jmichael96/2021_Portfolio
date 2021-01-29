@@ -30,7 +30,7 @@ $(window).on('load', function () {
                             };
                         }, 500);
                     };
-                }, 60)
+                }, 40)
                 hasReached = true;
             }
         });

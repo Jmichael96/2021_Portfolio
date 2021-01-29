@@ -1,5 +1,6 @@
 var canvas, canvas2, canvas3, canvas4, canvas5, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
 function initPlanets() {
+
     canvas = document.getElementById("moonCanvas");
     canvas2 = document.getElementById('marsCanvas');
     canvas3 = document.getElementById('neptuneCanvas');
@@ -39,21 +40,27 @@ function initPlanets() {
     // callisto
     var loader5 = new createjs.LoadQueue(false);
 
-    // moon
-    loader.addEventListener("fileload", function (evt) { handleMoonFileLoad(evt, comp) });
-    loader.addEventListener("complete", function (evt) { handleMoonComplete(evt, comp) });
-    // mars
-    loader2.addEventListener("fileload", function (evt) { handleMarsFileLoad(evt, comp2) });
-    loader2.addEventListener("complete", function (evt) { handleMarsComplete(evt, comp2) });
-    // neptune
-    loader3.addEventListener("fileload", function (evt) { handleNeptuneFileLoad(evt, comp3) });
-    loader3.addEventListener("complete", function (evt) { handleNeptuneComplete(evt, comp3) });
-    // jupiter
-    loader4.addEventListener("fileload", function (evt) { handleJupiterFileLoad(evt, comp4) });
-    loader4.addEventListener("complete", function (evt) { handleJupiterComplete(evt, comp4) });
-    // callisto
-    loader5.addEventListener("fileload", function (evt) { handleCallistoFileLoad(evt, comp5) });
-    loader5.addEventListener("complete", function (evt) { handleCallistoComplete(evt, comp5) });
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // moon
+        loader.addEventListener("fileload", function (evt) { handleMoonFileLoad(evt, comp) });
+        loader.addEventListener("complete", function (evt) { handleMoonComplete(evt, comp) });
+        // mars
+        loader2.addEventListener("fileload", function (evt) { handleMarsFileLoad(evt, comp2) });
+        loader2.addEventListener("complete", function (evt) { handleMarsComplete(evt, comp2) });
+        // neptune
+        loader3.addEventListener("fileload", function (evt) { handleNeptuneFileLoad(evt, comp3) });
+        loader3.addEventListener("complete", function (evt) { handleNeptuneComplete(evt, comp3) });
+        // jupiter
+        loader4.addEventListener("fileload", function (evt) { handleJupiterFileLoad(evt, comp4) });
+        loader4.addEventListener("complete", function (evt) { handleJupiterComplete(evt, comp4) });
+        // callisto
+        loader5.addEventListener("fileload", function (evt) { handleCallistoFileLoad(evt, comp5) });
+        loader5.addEventListener("complete", function (evt) { handleCallistoComplete(evt, comp5) });
+    } else {
+        // neptune
+        loader3.addEventListener("fileload", function (evt) { handleNeptuneFileLoad(evt, comp3) });
+        loader3.addEventListener("complete", function (evt) { handleNeptuneComplete(evt, comp3) });
+    }
 
     // moon
     var lib = comp.getLibrary();
@@ -76,6 +83,7 @@ function initPlanets() {
     loader4.loadManifest(lib4.properties.manifest);
     // callisto
     loader5.loadManifest(lib5.properties.manifest);
+
 }
 
 // ! MOON

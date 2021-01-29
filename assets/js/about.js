@@ -13,7 +13,7 @@ $(window).on('load', function () {
                 let p = document.getElementById('aboutTxt');
                 p.innerHTML = '';
                 let n = 0;
-                let str = 'I&#8217;m a recent graduate from the University of Texas&#8217; coding boot camp. Since graduation I&#8217;ve been a freelance developer working with my own clients and with other small companies on a variety of projects. Additionally, I&#8217;ve been continuing my education through online platforms and extended learning courses. Outside of work, my free time is spent powerlifting, disc golfing, and expanding my knowledge in graphic design.';
+                let str = `I'm a recent graduate from the University of Texas' coding boot camp. Since graduation I've been a freelance developer working with my own clients and with other small companies on a variety of projects. Additionally, I've been continuing my education through online platforms and extended learning courses. Outside of work, my free time is spent powerlifting, disc golfing, and expanding my knowledge in graphic design.`;
                 let typeAbout = setInterval(function () {
                     n = n + 1;
                     p.innerHTML = str.slice(0, n) + ' <span style="color: #c75000; font-size: 1.2rem;">|</span>';
@@ -32,7 +32,7 @@ $(window).on('load', function () {
                             };
                         }, 500);
                     };
-                }, 60)
+                }, 40)
                 hasReached = true;
                 // fade in the about image
                 document.getElementById('personalImg').style.opacity = 1;
