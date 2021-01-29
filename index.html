@@ -40,11 +40,8 @@
     <link rel="shortcut icon" type="image/png" href="./assets/images/favicons/favicon.png" />
     <!-- Safari favicon -->
     <link rel="apple-touch-icon" href="./assets/images/favicons/favicon.png">
-    <link rel="preload" href="./assets/fonts/MandatoryPlaything-nRRd0.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- font -->
+    <link rel="preload" href="./assets/fonts/MandatoryPlaything-nRRd0.ttf" as="font" type="font/ttf" crossorigin />
 
     <!-- CUSTOM CSS LINKS -->
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -108,7 +105,7 @@
         </div>
     </div>
 
-    <a href="#header_section" id="scrollTopIcon" class="js-link scrollTop"><i class="fas fa-arrow-circle-up"></i></a>
+    <a href="#header_section"  class="js-link scrollTop"><i id="scrollTopIcon" class="fas fa-arrow-circle-up"></i></a>
 
     <!-- ! header -->
     <header id="header_section">
@@ -145,14 +142,13 @@
                         data-period="5000" data-rotate='["Specialties & Experience" ]'></span>
                 </p>
                 <ul class="fa-ul">
-                    <li class="specialtyList fade"><i class="fa-li fas fa-laptop-code"></i>Front-end web development
-                    </li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-server"></i>Back-end web development</li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-file-word"></i>Blog websites</li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-shopping-cart"></i>E-commerce</li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-building"></i>Commercial</li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-house-user"></i>Personal</li>
-                    <li class="specialtyList fade"><i class="fa-li fas fa-search"></i>SEO</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-laptop-code"></i>Front-end web development</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-server"></i>Back-end web development</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-file-word"></i>Blog websites</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-shopping-cart"></i>E-commerce</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-building"></i>Commercial</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-house-user"></i>Personal</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-search"></i>SEO</li>
                 </ul>
             </div>
             <div id="myCanvasContainer">
@@ -329,7 +325,7 @@
                     href="https://www.instagram.com/jvh_michael/"><span class="tool" data-tip="Instagram"><i
                             class="fab fa-instagram socialIcon"></i></span></a>
                 <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
-                    href="https://www.facebook.com/codevh"><span clasfacs="tool" data-tip="Facebook"><i
+                    href="https://www.facebook.com/codevh"><span class="tool" data-tip="Facebook"><i
                             class="fab fa-facebook-square socialIcon"></i></span></a>
                 <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
                     href="https://www.codewars.com/users/JeffreyD196"><span class="tool" data-tip="Codewars"><i
@@ -371,10 +367,11 @@
     <script type="text/javascript" src="./assets/js/about.js"></script>
     <script type="text/javascript" src="./assets/js/specialties.js"></script>
     <script type="text/javascript" src="./assets/js/contact.js"></script>
-    <script type="text/javascript" src="./assets/js/footer.js"></script>
     <script type="text/javascript" src="./assets/js/planets.js"></script>
+
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="./assets/libs/all.js"></script>
 
 </body>
 

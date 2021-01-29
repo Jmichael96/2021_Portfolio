@@ -23,7 +23,7 @@
 
 /* the scroll top icon itself */
 
-#scrollTopIcon>i {
+#scrollTopIcon {
     font-size: 3rem;
     opacity: .5;
     color: var(--scrollTopBg);
@@ -38,7 +38,7 @@
     animation: fadeUp .5s ease;
 }
 
-#scrollTopIcon>i:hover {
+#scrollTopIcon:hover {
     opacity: 1;
 }
 

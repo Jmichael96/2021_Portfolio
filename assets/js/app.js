@@ -52,6 +52,7 @@ document.onreadystatechange = function () {
 };
 
 $(window).on("load", function () {
+
   window.onscroll = () => {
     let windowBottom = $(this).scrollTop() + $(this).innerHeight();
     $(".fade").each(function () {
@@ -65,7 +66,10 @@ $(window).on("load", function () {
         if ($(this).css("opacity") == 1) { $(this).fadeTo(500, 0); }
       }
     });
-  }
+  };
+
+  // footer date
+  document.getElementById('footerDate').innerHTML = `${new Date().getFullYear()}`;
 });
 
 
