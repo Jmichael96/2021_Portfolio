@@ -67,7 +67,9 @@
     margin: 1.5rem 0;
     text-align: center;
 }
+
 /* cursor for the title */
+
 .contactCursorBlinker {
     -webkit-animation: 1s contactCursor step-end infinite;
     -moz-animation: 1s contactCursor step-end infinite;
@@ -120,6 +122,7 @@
         border-color: #a74300;
     }
 }
+
 /* wrapper around the input tag, bar and errors */
 
 .inputWrap {
@@ -360,6 +363,14 @@ label {
 /* map tag */
 
 #map {
+    height: 100%;
+    width: 100%;
+}
+
+/* the map image */
+
+#mapImg {
+    display: none;
     height: 100%;
     width: 100%;
 }
