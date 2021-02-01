@@ -3,13 +3,13 @@ $(window).on('load', function () {
     let hasReached = false;
     $(window).on('scroll', function () {
         let windowBottom = $(this).scrollTop() + $(this).innerHeight();
-        $('#aboutCard').each(function () {
+        $('#personalImg').each(function () {
 
             /* Check the location of each desired element */
             let objectBottom = $(this).offset().top + $(this).outerHeight();
             // let textTag = document.getElementById('aboutTxt');
             /* If the element is completely within bounds of the window, fade it in */
-            if (objectBottom < windowBottom - 100 && !hasReached) {
+            if (objectBottom < windowBottom + 100 && !hasReached) {
                 let p = document.getElementById('aboutTxt');
                 p.innerHTML = '';
                 let n = 0;

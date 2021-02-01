@@ -371,7 +371,7 @@ label {
 
 #mapImg {
     display: none;
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 
