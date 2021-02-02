@@ -382,7 +382,7 @@ label {
     top: 1rem;
     left: 1rem;
     width: 14rem;
-    height: 6rem;
+    height: 8rem;
     padding: .5rem;
     background-color: #3b4e74;
     display: flex;
@@ -394,7 +394,7 @@ label {
 
 .locationText {
     color: white;
-    margin: 1rem 0;
+    margin: 0;
     font-size: .9rem;
     width: 100%;
 }
@@ -414,6 +414,24 @@ label {
     color: var(--emailColor);
     text-decoration: none;
     cursor: pointer;
+}
+
+/* the download resume button */
+
+#resumeBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1rem;
+    width: 100%;
+    max-width: 6rem;
+    padding: .2rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#resumeBtn:focus {
+    outline: none;
 }
 
 /* changing the transparency of the tom tom copyright */

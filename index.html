@@ -44,8 +44,16 @@
     <link rel="preload" href="./assets/fonts/MandatoryPlaything-nRRd0.ttf" as="font" type="font/ttf" crossorigin />
 
     <!-- CUSTOM CSS LINKS -->
-    <link rel="stylesheet" href="./assets/css/minified.css" />
-    <!-- <link rel="stylesheet" href="./assets/css/main.css" /> -->
+    <!-- <link rel="stylesheet" href="./assets/css/minified.css" /> -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/pageLoader.css" />
+    <link rel="stylesheet" href="./assets/css/projects.css" />
+    <link rel="stylesheet" href="./assets/css/specialties.css" />
 
     <!-- given to me from the adobe environment setup -->
     <script type="text/javascript" src="./assets/libs/create.js"></script>
@@ -321,14 +329,14 @@
                             class="fab fa-github-square socialIcon"></i></span></a>
             </div>
         </form>
-        <section id="mapWrapper">
+        <section id="mapWrapper" class="fade">
             <div id="map"></div>
             <img id="mapImg" src="./assets/images/bg/mobileMap.png" alt="mobile map" />
             <div id="locationBox">
                 <div>
                     <p class="locationText">Spring, TX</p>
                     <p class="locationEmailText">DM: <a href="#" class="locationEmail">myemail@codevh.com</a></p>
-                    <a href="./assets/files/Resume-2021.pdf" download><button type="button">Resume</button></a>
+                    <a href="./assets/files/Resume-2021.pdf" download><button type="button" id="resumeBtn">Resume</button></a>
                 </div>
                 </img>
         </section>
