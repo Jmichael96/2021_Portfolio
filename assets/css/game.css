@@ -1,5 +1,139 @@
+/* wrapper around the game content */
+
+#gameWrap {
+    position: relative;
+    box-shadow: 0 4px 12px rgb(0, 0, 0, .3);
+}
+
+/* canvas that contains the game */
+
 #space-invaders {
     margin: 0 auto;
     display: block;
-    background: white
+    background: rgba(214, 214, 214, 0.055);
+    position: relative;
+}
+
+/* start button */
+
+#startBtn {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#startBtn:focus {
+    outline: none;
+}
+
+/* restart button */
+
+#restartBtn {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#restartBtn:focus {
+    outline: none;
+}
+
+/* rendering the kills in game */
+
+#kills {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 2.5rem;
+    right: .3rem;
+    margin: .5rem;
+}
+
+/* rendering the level in game */
+
+#level {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 1.2rem;
+    right: .3rem;
+    margin: .5rem;
+}
+
+/* point tracker while in game */
+
+#points {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 0;
+    right: .3rem;
+    margin: .5rem;
+}
+
+/* high score message at end of the game */
+
+#highScoreMessage {
+    display: none;
+    position: absolute;
+    color: #c75000;
+    font-size: 2rem;
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* for mobile devices */
+
+#leftBtn {
+    display: none;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+}
+
+#rightBtn {
+    display: none;
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+}
+
+/* styles for both of the buttons */
+
+.gameControls {
+    cursor: pointer;
+    padding: .4rem;
+    width: 48%;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.gameControls:focus {
+    outline: none;
 }
