@@ -441,4 +441,114 @@
             kills += 1;
         }
     };
+
+    // ! PLAYER CONTROLLER
+    let Player = function () {
+        this.active = true;
+        this.size = {
+            width: playerSize,
+            height: playerSize
+        };
+        // how many bullets burst out at ones when game starts
+        this.shooterHeat = -3;
+
+        // where player starts on game canvas
+        this.coordinates = {
+            x: gameSize.width / 2 - (this.size.width / 2) | 0,
+            y: gameSize.height - this.size.height * 2
+        };
+        this.projectile = [];
+        this.keyboard = new KeyController();
+    };
+
+    Player.prototype = {
+        update: function () {
+            for (let i = 0; i < this.projectile.length; i++) {
+                this.projectile[i].update();
+            }
+            this.projectile = this.projectile.filter((projectile) => {
+                return projectile.active;
+            });
+
+            if (!this.active) return;
+
+            // buttons for mobile 
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                const leftBtn = document.getElementById('leftBtn');
+                const rightBtn = document.getElementById('rightBtn');
+
+                leftBtn.ontouchstart = () => {
+                    this.coordinates.x -= 3;
+                }
+                rightBtn.ontouchstart = () => {
+                    this.coordinates.x += 3;
+                }
+            }
+
+            // controls left and right speed of player
+            if (this.keyboard.isDown(this.keyboard.KEYS.LEFT) && this.coordinates.x > 0) {
+                this.coordinates.x -= 3;
+            } else if (this.keyboard.isDown(this.keyboard.KEYS.RIGHT) && this.coordinates.x < gameSize.width - this.size.width) {
+                this.coordinates += 3;
+            }
+            // ! AUTO SHOOT IS TURNED ON
+            // check if on mobile or not. if so turn on full auto!
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // how fast the player can shoot
+            this.shooterHeat += 1.4;
+            if (this.shooterHeat < 0) {
+                // creating a new projectile and adjusting the coordinates/speed
+                let projectile = new Projectile({
+                    x: this.coordinates.x + this.size.width / 2 - 1,
+                    y: this.coordinates.y - 1
+                }, {
+                    x: 0,
+                    y: -7
+                });
+                this.projectile.push(projectile);
+            } else if (this.shooterHeat > 12) {
+                // how many shoot out after each shot
+                this.shooterHeat = -2;
+            }
+            // return;
+            // }
+
+            // ! FOR SPACE BAR SHOOT
+            // for if the player is shooting
+            // if (this.keyboarder.isDown(this.keyboarder.KEYS.Space)) {
+            //     // how fast the player can shoot
+            //     this.shooterHeat += 1;
+            //     if (this.shooterHeat < 0) {
+            //         // creating a new projectile and adjusting the coordinates/speed
+            //         let projectile = new Projectile({
+            //             x: this.coordinates.x + this.size.width / 2 - 1,
+            //             y: this.coordinates.y - 1
+            //         }, {
+            //             x: 0,
+            //             y: -7
+            //         });
+            //         this.projectile.push(projectile);
+            //     } else if (this.shooterHeat > 12) {
+            //         this.shooterHeat = -3;
+            //     }
+            // } else {
+            //     this.shooterHeat = -3;
+            // }
+        },
+        // draw the ship and projectiles
+        draw: function () {
+            if (this.active) {
+                screen.drawImage(playerCanvas, this.coordinates.x, this.coordinates.y);
+            }
+            for (let i = 0; i < this.projectile.length; i++) {
+                this.projectile[i].draw();
+            }
+        },
+        // destroy and lose the game
+        destroy: function () {
+            this.active = false;
+            game.lost = true;
+        }
+    };
+
 });
