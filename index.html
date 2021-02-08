@@ -345,8 +345,19 @@
     </article>
 
     <!-- ! GAME -->
-    <canvas id="spaceInvaders"></canvas>
-    <button id="startGameBtn">Start Game</button>
+    <div class="wrapper">
+        <div id="gameWrap">
+            <canvas id="space-invaders"></canvas>
+            <button id="leftBtn" class="gameControls"><i class="fas fa-arrow-left"></i></button>
+            <button id="rightBtn" class="gameControls"><i class="fas fa-arrow-right"></i></button>
+            <button id="startBtn">Start Game</button>
+            <button id="restartBtn">Try Again</button>
+            <p id="kills"></p>
+            <p id="level"></p>
+            <p id="points"></p>
+            <p id="highScoreMessage"></p>
+        </div>
+    </div>
 
 
     <footer>
