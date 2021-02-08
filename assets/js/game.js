@@ -162,6 +162,35 @@
         game.draw();
         requestAnimationFrame(loop);
     };
+
+    // Start game
+    document.getElementById('startBtn').onclick = () => {
+        let invaderAsset = new Image;
+        let playerAsset = new Image;
+
+        invaderAsset.onload = function () {
+            // draw the invaders
+            invaderCanvas = document.createElement('canvas');
+            invaderCanvas.width = invaderSize;
+            invaderCanvas.height = invaderSize;
+            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
+        };
+        // on player load, draw player & initiate the game
+        playerAsset.onload = () => {
+            // draw the player
+            playerCanvas = document.createElement('canvas');
+            playerCanvas.width = playerSize;
+            playerCanvas.height = playerSize;
+            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
+
+            initGameData();
+            loop();
+        };
+        // image assets for player and invaders
+        invaderAsset.src = "./assets/images/invaderShip.png";
+        playerAsset.src = './assets/images/invaderSm.png';
+    };
+
     // restart game
     document.getElementById('restartBtn').onclick = () => {
         // reset game level to 1
@@ -194,7 +223,7 @@
         invaderAsset.src = "./assets/images/invaderShip.png";
         playerAsset.src = './assets/images/invaderSm.png';
     };
-    
+
     // ! GAME CONTROLLER
     let Game = function () {
         this.lost = false;
@@ -360,6 +389,56 @@
             return this.invaders.filter(function (b) {
                 return Math.abs(invader.coordinates.x - b.coordinates.x) === 0 && b.coordinates.y > invader.coordinates.y;
             }).length > 0;
+        }
+    };
+
+    // ! INVADER CONTROLLER
+    let Invader = function (coordinates) {
+        this.active = true;
+        this.coordinates = coordinates;
+        this.size = {
+            width: invaderSize,
+            height: invaderSize
+        };
+        this.patrolX = 0;
+        this.speedX = invaderSpeed;
+    };
+
+    Invader.prototype = {
+        update: function () {
+            // invader projectiles
+            if (Math.random() > invaderAttackRate && !game.invadersBelow(this)) {
+                // speed and coordinates of projectile
+                let enemyProjectile = new Projectile({
+                    x: this.coordinates.x + this.size.width / 2,
+                    y: this.coordinates.y + this.size.height / 2
+                }, {
+                    x: 0,
+                    y: 1
+                });
+                game.invaderShots.push(enemyProjectile);
+            }
+        },
+        draw: function () {
+            // dictates how far invaders travel on the x-axis
+            if (this.patrolX < 0 || this.patrolX > gameSize.width / 2) {
+                this.speedX = -this.speedX;
+                this.patrolX += this.speedX;
+                // how far invaders move forward
+                this.coordinates.y += 10;
+
+                // if invaders reach end of canvas end game
+                if (this.coordinates.y + this.size.height * 2 > gameSize.height) game.lost = true;
+            } else {
+                // for how long till invaders move forward
+                this.coordinates.x += this.speedX;
+                this.patrolX += this.speedX;
+            }
+        },
+        destroy: function () {
+            this.active = false;
+            // add kills
+            kills += 1;
         }
     };
 });
