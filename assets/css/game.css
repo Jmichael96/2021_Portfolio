@@ -2,7 +2,19 @@
 
 #gameWrap {
     position: relative;
-    box-shadow: 0 4px 12px rgb(0, 0, 0, .3);
+    /* box-shadow: 0 4px 12px rgb(0, 0, 0, .3); */
+    margin: 6rem 0;
+}
+/* game background image */
+#gameBg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 /* canvas that contains the game */
@@ -10,7 +22,7 @@
 #space-invaders {
     margin: 0 auto;
     display: block;
-    background: rgba(214, 214, 214, 0.055);
+    background: rgba(214, 214, 214, 0);
     position: relative;
 }
 

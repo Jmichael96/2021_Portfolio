@@ -178,6 +178,7 @@
 
     // start a new game
     const startGame = () => {
+        localStorage.clear();
         // set display to none to remove the restart button from screen
         document.getElementById('restartBtn').style.display = 'none';
         document.getElementById('startBtn').style.display = 'none';
@@ -353,8 +354,18 @@
                 screen.fillStyle = '#c75000';
                 // if there is a high score render the text
                 if (hasHighScore) {
+                    let isBlinking = true;
                     highScoreRender.style.display = 'block';
                     highScoreRender.innerHTML = 'YOU GOT A HIGH SCORE!';
+                    setInterval(() => {
+                        if (isBlinking) {
+                            highScoreRender.style.opacity = 0;
+                            isBlinking = false;
+                        } else {
+                            highScoreRender.style.opacity = 1;
+                            isBlinking = true;
+                        }
+                    }, 900);
                 }
                 screen.font = '2rem Mandatory Plaything';
                 screen.fillText('YOU DIED', gameSize.width / 2, gameSize.height / 2 - 20);
