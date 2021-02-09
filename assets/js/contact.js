@@ -44,8 +44,8 @@ $(window).on('load', function () {
     $('.locationEmail').attr('href', `mailto:${email1}${email2}${email3}`);
     document.getElementById('mapImg').style.display = 'block';
     document.getElementById('map').style.display = 'none';
-     // if there is not a mobile device being used render the tom tom map. else render an image
-     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // if there is not a mobile device being used render the tom tom map. else render an image
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // map styles and initiation
         // let map = tt.map({
         //     key: 'idwJh8J0x9cq7vGdT0SgaIkuv0Gdb1pM',
@@ -81,3 +81,63 @@ $(window).on('load', function () {
     }
 });
 
+// on form submit
+document.getElementById('submitFormBtn').onclick = (e) => {
+    let name = $('#nameInput').val();
+    let email = $('#emailInput').val().trim().toLowerCase();
+    let message = $('messageInput').val();
+
+    if (!name && !email && !message) {
+        openErrModal('Please fill out each form input');
+        return;
+    }
+
+    if (!name) {
+        openErrModal('Please add a name');
+        return;
+    }
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!email || !emailRegex.test(email)) {
+        openErrModal('Please enter a valid email');
+        return;
+    }
+    if (!message) {
+        openErrModal('Please enter a message');
+        return;
+    }
+    openRobotModal();
+};
+
+// ! ANTI-ROBOT MODAL
+const openRobotModal = () => {
+    document.getElementById('robotModalOverlay').classList.add('is-robot-modal-visible');
+    document.getElementById('robotModal').classList.add('is-robot-modal-visible');
+};
+// the x button inside the robot modal to close it
+document.getElementById('robotModalCloseBtn').addEventListener('click', function () {
+    document.getElementById('robotModalOverlay').classList.remove('is-robot-modal-visible');
+    document.getElementById('robotModal').classList.remove('is-robot-modal-visible');
+});
+// for if the user clicks anywhere outside the  robot modal modal it will close the modal
+document.getElementById('robotModalOverlay').addEventListener('click', function () {
+    document.getElementById('robotModalOverlay').classList.remove('is-robot-modal-visible');
+    document.getElementById('robotModal').classList.remove('is-robot-modal-visible');
+});
+
+// ! ERR MODAL
+const openErrModal = (msg) => {
+    document.getElementById('errOverlay').classList.add('is-visible');
+    document.getElementById('errModal').classList.add('is-visible');
+    document.getElementById('modalMessage').innerHTML = msg;
+};
+
+// the x button inside the modal to close it
+document.getElementById('close-btn').addEventListener('click', function () {
+    document.getElementById('errOverlay').classList.remove('is-visible');
+    document.getElementById('errModal').classList.remove('is-visible');
+});
+// for if the user clicks anywhere outside the modal it will close the modal
+document.getElementById('errOverlay').addEventListener('click', function () {
+    document.getElementById('errOverlay').classList.remove('is-visible');
+    document.getElementById('errModal').classList.remove('is-visible');
+});
