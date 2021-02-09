@@ -17,6 +17,7 @@
 /* start button */
 
 #startBtn {
+    font-family: 'Mandatory Plaything';
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid white;
@@ -39,6 +40,7 @@
 /* restart button */
 
 #restartBtn {
+    font-family: 'Mandatory Plaything';
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid white;
@@ -68,6 +70,7 @@
     bottom: 2.5rem;
     right: .3rem;
     margin: .5rem;
+    font-family: 'Mandatory Plaything';
 }
 
 /* rendering the level in game */
@@ -79,6 +82,7 @@
     bottom: 1.2rem;
     right: .3rem;
     margin: .5rem;
+    font-family: 'Mandatory Plaything';
 }
 
 /* point tracker while in game */
@@ -90,11 +94,13 @@
     bottom: 0;
     right: .3rem;
     margin: .5rem;
+    font-family: 'Mandatory Plaything';
 }
 
 /* high score message at end of the game */
 
 #highScoreMessage {
+    font-family: 'Mandatory Plaything';
     display: none;
     position: absolute;
     color: #c75000;
