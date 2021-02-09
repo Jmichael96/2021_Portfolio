@@ -7,7 +7,7 @@ document.onreadystatechange = function () {
   const specialtiesSection = document.getElementById('specialtiesSection');
   const projSection = document.getElementById('projectSection');
   const contactSection = document.getElementById('contactSection');
-  const pageLoader = document.getElementById('loader');
+  const pageLoader = document.getElementById('portfolio-loader');
   const planetBg = document.querySelector('.planetBg');
 
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -53,6 +53,7 @@ document.onreadystatechange = function () {
     }, 2000);
   }
 };
+
 $(window).on("load", function () {
   // resizing the nav to the appropriate specs
   resizeNavHandler();
@@ -86,6 +87,8 @@ $(window).on("load", function () {
   };
   // footer date
   document.getElementById('footerDate').innerHTML = `${new Date().getFullYear()}`;
+
+  scrollProgressBar();
 });
 // call this function when the window is resizing
 window.onresize = function () {
@@ -134,3 +137,36 @@ $('.mobileLink').click(function () {
   $('#mobileNavBtn').toggleClass('open');
   $('#sideNav').toggleClass('activeNav');
 });
+
+// progress bar handler
+const scrollProgressBar = () => {
+  const getMax = () => {
+    return $(document).height() - $(window).height();
+  };
+
+  const getValue = () => {
+    return $(window).scrollTop();
+  };
+
+  let progressBar = $('#progressBar');
+  let max = getMax();
+  let value;
+  let width;
+  
+  const getWidth = () => {
+    value = getValue();
+    width = (value / max) * 100;
+    width = width + '%';
+    return width;
+  };
+
+  const setWidth = () => {
+    progressBar.css({ width: getWidth() });
+  };
+
+  document.addEventListener('scroll', setWidth);
+  document.addEventListener('resize', () => {
+    max = getMax();
+    setWidth;
+  });
+};

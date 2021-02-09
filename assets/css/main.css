@@ -43,3 +43,26 @@ html body {
 .fade {
     opacity: 1;
 }
+
+/* wrapper around the progress bar */
+
+#progressBarWrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: transparent;
+    height: 4px;
+    display: block;
+}
+
+/* scrollbar for top of window */
+
+#progressBar {
+    background-color: #c75000;
+    width: 0%;
+    display: block;
+    height: inherit;
+}

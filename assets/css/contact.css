@@ -134,8 +134,9 @@
 /* input element */
 
 .input {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'Mandatory Plaything';
+    font-weight: 400;
     padding: 1.2rem 0 .5rem 0;
     display: block;
     width: 100%;
@@ -476,10 +477,10 @@ label {
     transform: translate(-50%, -50%);
     max-width: 300px;
     padding: 30px;
-    background: #303030;
+    background: #3b4e74;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 12;
+    z-index: 999;
 }
 
 .errModalCloseBtn {
@@ -489,14 +490,15 @@ label {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: #c75000;
 }
 
 /* error message p element */
 
 #modalMessage {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: .1rem;
     color: #ffffff;
 }
 
@@ -516,8 +518,6 @@ label {
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 12;
 }
-
-/** JS */
 
 .is-visible {
     opacity: 1;
@@ -539,10 +539,10 @@ label {
     transform: translate(-50%, -50%);
     max-width: 300px;
     padding: 30px;
-    background: #303030;
+    background: #3b4e74;
     border-radius: 4px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 12;
+    z-index: 999;
 }
 
 .robotModalCloseBtn {
@@ -552,7 +552,7 @@ label {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-    color: white;
+    color: #c75000;
 }
 
 /* error message p element */
@@ -560,6 +560,7 @@ label {
 #robotModalMsg {
     font-size: 1rem;
     font-weight: 500;
+    letter-spacing: .1rem;
     color: #ffffff;
 }
 
@@ -594,25 +595,30 @@ label {
     font-size: 1rem;
     border-radius: 3px;
     border: 1px solid white;
+    font-family: 'Mandatory Plaything';
 }
 
 /* submit the quote button inside the modal prompting the robot question */
 
-#submitQuoteBtn {
+#submitForm {
+    font-family: 'Mandatory Plaything';
     font-size: 1rem;
     letter-spacing: .05rem;
     padding: .2rem .5rem;
     border-radius: 3px;
-    background-color: #303030;
-    border: 2px solid #32af01;
-    color: white;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     cursor: pointer;
-    width: 100%;
     text-align: center;
     margin: 1rem 0;
+}
+
+#submitForm:focus {
+    outline: none;
 }
 
 /* terms of use text wrapper */

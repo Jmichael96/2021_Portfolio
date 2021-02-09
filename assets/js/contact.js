@@ -85,10 +85,10 @@ $(window).on('load', function () {
 document.getElementById('submitFormBtn').onclick = (e) => {
     let name = $('#nameInput').val();
     let email = $('#emailInput').val().trim().toLowerCase();
-    let message = $('messageInput').val();
+    let message = $('#messageInput').val();
 
     if (!name && !email && !message) {
-        openErrModal('Please fill out each form input');
+        openErrModal('Please fill out each input');
         return;
     }
 

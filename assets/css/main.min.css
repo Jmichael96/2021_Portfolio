@@ -37,7 +37,30 @@ html body {
     opacity: 1;
 }
 
-/* ! ======================== ABOUT */
+/* wrapper around the progress bar */
+
+#progressBarWrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: transparent;
+    height: 4px;
+    display: block;
+}
+
+/* scrollbar for top of window */
+
+#progressBar {
+    background-color: #c75000;
+    width: 0%;
+    display: block;
+    height: inherit;
+}
+
+/* ! ============================================= ABOUT */
 
 /* about section */
 
@@ -344,8 +367,9 @@ html body {
 /* input element */
 
 .input {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'Mandatory Plaything';
+    font-weight: 400;
     padding: 1.2rem 0 .5rem 0;
     display: block;
     width: 100%;
@@ -665,6 +689,184 @@ label {
     height: 45px;
     cursor: pointer;
     fill: var(--iconColor)
+}
+
+/* ! MODAL STYLES */
+
+/* ! ERROR MODAL */
+
+/** Modal */
+
+.errModal {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    padding: 30px;
+    background: #3b4e74;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.errModalCloseBtn {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #c75000;
+}
+
+/* error message p element */
+
+#modalMessage {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    color: #ffffff;
+}
+
+/** Overlay */
+
+.errOverlay {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 12;
+}
+
+.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ! ROBOT MODAL  */
+
+.robotModal {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 300px;
+    padding: 30px;
+    background: #3b4e74;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.robotModalCloseBtn {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #c75000;
+}
+
+/* error message p element */
+
+#robotModalMsg {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    color: #ffffff;
+}
+
+/** Overlay */
+
+.robotModalOverlay {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 12;
+}
+
+/** JS */
+
+.is-robot-modal-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* question input select */
+
+#question {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    font-family: 'Mandatory Plaything';
+}
+
+/* submit the quote button inside the modal prompting the robot question */
+
+#submitForm {
+    font-family: 'Mandatory Plaything';
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#submitForm:focus {
+    outline: none;
+}
+
+/* terms of use text wrapper */
+
+.termsTextWrap {
+    color: white;
+    font-size: .7rem;
+    font-weight: 100;
+}
+
+/* terms text */
+
+.termsTextWrap>a {
+    text-decoration: underline;
+    color: white;
 }
 
 /* ! MEDIA QUERIES */

@@ -34,193 +34,7 @@
 
     // blocks for random layout
     let blocks = [];
-    // Start game
-    document.getElementById('startBtn').onclick = () => {
-        let invaderAsset = new Image;
-        let playerAsset = new Image;
 
-        invaderAsset.onload = function () {
-            // draw the invaders
-            invaderCanvas = document.createElement('canvas');
-            invaderCanvas.width = invaderSize;
-            invaderCanvas.height = invaderSize;
-            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
-        };
-        // on player load, draw player & initiate the game
-        playerAsset.onload = () => {
-            // draw the player
-            playerCanvas = document.createElement('canvas');
-            playerCanvas.width = playerSize;
-            playerCanvas.height = playerSize;
-            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
-
-            initGameData();
-            loop();
-        };
-        // image assets for player and invaders
-        invaderAsset.src = './assets/images/game/invaderShip.png';
-        playerAsset.src = './assets/images/game/invaderSm.png';
-    };
-
-    // on load event
-    window.addEventListener('load', () => {
-        // create the canvas
-        canvas = document.getElementById('space-invaders');
-        screen = canvas.getContext('2d');
-        const leftBtn = document.getElementById('leftBtn');
-        const rightBtn = document.getElementById('rightBtn');
-
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            leftBtn.style.display = 'block';
-            rightBtn.style.display = 'block';
-        } else {
-            leftBtn.style.display = 'none';
-            rightBtn.style.display = 'none';
-        }
-        // configure the size
-        configSize();
-    });
-
-    window.addEventListener('resize', () => {
-        // when window size is changed, change the size of the canvas
-        configSize();
-    });
-
-    // configure the size of the canvas
-    const configSize = () => {
-        // the outer div surrounding the canvas
-        const wrapper = document.getElementById('gameWrap');
-        // create the canvas size
-        if (window.innerWidth > 1200) {
-            screen.canvas.width = 1200;
-            screen.canvas.height = 700;
-            wrapper.style.width = '1200px';
-            wrapper.style.height = '700px';
-            // setting the game screen size
-            gameSize = {
-                width: 1200,
-                height: 700
-            };
-            // how many invaders group together
-            invaderMultiplier = 2;
-            // initialOffsetInvader = 1600;
-        } else if (window.innerWidth > 920) {
-            screen.canvas.width = 900;
-            screen.canvas.height = 600;
-            wrapper.style.width = '900px';
-            wrapper.style.height = '600px';
-            gameSize = {
-                width: 900,
-                height: 600
-            };
-            invaderMultiplier = 2;
-            // initialOffsetInvader = 280;
-        } else if (window.innerWidth > 736) {
-            screen.canvas.width = 700;
-            screen.canvas.height = 500;
-            wrapper.style.width = '700px';
-            wrapper.style.height = '500px';
-
-            gameSize = {
-                width: 700,
-                height: 500
-            };
-            invaderMultiplier = 1;
-        } else if (window.innerWidth > 518) {
-            screen.canvas.width = 500;
-            screen.canvas.height = 500;
-            wrapper.style.width = '500px';
-            wrapper.style.height = '500px';
-
-            gameSize = {
-                width: 500,
-                height: 500
-            };
-            invaderMultiplier = 1;
-        } else if (window.innerWidth > 430) {
-            screen.canvas.width = 400;
-            screen.canvas.height = 500;
-            wrapper.style.width = '400px';
-            wrapper.style.height = '500px';
-
-            gameSize = {
-                width: 400,
-                height: 400
-            };
-            invaderMultiplier = 1;
-        } else {
-            screen.canvas.width = 300;
-            screen.canvas.height = 500;
-            wrapper.style.width = '300px';
-            wrapper.style.height = '500px';
-
-            gameSize = {
-                width: 300,
-                height: 500
-            };
-            invaderMultiplier = 1;
-        }
-    }
-
-    // initiate beginning game data
-    const initGameData = () => {
-        configSize();
-        // starting kills back to 0
-        kills = 0;
-        // how often invaders shoot. (.1 being the most) - (.99999 being the least)
-        invaderAttackRate = .9998;
-        invaderSpeed = 1;
-        // how long till the invaders spawn
-        spawnDelayCounter = invaderSpawnDelay;
-        // start the new game
-        startGame();
-    };
-
-    // start a new game
-    const startGame = () => {
-        localStorage.clear();
-        // set display to none to remove the restart button from screen
-        document.getElementById('restartBtn').style.display = 'none';
-        document.getElementById('startBtn').style.display = 'none';
-        document.getElementById('highScoreMessage').style.display = 'none';
-        blocks = [
-            [0, 7, 14],
-        ];
-        game = new Game();
-    };
-
-    // restart game
-    document.getElementById('restartBtn').onclick = () => {
-        // reset game level to 1
-        gameLevel = 0;
-
-        let invaderAsset = new Image;
-        let playerAsset = new Image;
-
-        invaderAsset.onload = function () {
-            // draw the invaders
-            invaderCanvas = document.createElement('canvas');
-            invaderCanvas.width = invaderSize;
-            invaderCanvas.height = invaderSize;
-            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
-        };
-        // on player load, draw player & initiate the game
-        playerAsset.onload = () => {
-            // draw the player
-            playerCanvas = document.createElement('canvas');
-            playerCanvas.width = playerSize;
-            playerCanvas.height = playerSize;
-            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
-            // Game Creation
-            canvas = document.getElementById('space-invaders');
-            screen = canvas.getContext('2d');
-
-            initGameData();
-        };
-        // image assets for player and invaders
-        invaderAsset.src = './assets/images/game/invaderShip.png';
-        playerAsset.src = './assets/images/game/invaderSm.png';
-    };
     // ! GAME CONTROLLER
     let Game = function () {
         this.lost = false;
@@ -656,7 +470,7 @@
     };
 
     // get location of pixels where invaders are starting up at
-    const getPixelRow = (rowRaw) => {
+    function getPixelRow(rowRaw) {
         let textRow = [],
             placer = 0,
             row = Math.floor(rowRaw / invaderMultiplier);
@@ -685,7 +499,194 @@
         }
         return invaders;
     }
+    // Start game
+    document.getElementById('startBtn').onclick = () => {
+        let invaderAsset = new Image;
+        let playerAsset = new Image;
 
+        invaderAsset.onload = function () {
+            // draw the invaders
+            invaderCanvas = document.createElement('canvas');
+            invaderCanvas.width = invaderSize;
+            invaderCanvas.height = invaderSize;
+            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
+        };
+        // on player load, draw player & initiate the game
+        playerAsset.onload = () => {
+            // draw the player
+            playerCanvas = document.createElement('canvas');
+            playerCanvas.width = playerSize;
+            playerCanvas.height = playerSize;
+            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
+
+            initGameData();
+            loop();
+        };
+        // image assets for player and invaders
+        invaderAsset.src = './assets/images/game/invaderShip.png';
+        playerAsset.src = './assets/images/game/invaderSm.png';
+    };
+
+    // on load event
+    window.addEventListener('load', () => {
+        // create the canvas
+        canvas = document.getElementById('space-invaders');
+        screen = canvas.getContext('2d');
+        const leftBtn = document.getElementById('leftBtn');
+        const rightBtn = document.getElementById('rightBtn');
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            leftBtn.style.display = 'block';
+            rightBtn.style.display = 'block';
+        } else {
+            leftBtn.style.display = 'none';
+            rightBtn.style.display = 'none';
+        }
+        // configure the size
+        configSize();
+    });
+
+    window.addEventListener('resize', () => {
+        // when window size is changed, change the size of the canvas
+        configSize();
+    });
+
+    // configure the size of the canvas
+    const configSize = () => {
+        // the outer div surrounding the canvas
+        const wrapper = document.getElementById('gameWrap');
+        // create the canvas size
+        if (window.innerWidth > 1200) {
+            screen.canvas.width = 1200;
+            screen.canvas.height = 700;
+            wrapper.style.width = '1200px';
+            wrapper.style.height = '700px';
+            // setting the game screen size
+            gameSize = {
+                width: 1200,
+                height: 700
+            };
+            // how many invaders group together
+            invaderMultiplier = 2;
+            // initialOffsetInvader = 1600;
+        } else if (window.innerWidth > 920) {
+            screen.canvas.width = 900;
+            screen.canvas.height = 600;
+            wrapper.style.width = '900px';
+            wrapper.style.height = '600px';
+            gameSize = {
+                width: 900,
+                height: 600
+            };
+            invaderMultiplier = 2;
+            // initialOffsetInvader = 280;
+        } else if (window.innerWidth > 736) {
+            screen.canvas.width = 700;
+            screen.canvas.height = 500;
+            wrapper.style.width = '700px';
+            wrapper.style.height = '500px';
+
+            gameSize = {
+                width: 700,
+                height: 500
+            };
+            invaderMultiplier = 1;
+        } else if (window.innerWidth > 518) {
+            screen.canvas.width = 500;
+            screen.canvas.height = 500;
+            wrapper.style.width = '500px';
+            wrapper.style.height = '500px';
+
+            gameSize = {
+                width: 500,
+                height: 500
+            };
+            invaderMultiplier = 1;
+        } else if (window.innerWidth > 430) {
+            screen.canvas.width = 400;
+            screen.canvas.height = 500;
+            wrapper.style.width = '400px';
+            wrapper.style.height = '500px';
+
+            gameSize = {
+                width: 400,
+                height: 400
+            };
+            invaderMultiplier = 1;
+        } else {
+            screen.canvas.width = 300;
+            screen.canvas.height = 500;
+            wrapper.style.width = '300px';
+            wrapper.style.height = '500px';
+
+            gameSize = {
+                width: 300,
+                height: 500
+            };
+            invaderMultiplier = 1;
+        }
+    }
+
+    // initiate beginning game data
+    const initGameData = () => {
+        configSize();
+        // starting kills back to 0
+        kills = 0;
+        // how often invaders shoot. (.1 being the most) - (.99999 being the least)
+        invaderAttackRate = .9998;
+        invaderSpeed = 1;
+        // how long till the invaders spawn
+        spawnDelayCounter = invaderSpawnDelay;
+        // start the new game
+        startGame();
+    };
+
+    // start a new game
+    const startGame = () => {
+        // only for if you want to reset high scores
+        // localStorage.clear();
+        // set display to none to remove the restart button from screen
+        document.getElementById('restartBtn').style.display = 'none';
+        document.getElementById('startBtn').style.display = 'none';
+        document.getElementById('highScoreMessage').style.display = 'none';
+        blocks = [
+            [0, 7, 14],
+        ];
+        game = new Game();
+    };
+
+    // restart game
+    document.getElementById('restartBtn').onclick = () => {
+        // reset game level to 1
+        gameLevel = 0;
+
+        let invaderAsset = new Image;
+        let playerAsset = new Image;
+
+        invaderAsset.onload = function () {
+            // draw the invaders
+            invaderCanvas = document.createElement('canvas');
+            invaderCanvas.width = invaderSize;
+            invaderCanvas.height = invaderSize;
+            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
+        };
+        // on player load, draw player & initiate the game
+        playerAsset.onload = () => {
+            // draw the player
+            playerCanvas = document.createElement('canvas');
+            playerCanvas.width = playerSize;
+            playerCanvas.height = playerSize;
+            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
+            // Game Creation
+            canvas = document.getElementById('space-invaders');
+            screen = canvas.getContext('2d');
+
+            initGameData();
+        };
+        // image assets for player and invaders
+        invaderAsset.src = './assets/images/game/invaderShip.png';
+        playerAsset.src = './assets/images/game/invaderSm.png';
+    };
     // start looping through all the data and functions and initiate the animations
     function loop() {
         game.update();
