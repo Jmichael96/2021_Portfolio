@@ -1,13 +1,13 @@
 (function () {
     'use strict';
 
-    // general game variables
+    // General
     let canvas,
         screen,
         gameSize,
         game;
 
-    // game assets
+    // Assets
     let invaderCanvas,
         invaderMultiplier,
         //   size of enemies 
@@ -24,7 +24,7 @@
         //   the delay for when you finish a level. how long it comes back with new enemies 
         invaderSpawnDelay = 1;
 
-    // game counters
+    // Counter
     let i = 0,
         gameLevel = 0,
         kills = 0,
@@ -35,7 +35,7 @@
     // blocks for random layout
     let blocks = [];
 
-    // ! GAME CONTROLLER
+    // Game Controller
     let Game = function () {
         this.lost = false;
         this.player = new Player();
@@ -168,18 +168,8 @@
                 screen.fillStyle = '#c75000';
                 // if there is a high score render the text
                 if (hasHighScore) {
-                    let isBlinking = true;
                     highScoreRender.style.display = 'block';
                     highScoreRender.innerHTML = 'YOU GOT A HIGH SCORE!';
-                    setInterval(() => {
-                        if (isBlinking) {
-                            highScoreRender.style.opacity = 0;
-                            isBlinking = false;
-                        } else {
-                            highScoreRender.style.opacity = 1;
-                            isBlinking = true;
-                        }
-                    }, 900);
                 }
                 screen.font = '2rem Mandatory Plaything';
                 screen.fillText('YOU DIED', gameSize.width / 2, gameSize.height / 2 - 20);
@@ -226,7 +216,7 @@
         }
     };
 
-    // ! INVADER CONTROLLER
+    // ! INVADERS
     let Invader = function (coordinates) {
         this.active = true;
         this.coordinates = coordinates;
@@ -281,7 +271,7 @@
         }
     };
 
-    // ! PLAYER CONTROLLER
+    // Player
     let Player = function () {
         this.active = true;
         this.size = {
@@ -375,7 +365,6 @@
             // } else {
             //     this.shooterHeat = -3;
             // }
-
         },
         // draw the ship
         draw: function () {
@@ -395,7 +384,7 @@
         }
     };
 
-    // ! PROJECTILE CONTROLLER
+    // Projectile
     let Projectile = function (coordinates, velocity) {
         this.active = true;
         this.coordinates = coordinates;
@@ -426,7 +415,6 @@
             }
         }
     };
-
     // Keyboard input tracking
     let KeyController = function () {
         this.KEYS = {
@@ -462,7 +450,7 @@
     };
 
     // checking if the arguments a & b collide
-    const collides = (a, b) => {
+    function collides(a, b) {
         return a.coordinates.x < b.coordinates.x + b.size.width &&
             a.coordinates.x + a.size.width > b.coordinates.x &&
             a.coordinates.y < b.coordinates.y + b.size.height &&
@@ -499,6 +487,7 @@
         }
         return invaders;
     }
+
     // Start game
     document.getElementById('startBtn').onclick = () => {
         let invaderAsset = new Image;
@@ -628,7 +617,7 @@
     }
 
     // initiate beginning game data
-    const initGameData = () => {
+    function initGameData() {
         configSize();
         // starting kills back to 0
         kills = 0;
@@ -643,8 +632,6 @@
 
     // start a new game
     const startGame = () => {
-        // only for if you want to reset high scores
-        // localStorage.clear();
         // set display to none to remove the restart button from screen
         document.getElementById('restartBtn').style.display = 'none';
         document.getElementById('startBtn').style.display = 'none';
@@ -678,7 +665,7 @@
             playerCanvas.height = playerSize;
             playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
             // Game Creation
-            canvas = document.getElementById('space-invaders');
+            canvas = document.getElementById("space-invaders");
             screen = canvas.getContext('2d');
 
             initGameData();
@@ -687,6 +674,7 @@
         invaderAsset.src = './assets/images/game/invaderShip.png';
         playerAsset.src = './assets/images/game/invaderSm.png';
     };
+
     // start looping through all the data and functions and initiate the animations
     function loop() {
         game.update();
