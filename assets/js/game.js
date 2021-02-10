@@ -545,30 +545,6 @@
     document.getElementById('startBtn').onclick = () => {
         initGameData();
         loop();
-        // let invaderAsset = new Image();
-        // let playerAsset = new Image();
-
-        // invaderAsset.onload = function () {
-        //     // draw the invaders
-        //     invaderCanvas = document.createElement('canvas');
-        //     invaderCanvas.width = invaderSize;
-        //     invaderCanvas.height = invaderSize;
-        //     invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
-        // };
-        // // on player load, draw player & initiate the game
-        // playerAsset.onload = () => {
-        //     // draw the player
-        //     playerCanvas = document.createElement('canvas');
-        //     playerCanvas.width = playerSize;
-        //     playerCanvas.height = playerSize;
-        //     playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
-
-        //     initGameData();
-        //     loop();
-        // };
-        // // image assets for player and invaders
-        // invaderAsset.src = './assets/images/game/invaderShip.png';
-        // playerAsset.src = './assets/images/game/invaderSm.png';
     };
 
     // on load event
@@ -731,32 +707,7 @@
         // reset game level to 1
         gameLevel = 0;
 
-        let invaderAsset = new Image();
-        let playerAsset = new Image();
-
-        invaderAsset.onload = function () {
-            // draw the invaders
-            invaderCanvas = document.createElement('canvas');
-            invaderCanvas.width = invaderSize;
-            invaderCanvas.height = invaderSize;
-            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
-        };
-        // on player load, draw player & initiate the game
-        playerAsset.onload = () => {
-            // draw the player
-            playerCanvas = document.createElement('canvas');
-            playerCanvas.width = playerSize;
-            playerCanvas.height = playerSize;
-            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
-            // Game Creation
-            canvas = document.getElementById("space-invaders");
-            screen = canvas.getContext('2d');
-
-            initGameData();
-        };
-        // image assets for player and invaders
-        invaderAsset.src = './assets/images/game/invaderShip.png';
-        playerAsset.src = './assets/images/game/invaderSm.png';
+        initGameData();
     };
 
     // start looping through all the data and functions and initiate the animations
