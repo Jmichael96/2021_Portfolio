@@ -522,8 +522,8 @@
 
     // Start game
     document.getElementById('startBtn').onclick = () => {
-        let invaderAsset = new Image;
-        let playerAsset = new Image;
+        let invaderAsset = new Image();
+        let playerAsset = new Image();
 
         invaderAsset.onload = function () {
             // draw the invaders
@@ -685,8 +685,8 @@
         // reset game level to 1
         gameLevel = 0;
 
-        let invaderAsset = new Image;
-        let playerAsset = new Image;
+        let invaderAsset = new Image();
+        let playerAsset = new Image();
 
         invaderAsset.onload = function () {
             // draw the invaders
