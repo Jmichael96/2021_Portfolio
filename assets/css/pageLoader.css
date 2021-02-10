@@ -55,7 +55,7 @@
 }
 
 .planet2 {
-    left: 23px;
+    left: 28px;
     height: 20px;
     width: 20px;
     background: linear-gradient(#004d00, rgb(0, 107, 179), rgb(0, 95, 158));
@@ -68,6 +68,13 @@
     height: 17px;
     width: 17px;
     background: radial-gradient(#ff9900, #d43900);
+}
+
+.planet4 {
+    left: 70px;
+    height: 18px;
+    width: 18px;
+    background: radial-gradient(#4e2600, #947752);
 }
 
 .orbit {
@@ -104,6 +111,14 @@
     -moz-animation: rotation 6s infinite linear;
     -webkit-animation: rotation 6s infinite linear;
     animation: rotation 6s infinite linear;
+}
+
+.orbit4 {
+    height: 250px;
+    width: 250px;
+    -moz-animation: rotation 8s infinite linear;
+    -webkit-animation: rotation 8s infinite linear;
+    animation: rotation 8s infinite linear;
 }
 
 @-webkit-keyframes rotation {

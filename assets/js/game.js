@@ -62,40 +62,72 @@
 
                 // for when all invaders die. change the level amount
                 gameLevel += 1;
-
-                if (gameLevel === 1) {
-                    // how often the invaders shoot
-                    invaderAttackRate -= 0.001;
-                } else if (gameLevel === 2) {
-                    // how often the invaders shoot
-                    invaderAttackRate -= 0.008;
-                    // add new section of invaders
-                    blocks.unshift([3.5, 10.5]);
-                    // up the speed of the invaders
-                    invaderSpeed += .5;
-                } else if (gameLevel === 3) {
-                    // add new section of invaders
-                    blocks.unshift([0, 7, 14]);
-                } else if (gameLevel === 4) {
-                    // add new section of invaders
-                    blocks.unshift([3.5, 10.5]);
-                } else if (gameLevel === 5) {
-                    // add new section of invaders
-                    blocks.unshift([0, 7, 14]);
-                    // add new section of invaders
-                    blocks.unshift([0, 7, 14]);
-                    // add new section of invaders
-                    blocks.unshift([3.5, 10.5]);
-                } else if (gameLevel === 6) {
-                    // up the speed of the invaders
-                    invaderSpeed += .5;
-                    // how often the invaders shoot
-                    invaderAttackRate -= 0.01;
+                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
+                    if (gameLevel === 1) {
+                        // how often the invaders shoot
+                        invaderAttackRate -= 0.001;
+                    } else if (gameLevel === 2) {
+                        // how often the invaders shoot
+                        invaderAttackRate -= 0.008;
+                        // add new section of invaders
+                        blocks.unshift([3.5, 10.5]);
+                        // up the speed of the invaders
+                        invaderSpeed += .5;
+                    } else if (gameLevel === 3) {
+                        // add new section of invaders
+                        blocks.unshift([0, 7, 14]);
+                    } else if (gameLevel === 4) {
+                        // add new section of invaders
+                        blocks.unshift([3.5, 10.5]);
+                    } else if (gameLevel === 5) {
+                        // add new section of invaders
+                        blocks.unshift([0, 7, 14]);
+                        // add new section of invaders
+                        blocks.unshift([0, 7, 14]);
+                        // add new section of invaders
+                        blocks.unshift([3.5, 10.5]);
+                    } else if (gameLevel === 6) {
+                        // up the speed of the invaders
+                        invaderSpeed += .5;
+                        // how often the invaders shoot
+                        invaderAttackRate -= 0.01;
+                    } else {
+                        // add new section of invaders
+                        blocks.unshift([3.5, 10.5]);
+                        // add new section of invaders
+                        blocks.unshift([0, 7, 14]);
+                    }
                 } else {
-                    // add new section of invaders
-                    blocks.unshift([3.5, 10.5]);
-                    // add new section of invaders
-                    blocks.unshift([0, 7, 14]);
+                    if (gameLevel === 1) {
+                        // how often the invaders shoot
+                        invaderAttackRate -= 0.001;
+                    } else if (gameLevel === 2) {
+                        // how often the invaders shoot
+                        // invaderAttackRate -= 0.008;
+                        // add new section of invaders
+                        blocks.unshift([2, 4]);
+                        // up the speed of the invaders
+                        // invaderSpeed += .5;
+                    } else if (gameLevel === 3) {
+                        // add new section of invaders
+                        blocks.unshift([0, 3, 6]);
+                    } else if (gameLevel === 4) {
+                        // add new section of invaders
+                        blocks.unshift([2, 4]);
+                    } else if (gameLevel === 5) {
+                        // add new section of invaders
+                        blocks.unshift([0, 3, 6]);
+                        // add new section of invaders
+                        blocks.unshift([2, 4]);
+                    } else if (gameLevel === 6) {
+                        // up the speed of the invaders
+                        // invaderSpeed += .5;
+                        // how often the invaders shoot
+                        invaderAttackRate -= 0.01;
+                    } else {
+                        // add new section of invaders
+                        blocks.unshift([2, 4]);
+                    }
                 }
 
                 game.invaders = createInvaders();
@@ -308,10 +340,10 @@
                 const leftBtn = document.getElementById('leftBtn');
                 const rightBtn = document.getElementById('rightBtn');
 
-                leftBtn.ontouchstart = () => {
+                leftBtn.onmousedown = () => {
                     this.coordinates.x -= 3;
                 }
-                rightBtn.ontouchstart = () => {
+                rightBtn.onmousedown = () => {
                     this.coordinates.x += 3;
                 }
             }
@@ -636,9 +668,15 @@
         document.getElementById('restartBtn').style.display = 'none';
         document.getElementById('startBtn').style.display = 'none';
         document.getElementById('highScoreMessage').style.display = 'none';
-        blocks = [
-            [0, 7, 14],
-        ];
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            blocks = [
+                [0, 7, 14],
+            ];
+        } else {
+            blocks = [
+                [0, 3, 6]
+            ];
+        }
         game = new Game();
     };
 
