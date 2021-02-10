@@ -149,6 +149,7 @@
     position: absolute;
     bottom: -2rem;
     left: 0;
+    background-color: white;
 }
 
 #rightBtn {
@@ -156,4 +157,5 @@
     position: absolute;
     bottom: -2rem;
     right: 0;
+    background-color: white;
 }

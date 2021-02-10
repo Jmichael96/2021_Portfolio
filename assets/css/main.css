@@ -19,6 +19,13 @@
     src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
 }
 
+/* so that users don't have any problem playing the game and accidentally zooming in on double tap */
+
+* {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
 html body {
     margin: 0;
     padding: 0;

@@ -62,7 +62,7 @@
 
                 // for when all invaders die. change the level amount
                 gameLevel += 1;
-                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
+                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     if (gameLevel === 1) {
                         // how often the invaders shoot
                         invaderAttackRate -= 0.001;
@@ -286,8 +286,11 @@
                 // ? once invaders reach the right side they go strait down 
                 this.patrolX += this.speedX;
                 // how far invaders move forward
-                this.coordinates.y += 10;
-
+                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    this.coordinates.y += 10;
+                } else {
+                    this.coordinates.y += 3;
+                }
                 // if the invaders reach the end of the canvas. end game
                 if (this.coordinates.y + this.size.height * 2 > gameSize.height) game.lost = true;
             } else {
@@ -339,12 +342,30 @@
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 const leftBtn = document.getElementById('leftBtn');
                 const rightBtn = document.getElementById('rightBtn');
+                let thing = this;
+                let gameData = gameSize;
+                // $('#leftBtn').on('touchstart touchmove mousedown', function (e) {
+                //     e.preventDefault()
+                //     if (thing.coordinates.x > 0) {
+                //         thing.coordinates.x -= .01;
+                //     }
+                // });
 
+                // $('#rightBtn').on('touchstart touchmove mousedown', function (e) {
+                //     e.preventDefault()
+                //     if (thing.coordinates.x < gameData.width - thing.size.width) {
+                //         thing.coordinates.x += .01;
+                //     }
+                // });
                 leftBtn.onmousedown = () => {
-                    this.coordinates.x -= 3;
+                    if (this.coordinates.x > 0) {
+                        this.coordinates.x -= 5;
+                    }
                 }
                 rightBtn.onmousedown = () => {
-                    this.coordinates.x += 3;
+                    if (this.coordinates.x < gameSize.width - this.size.width) {
+                        this.coordinates.x += 5;
+                    }
                 }
             }
             // controls the left and right speed of player
@@ -522,30 +543,32 @@
 
     // Start game
     document.getElementById('startBtn').onclick = () => {
-        let invaderAsset = new Image();
-        let playerAsset = new Image();
+        initGameData();
+        loop();
+        // let invaderAsset = new Image();
+        // let playerAsset = new Image();
 
-        invaderAsset.onload = function () {
-            // draw the invaders
-            invaderCanvas = document.createElement('canvas');
-            invaderCanvas.width = invaderSize;
-            invaderCanvas.height = invaderSize;
-            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
-        };
-        // on player load, draw player & initiate the game
-        playerAsset.onload = () => {
-            // draw the player
-            playerCanvas = document.createElement('canvas');
-            playerCanvas.width = playerSize;
-            playerCanvas.height = playerSize;
-            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
+        // invaderAsset.onload = function () {
+        //     // draw the invaders
+        //     invaderCanvas = document.createElement('canvas');
+        //     invaderCanvas.width = invaderSize;
+        //     invaderCanvas.height = invaderSize;
+        //     invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
+        // };
+        // // on player load, draw player & initiate the game
+        // playerAsset.onload = () => {
+        //     // draw the player
+        //     playerCanvas = document.createElement('canvas');
+        //     playerCanvas.width = playerSize;
+        //     playerCanvas.height = playerSize;
+        //     playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
 
-            initGameData();
-            loop();
-        };
-        // image assets for player and invaders
-        invaderAsset.src = './assets/images/game/invaderShip.png';
-        playerAsset.src = './assets/images/game/invaderSm.png';
+        //     initGameData();
+        //     loop();
+        // };
+        // // image assets for player and invaders
+        // invaderAsset.src = './assets/images/game/invaderShip.png';
+        // playerAsset.src = './assets/images/game/invaderSm.png';
     };
 
     // on load event
@@ -565,6 +588,29 @@
         }
         // configure the size
         configSize();
+        let invaderAsset = new Image();
+        let playerAsset = new Image();
+
+        invaderAsset.onload = function () {
+            console.log('loaded invader');
+            // draw the invaders
+            invaderCanvas = document.createElement('canvas');
+            invaderCanvas.width = invaderSize;
+            invaderCanvas.height = invaderSize;
+            invaderCanvas.getContext("2d").drawImage(invaderAsset, 0, 0);
+        };
+        // on player load, draw player & initiate the game
+        playerAsset.onload = () => {
+            console.log('loaded player');
+            // draw the player
+            playerCanvas = document.createElement('canvas');
+            playerCanvas.width = playerSize;
+            playerCanvas.height = playerSize;
+            playerCanvas.getContext('2d').drawImage(playerAsset, 0, 0);
+        };
+        // image assets for player and invaders
+        invaderAsset.src = './assets/images/game/invaderShip.png';
+        playerAsset.src = './assets/images/game/invaderSm.png';
     });
 
     window.addEventListener('resize', () => {
@@ -646,7 +692,7 @@
             };
             invaderMultiplier = 1;
         }
-    }
+    };
 
     // initiate beginning game data
     function initGameData() {

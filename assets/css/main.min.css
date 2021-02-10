@@ -12,6 +12,11 @@
     src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
 }
 
+* {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
 html body {
     margin: 0;
     padding: 0;
@@ -2417,6 +2422,7 @@ svg .polygon {
     position: absolute;
     bottom: -2rem;
     left: 0;
+    background-color: white;
 }
 
 #rightBtn {
@@ -2424,4 +2430,5 @@ svg .polygon {
     position: absolute;
     bottom: -2rem;
     right: 0;
+    background-color: white;
 }
