@@ -86,12 +86,10 @@ document.getElementById('submitFormBtn').onclick = (e) => {
     let name = $('#nameInput').val();
     let email = $('#emailInput').val().trim().toLowerCase();
     let message = $('#messageInput').val();
-
     if (!name && !email && !message) {
         openErrModal('Please fill out each input');
         return;
     }
-
     if (!name) {
         openErrModal('Please add a name');
         return;
@@ -105,21 +103,34 @@ document.getElementById('submitFormBtn').onclick = (e) => {
         openErrModal('Please enter a message');
         return;
     }
-    let formData = {
-        name, 
-        email,
-        message
-    };
-    console.log(formData);
-    $.ajax({
-        type: 'POST',
-        url: './php/mail.pp',
-        data: formData,
-        success: (a) => {
-            console.log(a);
-        }
-    });
-    // openRobotModal();
+    openRobotModal();
+};
+// on complete form submit
+document.getElementById('submitForm').onclick = () => {
+    let name = $('#nameInput').val();
+    let email = $('#emailInput').val().trim().toLowerCase();
+    let message = $('#messageInput').val();
+    let question = $('#question').val().trim();
+
+    if (+question === 13 || +question === -2) {
+        return;
+    } else if (+question === -3) {
+        document.getElementById('robotModalOverlay').classList.remove('is-robot-modal-visible');
+        document.getElementById('robotModal').classList.remove('is-robot-modal-visible');
+        $.ajax({
+            type: 'POST',
+            url: './php/mail.php',
+            data: {
+                action: 'callForm',
+                name,
+                email,
+                message
+            },
+            success: () => {
+                console.log('Success!');
+            }
+        });
+    }
 };
 
 // ! ANTI-ROBOT MODAL
