@@ -926,7 +926,7 @@ footer {
     margin: .5rem 0;
     letter-spacing: .1rem;
     text-align: center;
-    color: #3b4e74;
+    color: #ffffff;
     font-size: 1rem;
 }
 
@@ -941,7 +941,7 @@ footer {
 #ownershipTextWrap {
     margin: .5rem 0;
     text-align: center;
-    color: #3b4e74;
+    color: #ffffff;
     letter-spacing: .1rem;
     font-size: 1rem;
 }
@@ -1452,7 +1452,7 @@ footer {
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
     transition: all .5s ease-out;
-    z-index: 999;
+    z-index: 50;
 }
 
 /* inner wrap surrounding all the content */
@@ -1608,7 +1608,7 @@ footer {
     visibility: hidden;
     transition: all 0.25s ease;
     transform: translateX(-100%);
-    z-index: 999;
+    z-index: 51;
     box-shadow: 0 0 8px rgb(0, 0, 0);
     background-color: var(--sideNavBg);
 }
@@ -1734,7 +1734,7 @@ footer {
     background: radial-gradient(#4e2600, #947752);
 }
 
-.orbit {
+.orbitSpinner {
     background: transparent;
     border-radius: 50%;
     border: 1px solid #fff;
@@ -2388,6 +2388,7 @@ svg .polygon {
 
 #highScoreMessage {
     font-family: 'Mandatory Plaything';
+    text-align: center;
     display: none;
     position: absolute;
     color: #c75000;

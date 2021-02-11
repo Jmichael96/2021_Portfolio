@@ -200,8 +200,18 @@
                 screen.fillStyle = '#c75000';
                 // if there is a high score render the text
                 if (hasHighScore) {
+                    let isBlinking = true;
                     highScoreRender.style.display = 'block';
                     highScoreRender.innerHTML = 'YOU GOT A HIGH SCORE!';
+                    setInterval(() => {
+                        if (isBlinking) {
+                            highScoreRender.style.opacity = 0;
+                            isBlinking = false;
+                        } else {
+                            highScoreRender.style.opacity = 1;
+                            isBlinking = true;
+                        }
+                    }, 900);
                 }
                 screen.font = '2rem Mandatory Plaything';
                 screen.fillText('YOU DIED', gameSize.width / 2, gameSize.height / 2 - 20);
@@ -568,7 +578,6 @@
         let playerAsset = new Image();
 
         invaderAsset.onload = function () {
-            console.log('loaded invader');
             // draw the invaders
             invaderCanvas = document.createElement('canvas');
             invaderCanvas.width = invaderSize;
@@ -577,7 +586,6 @@
         };
         // on player load, draw player & initiate the game
         playerAsset.onload = () => {
-            console.log('loaded player');
             // draw the player
             playerCanvas = document.createElement('canvas');
             playerCanvas.width = playerSize;

@@ -115,6 +115,7 @@
 
 #highScoreMessage {
     font-family: 'Mandatory Plaything';
+    text-align: center;
     display: none;
     position: absolute;
     color: #c75000;

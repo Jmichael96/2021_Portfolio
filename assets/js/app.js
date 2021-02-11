@@ -12,8 +12,10 @@ document.onreadystatechange = function () {
 
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.getElementById('mobileCanvas').style.display = 'none';
+  } else if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.getElementById('gameWrap').style.display = 'none';
   }
-
+ 
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
@@ -55,6 +57,18 @@ document.onreadystatechange = function () {
 };
 
 $(window).on("load", function () {
+  // if the user is using firefox disable the game anyway and redirect to the game page
+  if (navigator.userAgent.indexOf("Firefox") > -1) {
+    document.getElementById('gameWrap').style.display = 'none';
+    document.getElementById('desktopGameLink').onclick = () => {
+      window.location.href = '/guardian.html';
+    }
+  }
+  // for the mobile nav link to play the game
+  document.getElementById('mobileGameLink').onclick = () => {
+    window.location.href = '/guardian.html';
+  };
+
   // resizing the nav to the appropriate specs
   resizeNavHandler();
   window.onscroll = () => {

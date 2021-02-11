@@ -77,7 +77,7 @@
     background: radial-gradient(#4e2600, #947752);
 }
 
-.orbit {
+.orbitSpinner {
     background: transparent;
     border-radius: 50%;
     border: 1px solid #fff;

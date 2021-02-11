@@ -105,7 +105,21 @@ document.getElementById('submitFormBtn').onclick = (e) => {
         openErrModal('Please enter a message');
         return;
     }
-    openRobotModal();
+    let formData = {
+        name, 
+        email,
+        message
+    };
+    console.log(formData);
+    $.ajax({
+        type: 'POST',
+        url: './php/mail.pp',
+        data: formData,
+        success: (a) => {
+            console.log(a);
+        }
+    });
+    // openRobotModal();
 };
 
 // ! ANTI-ROBOT MODAL

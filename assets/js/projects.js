@@ -4,7 +4,7 @@ document.onreadystatechange = function () {
     const projectLayout = document.getElementById('projectLayout');
     const nav = document.querySelector('nav');
     const sideNav = document.getElementById('sideNav');
-    const pageLoader = document.querySelector('#loader');
+    const pageLoader = document.querySelector('#portfolioLoader');
     if (document.readyState !== 'complete') {
         body.style.visibility = 'hidden';
         // project layout 
@@ -163,7 +163,7 @@ $(window).on('load', function () {
     }
     renderProjects();
     // once window is refreshed show the message stating that all projects are rendered
-    renderAmount(projects.length)
+    renderAmount(projects.length);
 });
 // CONSTANTS
 // getting location where projects will be rendered
@@ -181,7 +181,7 @@ const totalProjects = 14;
 const renderProjects = () => {
     projLocation.innerHTML = filteredArr.map((item, i) => {
         return `
-                <a key="${i + 1}" style="outline: none;" class="projLink fade" href="${item.link}" rel="noreferrer noopener"target="_blank">
+                <a key="${i + 1}" style="outline: none; z-index: 3;" class="projLink fade" href="${item.link}" rel="noreferrer noopener"target="_blank">
                     <div class="projectCard">
                         <div class="cardCover">
                             <div class="projectCardHeader" style="background-image: url(./assets/images/projects/${item.imageName})">
@@ -273,3 +273,11 @@ $('.js-link').click(function (e) {
         $('body, html').animate({ scrollTop: scrollTo + 'px' }, 1500);
     }
 });
+
+document.getElementById('desktopNavLink').onclick = () => {
+    window.location.href = '/';
+};
+
+document.getElementById('mobileNavLink').onclick = () => {
+    window.location.href = '/';
+};
