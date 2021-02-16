@@ -458,71 +458,7 @@ label {
     fill: var(--iconColor)
 }
 
-/* ! MODAL STYLES */
-
-/* ! ERROR MODAL */
-
-/** Modal */
-
-.errModal {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    max-width: 300px;
-    padding: 30px;
-    background: #3b4e74;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-}
-
-.errModalCloseBtn {
-    position: absolute;
-    right: .5rem;
-    top: .5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: #c75000;
-}
-
-/* error message p element */
-
-#modalMessage {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: .1rem;
-    color: #ffffff;
-}
-
-/** Overlay */
-
-.errOverlay {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 12;
-}
-
-.is-visible {
-    opacity: 1;
-    pointer-events: auto;
-}
+/* ! MODAL STYLE */
 
 /* ! ROBOT MODAL  */
 
@@ -537,11 +473,12 @@ label {
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    max-width: 300px;
-    padding: 30px;
+    width: 80%;
+    max-width: 22rem;
+    padding: 1rem;
     background: #3b4e74;
     border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 999;
 }
 
