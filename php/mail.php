@@ -1,7 +1,7 @@
 <?php
 
 if($_POST['action'] == 'callForm') {
-                $mail_to_send_to = "jeffreyvh@ymail.com" ;
+                $mail_to_send_to = "jeffreyvh@ymail.com, jeffrey.vanhorn@yahoo.com" ;
                 $from_email = "admin@codevh.com" ;
                 $name = $_POST['name'] ;
                 $email = $_POST['email'] ;

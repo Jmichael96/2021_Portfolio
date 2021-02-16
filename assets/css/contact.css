@@ -641,43 +641,47 @@ label {
 .alert-success {
     background-color: #3b4e74;
     position: fixed;
-    width: 90%;
+    width: 80%;
     max-width: 40rem;
-    padding: 15px;
+    height: 1rem;
+    padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.258);
-    bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    bottom: 5%;
     left: 50%;
     z-index: 99;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     transform: translateX(-50%);
     overflow: hidden;
+    display: none;
     /* webkit animation */
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-fill-mode: both;
     -webkit-animation-name: alert-in;
     /* moz animation */
-    -moz-animation-duration: 1s;
+    -moz-animation-duration: 4s;
     -moz-animation-iteration-count: 1;
     -moz-animation-fill-mode: both;
     -moz-animation-name: alert-in;
     /* ms animation */
-    -ms-animation-duration: 1s;
+    -ms-animation-duration: 4s;
     -ms-animation-iteration-count: 1;
     -ms-animation-fill-mode: both;
     -ms-animation-name: alert-in;
     /* animation */
-    animation-duration: 1s;
+    animation-duration: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
     animation-name: alert-in;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 /* alert text */
 
-.alertText {
+#alertText {
     width: 100%;
     color: white;
     font-size: 1rem;
@@ -686,9 +690,9 @@ label {
     padding: 0;
 }
 
-.alertIconWrap {
+#alertIconWrap {
     text-align: center;
-    width: 45px;
+    width: 32px;
     height: 100%;
     position: absolute;
     top: -1px;
@@ -701,29 +705,27 @@ label {
 
 /* arrow tic */
 
-.alertIconWrap:after {
+#alertIconWrap:after {
     display: block;
     content: '';
-    width: 36px;
-    height: 36px;
-    /* border: 1px solid #bdbdbd; */
+    width: 2.5rem;
+    height: 2.5rem;
     position: absolute;
     border-left: 0;
     border-bottom: 0;
-    top: 13%;
-    right: -19px;
+    top: 50%;
+    right: -2px;
     z-index: 99;
-    /* margin-top: -5px; */
-    /* border-color: #54a754; */
     background: #c75000;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
+    margin-top: -6px;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+    -moz-transform: rotate(45deg) translateY(-50%);
+    -ms-transform: rotate(45deg) translateY(-50%);
+    -o-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
 }
 
-.alertIconWrap i {
+#alertIconWrap i {
     font-size: 2rem;
     color: #FFF;
     position: absolute;
@@ -741,46 +743,55 @@ label {
 
 @-webkit-keyframes alert-in {
     0% {
-        transform: translate(0px, 1500px);
+        transform: translateX(1000px)
     }
-    20% {
-        transform: translate(0px, 355px);
+    30% {
+        transform: translateX(-50%);
     }
-    25%, 65%, 75% {
-        transform: translate(0px, 375px);
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
     }
     100% {
-        transform: translate(0px, 50px);
+        transform: translateX(1000px);
     }
 }
 
 @-moz-keyframes alert-in {
     0% {
-        transform: translate(0px, 1500px);
+        transform: translateX(1000px)
     }
-    20% {
-        transform: translate(0px, 355px);
+    30% {
+        transform: translateX(-50%);
     }
-    25%, 65%, 75% {
-        transform: translate(0px, 375px);
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
     }
     100% {
-        transform: translate(0px, 50px);
+        transform: translateX(1000px);
     }
 }
 
 @-ms-keyframes alert-in {
     0% {
-        transform: translate(0px, 1500px);
+        transform: translateX(1000px)
     }
-    20% {
-        transform: translate(0px, 355px);
+    30% {
+        transform: translateX(-50%);
     }
-    25%, 65%, 75% {
-        transform: translate(0px, 375px);
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
     }
     100% {
-        transform: translate(0px, 50px);
+        transform: translateX(1000px);
     }
 }
 
@@ -788,8 +799,17 @@ label {
     0% {
         transform: translateX(1000px)
     }
-    100% {
+    30% {
         transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
+    }
+    100% {
+        transform: translateX(1000px);
     }
 }
 
