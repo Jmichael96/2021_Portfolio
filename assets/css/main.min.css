@@ -12,6 +12,8 @@
     src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
 }
 
+/* so that users don't have any problem playing the game and accidentally zooming in on double tap */
+
 * {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
@@ -1581,8 +1583,8 @@ footer {
 
 /* logo image */
 
-.navLogo {
-    height: 5rem;
+#desktopJackAttack {
+    height: 4rem;
     margin-left: .5rem;
 }
 
@@ -1765,6 +1767,13 @@ footer {
     font-size: 1.7rem;
     font-weight: 900;
     text-decoration: none;
+}
+
+#mobileJackAttack {
+    display: block;
+    width: 100%;
+    max-width: 15.5rem;
+    margin-top: 1rem;
 }
 
 /* ! =============================================== PAGE LOADER */

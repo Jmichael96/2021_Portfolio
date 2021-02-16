@@ -16,13 +16,13 @@ if($_POST['action'] == 'callForm') {
                 <title>Hello Mr. Dahmer</title>
                 </head>
                 <body>
-                <p>Message: $message</p>
+                <p style='font-size: 1rem;'>$message</p>
                 <br />
-                <p>Name: $name</p>
-                <p>Email: <a href='#!'>$email</a></p>
+                <p style='font-size: 1rem;'><b>FROM</b> $name</p>
+                <p style='font-size: 1rem;'><b>CONTACT ME @</b> <a href='#!' style='cursor: pointer; color: #008cff'>$email</a></p>
                 </body>
                  </html>
                 " ;
-                mail( $mail_to_send_to, "Message from your website", $body, $headers );
+                mail( $mail_to_send_to, "WEEEOOOW YOU GOT A MESSAGE", $body, $headers );
         }
 ?>
