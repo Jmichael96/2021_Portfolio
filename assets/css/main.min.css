@@ -2393,6 +2393,31 @@ svg .polygon {
     margin: 6rem 0;
 }
 
+/* wrapper around the redirect game button */
+
+#playBtnWrap {
+    display: none;
+    margin: 3rem 0 6rem 0;
+}
+
+/* redirect button for when a user is on a mobile device or firefox */
+
+#redirectGameBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 12rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#redirectGameBtn:focus {
+    outline: none;
+}
+
 /* game background image */
 
 #gameBg {

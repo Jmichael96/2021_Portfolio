@@ -9,12 +9,15 @@ document.onreadystatechange = function () {
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('portfolioLoader');
   const planetBg = document.getElementsByClassName('.planetBg');
-  
+
   // for the game
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // turn off mobile canvas
     document.getElementById('mobileCanvas').style.display = 'none';
   } else if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    // if mobile remove the game on index page
     document.getElementById('gameWrap').style.display = 'none';
+    document.getElementById('playBtnWrap').style.display = 'flex';
   }
 
   if (document.readyState !== 'complete') {
@@ -69,12 +72,17 @@ $(window).on("load", function () {
   // if the user is using firefox disable the game anyway and redirect to the game page
   if (navigator.userAgent.indexOf("Firefox") > -1) {
     document.getElementById('gameWrap').style.display = 'none';
+    document.getElementById('playBtnWrap').style.display = 'flex';
     document.getElementById('desktopGameLink').onclick = () => {
       window.location.href = '/guardian.html';
     }
   }
   // for the mobile nav link to play the game
   document.getElementById('mobileGameLink').onclick = () => {
+    window.location.href = '/guardian.html';
+  };
+  // the redirect button when a user is on a mobile device or in firefox
+  document.getElementById('redirectGameBtn').onclick = () => {
     window.location.href = '/guardian.html';
   };
 
