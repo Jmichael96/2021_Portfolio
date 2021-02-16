@@ -164,7 +164,79 @@ $(window).on('load', function () {
     renderProjects();
     // once window is refreshed show the message stating that all projects are rendered
     renderAmount(projects.length);
+    resizeNavHandler();
+    window.onscroll = () => {
+        //  ! FADE IN EFFECT
+        let windowBottom = $(this).scrollTop() + $(this).innerHeight();
+        $(".fade").each(function () {
+            /* Check the location of each desired element */
+            let objectBottom = $(this).offset().top + $(this).outerHeight();
+            /* If the element is completely within bounds of the window, fade it in */
+            if (objectBottom < windowBottom + 100) {
+                //object comes into view (scrolling down)
+                if ($(this).css("opacity") == 0) { $(this).fadeTo(500, 1); }
+            } else { //object goes out of view (scrolling up)
+                if ($(this).css("opacity") == 1) { $(this).fadeTo(500, 0); }
+            }
+        });
+        // ! NAVBAR
+        const nav = document.getElementById('nav');
+        const scrollBtn = document.getElementById('scrollTopIcon');
+        if (this.scrollY <= 100) {
+            nav.style.height = '4rem';
+            nav.style.backgroundColor = '#000000b0'
+            scrollBtn.style.display = 'none';
+        }
+        else {
+            nav.style.height = '3rem';
+            nav.style.backgroundColor = 'black';
+            scrollBtn.style.display = 'block';
+        };
+        scrollProgressBar();
+    };
+    // footer date
+    document.getElementById('footerDate').innerHTML = `${new Date().getFullYear()}`;
 });
+
+// call this function when the window is resizing
+window.onresize = function () {
+    // resizing the nav to the appropriate specs
+    resizeNavHandler();
+}
+
+// navbar on window resize
+function resizeNavHandler() {
+    let desktopNav = document.getElementById('desktopNav');
+    let mobileNav = document.getElementById('mobileNav');
+    if (window.innerWidth >= 1025) {
+        desktopNav.style.display = 'flex';
+        mobileNav.style.display = 'none';
+    } else if (window.innerWidth <= 1024) {
+        desktopNav.style.display = 'none';
+        mobileNav.style.display = 'flex';
+    }
+};
+// toggle the mobile menu button
+$('#mobileNavBtn').click(function () {
+    $(this).toggleClass('open');
+});
+// toggle the side nav sliding in
+$('#mobileNavBtn').click(function () {
+    $('#sideNav').toggleClass('activeNav');
+});
+// toggle the nav and mobile menu button when clicking on a button inside the side nav
+$('.mobileLink').click(function () {
+    $('#mobileNavBtn').toggleClass('open');
+    $('#sideNav').toggleClass('activeNav');
+});
+
+// progress bar handler
+const scrollProgressBar = () => {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+};
 // CONSTANTS
 // getting location where projects will be rendered
 const projLocation = document.getElementById('projectRender');
@@ -256,7 +328,7 @@ const isFilteringHandler = (filterName) => {
 // the animation for the custom select input
 document.getElementById('selectInput').onclick = function () {
     let className = ' ' + selectInput.className + ' ';
-    this.className = ~className.indexOf(' active ') ?className.replace(' active ', ' ') : this.className + ' active';
+    this.className = ~className.indexOf(' active ') ? className.replace(' active ', ' ') : this.className + ' active';
 };
 $('.selectValue').on('click', (e) => {
     // change the value of the custom input select label

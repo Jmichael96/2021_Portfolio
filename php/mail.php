@@ -13,7 +13,7 @@ if($_POST['action'] == 'callForm') {
                 $body =
                 "<html>
                 <head>
-                <title>Hello Dahmer</title>
+                <title>Hello Mr. Dahmer</title>
                 </head>
                 <body>
                 <p>Message: $message</p>
