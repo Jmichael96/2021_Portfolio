@@ -9,13 +9,14 @@ document.onreadystatechange = function () {
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('portfolioLoader');
   const planetBg = document.getElementsByClassName('.planetBg');
-
+  
+  // for the game
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.getElementById('mobileCanvas').style.display = 'none';
   } else if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.getElementById('gameWrap').style.display = 'none';
   }
- 
+
   if (document.readyState !== 'complete') {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
@@ -42,9 +43,9 @@ document.onreadystatechange = function () {
       pageLoader.style.visibility = 'hidden';
       // planetBg.style.display = 'block';
       // iterate over all planet backgrounds
-    for (let i = 0; i < planetBg.length; i++) {
-      planetBg[i].style.display = 'block';
-    }
+      for (let i = 0; i < planetBg.length; i++) {
+        planetBg[i].style.display = 'block';
+      }
       // ! RENDERING THE NAME
       let nameString = 'jeffrey vanhorn';
       nameString.split('').map(function (char, index) {

@@ -108,13 +108,15 @@ document.getElementById('submitFormBtn').onclick = (e) => {
 };
 
 // on complete form submit
-document.getElementById('submitForm').onclick = () => {
+document.getElementById('submitForm').onclick = (e) => {
+    e.preventDefault();
+
     let name = $('#nameInput').val();
     let email = $('#emailInput').val().trim().toLowerCase();
     let message = $('#messageInput').val();
     let question = $('#question').val().trim();
 
-    if (+question === 13 || +question === -2) {
+    if (+question === 0 || +question === 13 || +question === -2) {
         renderAlert('Wrong answer robot!', true);
         return;
     } else if (+question === -3) {
@@ -131,9 +133,18 @@ document.getElementById('submitForm').onclick = () => {
             },
             success: () => {
                 renderAlert('Message Sent!', false);
+                // clear the form data
+                clearForm();
             }
         });
     }
+};
+
+const clearForm = () => {
+    document.getElementById('nameInput').value = '';
+    document.getElementById('emailInput').value = '';
+    document.getElementById('messageInput').value = '';
+    document.getElementById('question').value = '0';
 };
 
 // ! ANTI-ROBOT MODAL
@@ -170,5 +181,5 @@ const renderAlert = (msg, isErr) => {
 
     setTimeout(() => {
         alert.style.display = 'none';
-    }, 6000);
+    }, 5000);
 };
