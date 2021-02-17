@@ -49,6 +49,9 @@ $(window).on('load', function () {
         pinchZoom: true,
         zoomMax: 1,
         shuffleTags: true,
-        zoom: .85
+        zoom: .85,
+        dragControl: true,
+        noMouse: true,
+        wheelZoom: false
     });
 });
