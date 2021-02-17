@@ -3,7 +3,7 @@ document.onreadystatechange = function () {
   const body = document.querySelector('body');
   const nav = document.querySelector('nav');
   const sideNav = document.getElementById('sideNav');
-  const mobileCanvas = document.getElementById('mobileCanvas');
+  // const mobileCanvas = document.getElementById('mobileCanvas');
   const aboutSection = document.getElementById('aboutSection');
   const specialtiesSection = document.getElementById('specialtiesSection');
   const projSection = document.getElementById('projectSection');
@@ -24,30 +24,28 @@ document.onreadystatechange = function () {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
     sideNav.style.visibility = 'hidden';
-    mobileCanvas.style.display = 'none';
+    // mobileCanvas.style.display = 'none';
     aboutSection.style.visibility = 'hidden';
     specialtiesSection.style.visibility = 'hidden';
     projSection.style.visibility = 'hidden';
     contactSection.style.visibility = 'hidden';
     pageLoader.style.visibility = 'visible';
-    // planetBg.style.display = 'none';
     // iterate over all planet backgrounds
     for (let i = 0; i < planetBg.length; i++) {
       planetBg[i].style.display = 'none';
     }
   } else {
+    initPlanets();
     setTimeout(() => {
-      initPlanets();
       body.style.visibility = 'visible';
       nav.style.display = 'flex';
       sideNav.style.visibility = 'visible';
-      mobileCanvas.style.display = 'block';
+      // mobileCanvas.style.display = 'block';
       aboutSection.style.visibility = 'visible';
       specialtiesSection.style.visibility = 'visible';
       projSection.style.visibility = 'visible';
       contactSection.style.visibility = 'visible';
       pageLoader.style.visibility = 'hidden';
-      // planetBg.style.display = 'block';
       // iterate over all planet backgrounds
       for (let i = 0; i < planetBg.length; i++) {
         planetBg[i].style.display = 'block';

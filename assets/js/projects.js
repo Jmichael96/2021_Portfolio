@@ -355,5 +355,6 @@ document.getElementById('desktopNavLink').onclick = () => {
 };
 
 document.getElementById('mobileNavLink').onclick = () => {
+    console.log('redirecting')
     window.location.href = '/index.html';
 };

@@ -57,15 +57,18 @@ function initPlanets() {
         loader5.addEventListener("fileload", function (evt) { handleCallistoFileLoad(evt, comp5) });
         loader5.addEventListener("complete", function (evt) { handleCallistoComplete(evt, comp5) });
     } else {
-        canvas6 = document.getElementById('mobileCanvas');
-        let comp6 = AdobeAn.getComposition('D7E3423B551E00458CD72DB4C211F4E1');
-        var lib6 = comp6.getLibrary();
-        let loader6 = new createjs.LoadQueue(false);
-        // mars
-        loader6.addEventListener("fileload", function (evt) { handleMobileFileLoad(evt, comp2) });
-        loader6.addEventListener("complete", function (evt) { handleMobileCanvasComplete(evt, comp2) });
-        var lib6 = comp6.getLibrary();
-        loader6.loadManifest(lib6.properties.manifest);
+        // neptune
+        loader3.addEventListener("fileload", function (evt) { handleNeptuneFileLoad(evt, comp3) });
+        loader3.addEventListener("complete", function (evt) { handleNeptuneComplete(evt, comp3) });
+        // canvas6 = document.getElementById('mobileCanvas');
+        // let comp6 = AdobeAn.getComposition('D7E3423B551E00458CD72DB4C211F4E1');
+        // var lib6 = comp6.getLibrary();
+        // let loader6 = new createjs.LoadQueue(false);
+        // // mars
+        // loader6.addEventListener("fileload", function (evt) { handleMobileFileLoad(evt, comp2) });
+        // loader6.addEventListener("complete", function (evt) { handleMobileCanvasComplete(evt, comp2) });
+        // var lib6 = comp6.getLibrary();
+        // loader6.loadManifest(lib6.properties.manifest);
     }
 
     // moon
