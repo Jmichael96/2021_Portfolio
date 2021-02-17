@@ -3,13 +3,13 @@ document.onreadystatechange = function () {
   const body = document.querySelector('body');
   const nav = document.querySelector('nav');
   const sideNav = document.getElementById('sideNav');
+  const mobileCanvas = document.getElementById('mobileCanvas');
   const aboutSection = document.getElementById('aboutSection');
   const specialtiesSection = document.getElementById('specialtiesSection');
   const projSection = document.getElementById('projectSection');
   const contactSection = document.getElementById('contactSection');
   const pageLoader = document.getElementById('portfolioLoader');
   const planetBg = document.getElementsByClassName('.planetBg');
-
   // for the game
   if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     // turn off mobile canvas
@@ -24,6 +24,7 @@ document.onreadystatechange = function () {
     body.style.visibility = 'hidden';
     nav.style.display = 'none';
     sideNav.style.visibility = 'hidden';
+    mobileCanvas.style.display = 'none';
     aboutSection.style.visibility = 'hidden';
     specialtiesSection.style.visibility = 'hidden';
     projSection.style.visibility = 'hidden';
@@ -36,9 +37,11 @@ document.onreadystatechange = function () {
     }
   } else {
     setTimeout(() => {
+      initPlanets();
       body.style.visibility = 'visible';
       nav.style.display = 'flex';
       sideNav.style.visibility = 'visible';
+      mobileCanvas.style.display = 'block';
       aboutSection.style.visibility = 'visible';
       specialtiesSection.style.visibility = 'visible';
       projSection.style.visibility = 'visible';

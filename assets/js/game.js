@@ -403,7 +403,7 @@
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 this.shooterHeat += 1.5;
             } else {
-                this.shooterHeat += .5;
+                this.shooterHeat += .7;
             }
             if (this.shooterHeat < 0) {
                 // creating a new projectile and adjusting the coordinates/speed

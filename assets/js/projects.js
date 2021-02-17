@@ -351,9 +351,9 @@ $('.js-link').click(function (e) {
 });
 
 document.getElementById('desktopNavLink').onclick = () => {
-    window.location.href = '/';
+    window.location.href = '/index.html';
 };
 
 document.getElementById('mobileNavLink').onclick = () => {
-    window.location.href = '/';
+    window.location.href = '/index.html';
 };
