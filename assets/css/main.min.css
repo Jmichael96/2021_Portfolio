@@ -1586,6 +1586,10 @@ footer {
 #desktopJackAttack {
     height: 4rem;
     margin-left: .5rem;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
 /* wrapper surrounding each of the nav links */

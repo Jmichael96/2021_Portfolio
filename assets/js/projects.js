@@ -182,15 +182,19 @@ $(window).on('load', function () {
         // ! NAVBAR
         const nav = document.getElementById('nav');
         const scrollBtn = document.getElementById('scrollTopIcon');
+        // navbar image
+        const navImg = document.getElementById('desktopJackAttack');
         if (this.scrollY <= 100) {
             nav.style.height = '4rem';
             nav.style.backgroundColor = '#000000b0'
             scrollBtn.style.display = 'none';
+            navImg.style.height = '4rem';
         }
         else {
             nav.style.height = '3rem';
             nav.style.backgroundColor = 'black';
             scrollBtn.style.display = 'block';
+            navImg.style.height = '3rem';
         };
         scrollProgressBar();
     };
