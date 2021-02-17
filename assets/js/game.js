@@ -43,11 +43,19 @@
         this.invaderShots = [];
 
         // initiate the invaders to move and changes the amount of time per step moved
-        if (invaderDownTimer === undefined) {
-            invaderDownTimer = setInterval(function () {
-                for (i = 0; i < game.invaders.length; i++) game.invaders[i].move();
-            }, 0);
-        };
+        if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (invaderDownTimer === undefined) {
+                invaderDownTimer = setInterval(function () {
+                    for (i = 0; i < game.invaders.length; i++) game.invaders[i].move();
+                }, 0);
+            }
+        } else {
+            if (invaderDownTimer === undefined) {
+                invaderDownTimer = setInterval(function () {
+                    for (i = 0; i < game.invaders.length; i++) game.invaders[i].move();
+                }, 10);
+            }
+        }
     }
 
     Game.prototype = {
@@ -62,6 +70,7 @@
 
                 // for when all invaders die. change the level amount
                 gameLevel += 1;
+                // for desktop users
                 if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     if (gameLevel === 1) {
                         // how often the invaders shoot
@@ -97,7 +106,8 @@
                         // add new section of invaders
                         blocks.unshift([0, 7, 14]);
                     }
-                } else {
+                }   // for mobile users 
+                else {
                     if (gameLevel === 1) {
                         // how often the invaders shoot
                         invaderAttackRate -= 0.001;
@@ -127,6 +137,7 @@
                     } else {
                         // add new section of invaders
                         blocks.unshift([2, 4]);
+                        blocks.unshift([0, 3, 6]);
                     }
                 }
 
@@ -299,7 +310,7 @@
                 if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     this.coordinates.y += 10;
                 } else {
-                    this.coordinates.y += 3;
+                    this.coordinates.y += 1;
                 }
                 // if the invaders reach the end of the canvas. end game
                 if (this.coordinates.y + this.size.height * 2 > gameSize.height) game.lost = true;
@@ -369,12 +380,12 @@
                 // });
                 leftBtn.onmousedown = () => {
                     if (this.coordinates.x > 0) {
-                        this.coordinates.x -= 5;
+                        this.coordinates.x -= 6;
                     }
                 }
                 rightBtn.onmousedown = () => {
                     if (this.coordinates.x < gameSize.width - this.size.width) {
-                        this.coordinates.x += 5;
+                        this.coordinates.x += 6;
                     }
                 }
             }
@@ -389,7 +400,11 @@
             // check if on mobile or not. if so turn on full auto!
             // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             // how fast the player can shoot
-            this.shooterHeat += 1.5;
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                this.shooterHeat += 1.5;
+            } else {
+                this.shooterHeat += .5;
+            }
             if (this.shooterHeat < 0) {
                 // creating a new projectile and adjusting the coordinates/speed
                 let projectile = new Projectile({
@@ -402,7 +417,11 @@
                 this.projectile.push(projectile);
             } else if (this.shooterHeat > 12) {
                 // how many shoot out after each shot
-                this.shooterHeat = -2;
+                if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    this.shooterHeat = -2;
+                } else {
+                    this.shooterHeat = -1;
+                }
             }
             // return;
             // }
