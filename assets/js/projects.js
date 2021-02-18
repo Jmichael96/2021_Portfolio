@@ -113,10 +113,19 @@ const projects = [
     {
         id: 5,
         name: 'Clicky Game',
-        link: 'https://lit-wildwood-52008.herokuapp.com/',
+        link: 'https://clicky-game-jvh.herokuapp.com/',
         imageName: 'clickyGame.png',
         techStack: ['All Projects', 'React', 'Materialize', 'CSS', 'JavaScript'],
         desc: 'A game of memory!',
+        client: false,
+    },
+    {
+        id: 15,
+        name: 'Portfolio',
+        link: 'https://codevh.com/',
+        imageName: 'portfolio.png',
+        techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript'],
+        desc: 'My own personal portfolio that I built from scratch.',
         client: false,
     },
     {
@@ -172,7 +181,7 @@ $(window).on('load', function () {
             /* Check the location of each desired element */
             let objectBottom = $(this).offset().top + $(this).outerHeight();
             /* If the element is completely within bounds of the window, fade it in */
-            if (objectBottom < windowBottom + 100) {
+            if (objectBottom < windowBottom + 200) {
                 //object comes into view (scrolling down)
                 if ($(this).css("opacity") == 0) { $(this).fadeTo(500, 1); }
             } else { //object goes out of view (scrolling up)
@@ -252,7 +261,7 @@ let filteredArr = [];
 let isLatest = true;
 // assigning the total amount of projects as an integer to render the filtered text accordingly
 // ! MUST CHANGE EVERY TIME A PROJECT IS ADDED ===========================
-const totalProjects = 14;
+const totalProjects = 15;
 // render the projects function
 const renderProjects = () => {
     projLocation.innerHTML = filteredArr.map((item, i) => {
