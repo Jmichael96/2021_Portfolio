@@ -30,11 +30,11 @@ document.onreadystatechange = function () {
 const projects = [
     {
         id: 14,
-        name: 'Lynns Auto Repair',
+        name: 'Lynn&#8217;s Auto Repair',
         link: 'https://lynnsautorepairmagnolia.com',
         imageName: 'lynns.jpg',
         techStack: ['All Projects', 'Wordpress', 'PHP'],
-        desc: 'Auto shop in Magnolia, TX.',
+        desc: 'Service Website for Auto shop in Magnolia, TX.',
         client: true,
     },
     {
@@ -43,16 +43,16 @@ const projects = [
         link: 'https://updatewithcait.com',
         imageName: 'uwc.png',
         techStack: ['All Projects', 'React', 'JavaScript', 'Express', 'MongoDB', 'CSS', 'Node', 'React-Quill'],
-        desc: 'Blog website for a personal client',
+        desc: 'Multipurpose Blog Website for Personal Client.',
         client: true,
     },
     {
         id: 12,
-        name: 'Jays Iron Works',
+        name: 'Jay&#8217;s Iron Works',
         link: 'https://jays-ironworks.com',
         imageName: 'jaysironworks.png',
         techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript', 'PHP'],
-        desc: 'Commercial company that does wrought iron fence painting and repairs.',
+        desc: 'Service Website for Commercial Business specializing in wrought iron fence painting and repairs.',
         client: true,
         for: 'me'
     },
@@ -62,7 +62,7 @@ const projects = [
         link: 'https://toplinedumpsters.com',
         imageName: 'topline.jpeg',
         techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript', 'Bootstrap', 'PHP'],
-        desc: 'Commercial business for dumpster rentals',
+        desc: 'Dumpster Rental Website for Commercial Business.',
         client: true,
     },
     {
@@ -71,7 +71,7 @@ const projects = [
         link: 'https://jmichael96.github.io/Graphs/',
         imageName: 'graph.png',
         techStack: ['All Projects', 'React', 'GraphQL', 'Apollo', 'MaterialUI', 'Plotly', 'CSS'],
-        desc: 'Giving a visual representation from live oil and gas data',
+        desc: 'Visual representation of live oil and gas data.',
         client: false,
     },
     {
@@ -80,7 +80,7 @@ const projects = [
         link: 'https://slithery-snake96.herokuapp.com/',
         imageName: 'snake.jpg',
         techStack: ['All Projects', 'HTML5', 'JavaScript', 'MongoDB', 'Express', 'Bootstrap', 'CSS', 'Node'],
-        desc: 'A classic snake game. Try and beat your high score!',
+        desc: 'Classic Snake Game. Click to play and beat the high score!',
         client: false,
     },
     {
@@ -89,7 +89,7 @@ const projects = [
         link: 'https://google-books96.herokuapp.com/',
         imageName: 'bookbg.jpg',
         techStack: ['All Projects', 'React', 'MongoDB', 'Express', 'Bootstrap', 'Node', 'CSS'],
-        desc: 'Search for a book to buy or save it for later.',
+        desc: 'Online platform to find and save novels and short stories.',
         client: false,
     },
     {
@@ -98,7 +98,7 @@ const projects = [
         link: 'https://mongo-scraper-jvh.herokuapp.com/',
         imageName: 'mongo-scraper.png',
         techStack: ['All Projects', 'HTML5', 'JavaScript', 'Handlebars', 'Cheerio', 'MongoDB', 'Bootstrap', 'Express', 'CSS', 'Node'],
-        desc: 'A web scraper used to gather data about supercross and render it as a pleasing UI.',
+        desc: 'Web scraper used to gather data about supercross and render it as a pleasing UI.',
         client: false,
     },
     {
@@ -107,7 +107,7 @@ const projects = [
         link: 'https://jmichael96.github.io/Giphy-API/',
         imageName: 'giphy-api.png',
         techStack: ['All Projects', 'HTML5', 'JavaScript', 'Bootstrap', 'CSS'],
-        desc: 'Search and watch any animal gif you want!',
+        desc: 'Online platform to search and view animal gifs.',
         client: false,
     },
     {
@@ -116,7 +116,7 @@ const projects = [
         link: 'https://clicky-game-jvh.herokuapp.com/',
         imageName: 'clickyGame.png',
         techStack: ['All Projects', 'React', 'Materialize', 'CSS', 'JavaScript'],
-        desc: 'A game of memory!',
+        desc: 'Classic shuffle game designed to test players&#8217; memory.',
         client: false,
     },
     {
@@ -125,7 +125,7 @@ const projects = [
         link: 'https://codevh.com/',
         imageName: 'portfolio.png',
         techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript'],
-        desc: 'My own personal portfolio that I built from scratch.',
+        desc: 'Personal portfolio built from scratch.',
         client: false,
     },
     {
@@ -143,7 +143,7 @@ const projects = [
         link: 'https://sequelized-burger-jvh.herokuapp.com/',
         imageName: 'sequelizeBurger.jpg',
         techStack: ['All Projects', 'HTML5', 'CSS', 'Bootstrap', 'Express', 'JavaScript', 'Node', 'MySQL', 'Handlebars'],
-        desc: 'Build your own burger.',
+        desc: 'Hungry? Build your own burger!',
         client: false,
     },
     {
@@ -152,7 +152,7 @@ const projects = [
         link: 'https://jmichael96.github.io/Unit4-StarWarsRPG/',
         imageName: 'starwars.png',
         techStack: ['All Projects', 'HTML5', 'CSS', 'Bootstrap', 'JavaScript'],
-        desc: 'Try and eliminate your components!',
+        desc: 'Luck-based battle game against computer-opponent.',
         client: false,
     },
     {

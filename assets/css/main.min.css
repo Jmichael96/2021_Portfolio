@@ -1031,9 +1031,20 @@ label {
 /* footer element */
 
 footer {
+    position: relative;
     padding: .3rem 0;
     width: 100%;
     background-color: black;
+}
+
+/* website counter */
+
+#webCounter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0;
 }
 
 /* p tag wrapper around the footer copyright and date */
