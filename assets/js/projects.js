@@ -124,7 +124,7 @@ const projects = [
         name: 'Portfolio',
         link: 'https://codevh.com/',
         imageName: 'portfolio.png',
-        techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript'],
+        techStack: ['All Projects', 'HTML5', 'CSS', 'JavaScript', 'PHP'],
         desc: 'Personal portfolio built from scratch.',
         client: false,
     },
