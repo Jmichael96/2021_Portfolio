@@ -1,0 +1,954 @@
+:root {
+    --cardBg: #3b4e74;
+}
+
+/* the article tag surround all of the project content and filters */
+
+#projectLayout {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+/* ! PLANETS & BACKGROUNDS  */
+
+.marsBg {
+    position: absolute;
+    top: 0;
+    right: -4rem;
+    width: 34rem;
+    z-index: 2;
+}
+
+.moonBg {
+    position: absolute;
+    top: 27rem;
+    left: -5rem;
+    height: 24rem;
+    width: 41rem;
+    z-index: 2;
+}
+
+.jupiterBg {
+    position: absolute;
+    top: 52rem;
+    right: -4rem;
+    z-index: 2;
+    height: 24rem;
+    width: 38rem;
+}
+
+.callistoBg {
+    position: absolute;
+    top: 85rem;
+    left: -8rem;
+    z-index: 2;
+    height: 24rem;
+    width: 33rem;
+}
+
+/* showing how many and what projects are being rendered text */
+
+#projectAmountRender {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    margin: 10rem 0 0 0;
+    z-index: 3;
+    position: relative;
+}
+
+/* wrapper around the select input */
+
+#selectWrapper {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    z-index: 4;
+}
+
+/* ! ========== CUSTOM INPUT SELECT */
+
+.select {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 16rem;
+    display: block;
+    font-size: 1.1rem;
+    text-align: center;
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
+    z-index: 4;
+}
+
+.select.active .arrow {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.select.active .arrow:before {
+    transform: translate(10px, 0);
+}
+
+.select.active .arrow:after {
+    transform: rotate(90deg) translate(10px, 0);
+}
+
+/* style of the dropped down part of the list */
+
+.select.active ul {
+    opacity: 1;
+    height: 100%;
+    background-color: #3b4e74;
+    /* font-size: 1rem; */
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .3);
+}
+
+.select .arrow {
+    transform: rotate(0);
+    left: 0;
+}
+
+.select .arrow:before, .select .arrow:after {
+    background-color: transparent;
+    width: 3px;
+    height: 10px;
+    display: inline-block;
+    position: absolute;
+    border-bottom: 12px solid #ffffff;
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+}
+
+.select .arrow:before {
+    transform: rotate(-135deg);
+}
+
+.select .arrow:after {
+    transform: rotate(135deg);
+}
+
+.select.active .arrow {
+    transform: rotate(0);
+    transform: translate(0, -6px);
+}
+
+.select.active .arrow:before {
+    transform: rotate(-45deg);
+}
+
+.select.active .arrow:after {
+    transform: rotate(45deg);
+}
+
+.arrow {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    bottom: 0;
+    margin-top: 4px;
+    text-align: left;
+    transform: rotate(45deg);
+    float: right;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all 0.4s ease;
+}
+
+.arrow:before, .arrow:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 3px;
+    background-color: #fff;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all 0.4s ease;
+}
+
+.arrow:after {
+    position: absolute;
+    transform: rotate(90deg);
+    top: -5px;
+    left: 5px;
+}
+
+.selectBtn {
+    display: block;
+    text-align: left;
+    padding: .5rem;
+    margin: 0;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.selectBtn:hover {
+    color: rgb(255, 255, 255);
+    border-bottom-color: #c75000;
+}
+
+/* unordered list style */
+
+ul {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    list-style-type: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* list item */
+
+.selectValue {
+    margin: 0 auto;
+    padding: .5rem .5rem;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.selectValue:hover {
+    background-color: #c75000;
+}
+
+/* adding the spacing for the dropdown */
+
+.selectValue:first-child {
+    margin-top: 1rem;
+}
+
+.selectValue:last-child {
+    margin-bottom: 1rem;
+}
+
+/* ! *end* ========== CUSTOM INPUT SELECT */
+
+/* the name thats displayed in the project amount render */
+
+.techName {
+    color: #c75000;
+}
+
+/* the select around the rendered projects */
+
+#projectRender {
+    z-index: 99999;
+}
+
+/* strictly for when a filter is being selected it will render to the page */
+
+#filterLoading {
+    height: 100%;
+    position: relative;
+    display: none;
+    overflow: hidden;
+}
+
+/* the select of the filter loading content */
+
+#filterLoadingContentWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* searching for text when the filter loading content is displayed */
+
+#searchingForRender {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 2;
+    letter-spacing: .1rem;
+    position: absolute;
+    /* width: 95%; */
+    top: 37%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: 3.5s textLeft forwards;
+    -moz-animation: 3.5s textLeft forwards;
+    -ms-animation: 3.5s textLeft forwards;
+    -o-animation: 3.5s textLeft forwards;
+    animation: 3.5s textLeft forwards;
+}
+
+@keyframes textLeft {
+    0% {
+        transform: translateX(2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+@-moz-keyframes textLeft {
+    0% {
+        transform: translateX(2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+@-webkit-keyframes textLeft {
+    0% {
+        transform: translateX(2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+@-ms-keyframes textLeft {
+    0% {
+        transform: translateX(2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+@-o-keyframes textLeft {
+    0% {
+        transform: translateX(2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+/* spinner wrapper */
+
+#spinnerWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: 3.5s spinnerRight forwards;
+    -moz-animation: 3.5s spinnerRight forwards;
+    -ms-animation: 3.5s spinnerRight forwards;
+    -o-animation: 3.5s spinnerRight forwards;
+    animation: 3.5s spinnerRight forwards;
+}
+
+/* select around the spinner */
+
+#spinnerselect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spinnerRight {
+    0% {
+        transform: translateX(-2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+@-moz-keyframes spinnerRight {
+    0% {
+        transform: translateX(-2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+@-webkit-keyframes spinnerRight {
+    0% {
+        transform: translateX(-2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+@-ms-keyframes spinnerRight {
+    0% {
+        transform: translateX(-2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+@-o-keyframes spinnerRight {
+    0% {
+        transform: translateX(-2000px);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translateX(2000px);
+    }
+}
+
+.orbit, .star {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #333;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-left: -52px;
+    margin-top: -52px;
+    -webkit-animation: tick 5s infinite linear;
+    animation: tick 5s infinite linear;
+}
+
+.star {
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin: -15px 0 0 -15px;
+    background: #c75000;
+}
+
+#planet {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    width: 30px;
+    height: 0;
+    margin: 0;
+    background: #fff;
+    transition: all 0.5s ease-out;
+    -webkit-animation: tick 1s infinite linear;
+    animation: tick 1s infinite linear;
+}
+
+#planet:after, #planet:before {
+    padding: 2px;
+    background: #aaa;
+    display: block;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+}
+
+#planet:before {
+    padding: 10px;
+    left: 20%;
+    top: -10px;
+    background: #3b4e74;
+}
+
+@-webkit-keyframes tick {
+    0% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes tick {
+    0% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/* ! PROJECT CARD */
+
+/* the link around each card */
+
+.projLink {
+    margin: 2rem 1rem 1rem 1rem;
+}
+
+/* card for each project */
+
+.projectCard {
+    position: relative;
+    width: 20rem;
+    height: 22rem;
+    cursor: pointer;
+    perspective: 100vw;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    z-index: 4;
+}
+
+/* the card cover which contains the glare and hover animation */
+
+.cardCover {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(120deg, var(--cardBg) 0%, var(--cardBg) 100%);
+    background-size: cover;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    will-change: transform;
+    transform: skewX(0.001deg);
+    -webkit-transition: transform 0.35s ease-in-out;
+    -moz-transition: transform 0.35s ease-in-out;
+    -o-transition: transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
+    border-radius: 3px;
+    /* ! to remove the jagged lines on edge of card when the angle is changed */
+    outline: 1px solid transparent;
+}
+
+/* the lighting effect */
+
+.cardCover::after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(226deg, rgba(0, 0, 0, 0.1) 0%, rgba(131, 131, 131, 0.3) 35%, rgba(131, 131, 131, 0.1) 42%, rgba(255, 255, 255, 0) 60%);
+    transform: translateY(-30%);
+    will-change: transform;
+    -webkit-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    -moz-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    -o-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+
+.projectCard:hover .cardCover {
+    -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+    -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+    -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+    transform: rotateX(12deg) scale(.98) translateY(2px);
+}
+
+.projectCard:hover .cardCover::after {
+    transform: translateY(0%);
+}
+
+.projectCard::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+    will-change: opacity;
+    transform-origin: top center;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.projectCard:hover::before {
+    opacity: 0.6;
+    transform: rotateX(7deg) translateY(-6px) scale(1.05);
+}
+
+/* header of each card */
+
+.projectCardHeader {
+    position: relative;
+    height: 174px;
+    background-color: black;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.projectCardHeader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* change the color of the slant */
+
+svg .polygon {
+    fill: var(--cardBg);
+}
+
+/* div tag surrounding the svg slant */
+
+.projectCardSlant {
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
+/* card body */
+
+.projectCardBody {
+    text-align: center;
+    padding: .5rem;
+}
+
+/* title for each card */
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 0 auto;
+    color: white;
+    letter-spacing: .1rem;
+}
+
+/* card description text */
+
+.cardDesc {
+    font-size: .9rem;
+    color: #afafaf;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
+    letter-spacing: .1rem;
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1407px) {
+    .moonBg {
+        top: 42rem;
+    }
+    .moonImg {
+        top: 56rem;
+    }
+    .jupiterBg {
+        top: 78rem;
+    }
+    .jupiterImg {
+        top: 94rem;
+    }
+    .callistoBg {
+        top: 112rem;
+    }
+    .callistoImg {
+        top: 129rem;
+    }
+}
+
+@media only screen and (max-width: 1055) {
+    .moonBg {
+        top: 50rem;
+    }
+    .moonImg {
+        top: 66rem;
+    }
+    .jupiterBg {
+        top: 116rem;
+    }
+    .jupiterImg {
+        top: 132rem;
+    }
+    .callistoBg {
+        top: 170rem;
+    }
+    .callistoImg {
+        top: 188rem;
+    }
+}
+
+/* ! PLANETS & BACKGROUNDS  */
+
+@media only screen and (max-width: 852px) {
+    /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
+    /* the lighting effect */
+    .cardCover::after {
+        background: none;
+    }
+    .projectCard::before {
+        display: none;
+    }
+    .projectCard:hover .cardCover {
+        -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+        transform: none;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    /* the text left animation for the filter loading page */
+    @keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-moz-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-webkit-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-ms-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    @-o-keyframes textLeft {
+        0% {
+            transform: translateX(800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(-800px);
+        }
+    }
+    /* for the spinner right animation for the filter loading page */
+    @keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-moz-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-webkit-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-ms-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+    @-o-keyframes spinnerRight {
+        0% {
+            transform: translateX(-800px);
+        }
+        50% {
+            transform: translate(-50%, -50%);
+        }
+        75% {
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            transform: translateX(800px);
+        }
+    }
+}
+
+@media only screen and (max-width: 703px) {
+    .moonBg {
+        top: 120rem;
+    }
+    .moonImg {
+        top: 135rem;
+    }
+    .jupiterBg {
+        top: 234rem;
+    }
+    .jupiterImg {
+        top: 250rem;
+    }
+    .callistoBg {
+        top: 345rem;
+    }
+    .callistoImg {
+        top: 362rem;
+    }
+}

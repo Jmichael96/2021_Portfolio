@@ -1,0 +1,75 @@
+/* @import url('./about.css');
+@import url('./contact.css');
+@import url('./footer.css');
+@import url('./header.css');
+@import url('./navbar.css');
+@import url('./pageLoader.css');
+@import url('./projects.css');
+@import url('./specialties.css'); */
+
+:root {
+    --desktop-primary-color: #00051a;
+    --accent-color: #a236c9;
+    /* orange c75000 */
+    /* blue 3b4e74 */
+}
+
+@font-face {
+    font-family: 'Mandatory Plaything';
+    src: url('../fonts/MandatoryPlaything-nRRd0.ttf');
+}
+
+/* so that users don't have any problem playing the game and accidentally zooming in on double tap */
+
+* {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+html body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #00051a;
+    font-family: 'Mandatory Plaything';
+}
+
+/* wrapper to surround flex elements */
+
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+}
+
+/* fading in */
+
+.fade {
+    opacity: 1;
+}
+
+/* wrapper around the progress bar */
+
+#progressBarWrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: transparent;
+    height: 4px;
+    display: block;
+}
+
+/* scrollbar for top of window */
+
+#progressBar {
+    background-color: #c75000;
+    width: 0%;
+    display: block;
+    height: inherit;
+}

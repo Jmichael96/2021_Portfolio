@@ -1,0 +1,787 @@
+:root {
+    --iconColor: #3b4e74;
+    --emailColor: #c75000;
+    --tooltipBg: #c75000;
+    --tooltipText: #000000;
+    --inputBorderBefore: #3b4e74;
+    --inputBorderAfter: #c75000;
+    --inputLabel: #3b4e74;
+}
+
+/* contact section article tag */
+
+#contactSection {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    overflow: hidden;
+    height: 46rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+/* callisto background image for section */
+
+#callistoBg {
+    position: absolute;
+    bottom: -1rem;
+    left: -2rem;
+    z-index: 1;
+    width: 36rem;
+    height: 30rem;
+}
+
+/* image of callisto */
+
+#callistoCanvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    z-index: 2;
+    left: 5rem;
+    bottom: 3rem;
+    opacity: .9;
+}
+
+/* contact form */
+
+#contactForm {
+    width: 100%;
+    max-width: 35rem;
+    height: auto;
+    border-radius: 3px;
+    padding: 1rem;
+    margin: 1rem;
+    z-index: 3;
+    /* text-align: center; */
+}
+
+/* form title */
+
+#formTitle {
+    font-size: 2.2rem;
+    color: white;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+/* cursor for the title */
+
+.contactCursorBlinker {
+    -webkit-animation: 1s contactCursor step-end infinite;
+    -moz-animation: 1s contactCursor step-end infinite;
+    -ms-animation: 1s contactCursor step-end infinite;
+    -o-animation: 1s contactCursor step-end infinite;
+    animation: 1s contactCursor step-end infinite;
+}
+
+@keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-moz-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-webkit-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-ms-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-o-keyframes contactCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+/* wrapper around the input tag, bar and errors */
+
+.inputWrap {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0;
+}
+
+/* input element */
+
+.input {
+    font-size: 1rem;
+    font-family: 'Mandatory Plaything';
+    font-weight: 400;
+    padding: 1.2rem 0 .5rem 0;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--inputBorderBefore);
+    background-color: transparent;
+    color: white;
+}
+
+/* removing the resize box option for the message box */
+
+textarea {
+    resize: none;
+}
+
+/* to remove the red border around the input element since its required */
+
+.input:required {
+    box-shadow: none;
+}
+
+.input:focus {
+    outline: none;
+}
+
+/* label for inputs */
+
+label {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 20px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+
+.input:focus~label, .input:valid~label {
+    top: -10px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--inputLabel);
+}
+
+/* bottom line and animation for the input bar */
+
+.inputBar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.inputBar:before, .inputBar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: var(--inputBorderAfter);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.inputBar:before {
+    left: 50%;
+}
+
+.inputBar:after {
+    right: 50%;
+}
+
+/* active state */
+
+.input:focus~.inputBar:before, .input:focus~.inputBar:after {
+    width: 50%;
+}
+
+/* submit button wrapper */
+
+.submitWrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+/* submit button */
+
+#submitFormBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 9rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#submitFormBtn {
+    outline: none;
+}
+
+/* social media icon wrap */
+
+#socialIconWrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* text above the social icons */
+
+.socialText {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* the divider line between the social media content */
+
+.divider {
+    width: 100%;
+    border: 1px solid #c75000;
+    margin: 1.5rem 0;
+    border-radius: 3px;
+}
+
+/* the social icons */
+
+.socialIcon {
+    font-size: 2rem;
+    color: var(--iconColor);
+    cursor: pointer;
+}
+
+/* span tag for the tooltip*/
+
+.tool {
+    position: relative;
+    text-align: center;
+}
+
+/* common styles for both parts of tool tip */
+
+.tool::before, .tool::after {
+    left: 56%;
+    opacity: 0;
+    position: absolute;
+    z-index: -100;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.tool:hover::before, .tool:focus::before, .tool:hover::after, .tool:focus::after {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 100;
+}
+
+/* pointer tip */
+
+.tool::before {
+    border-style: solid;
+    border-width: 1em 0.75em 0 0.75em;
+    border-color: var(--tooltipBg) transparent transparent transparent;
+    bottom: 140%;
+    content: "";
+    margin-left: -0.85rem;
+    transition: all .4s cubic-bezier(.84, -0.18, .31, 1.26), opacity .2s .2s;
+    transform: scale(.6) translateY(-90%);
+}
+
+.tool:hover::before, .tool:focus::before {
+    transition: all .4s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
+}
+
+/* speech bubble */
+
+.tool::after {
+    background: var(--tooltipBg);
+    border-radius: 5px;
+    bottom: 216%;
+    color: var(--tooltipText);
+    content: attr(data-tip);
+    margin-left: -3.7rem;
+    padding: .2rem;
+    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26) .2s;
+    transform: scale(.6) translateY(50%);
+    width: 7rem;
+}
+
+.tool:hover::after, .tool:focus::after {
+    transition: all .65s cubic-bezier(.84, -0.18, .31, 1.26);
+}
+
+/* @media (max-width: 760px) {
+    .tool::after {
+        font-size: .75em;
+        margin-left: -5em;
+        width: 10em;
+    }
+} */
+
+/* wrapper around the map */
+
+#mapWrapper {
+    height: 40rem;
+    width: 100%;
+    max-width: 40rem;
+    position: relative;
+    z-index: 3;
+}
+
+/* map tag */
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* the map image */
+
+#mapImg {
+    display: none;
+    height: auto;
+    width: 100%;
+}
+
+/* box that shows where i live */
+
+#locationBox {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 14rem;
+    height: 8rem;
+    padding: .5rem;
+    background-color: #3b4e74;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    border-radius: 3px;
+}
+
+/* location text stating the city */
+
+.locationText {
+    color: white;
+    margin: 0;
+    font-size: .9rem;
+    width: 100%;
+}
+
+/* email text inside the location box */
+
+.locationEmailText {
+    width: 100%;
+    color: white;
+    margin: 1rem 0;
+    font-size: .9rem;
+}
+
+/* the email address attached to the anchor tag */
+
+.locationEmail {
+    color: var(--emailColor);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* the download resume button */
+
+#resumeBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1rem;
+    width: 100%;
+    max-width: 6rem;
+    padding: .2rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#resumeBtn:focus {
+    outline: none;
+}
+
+/* changing the transparency of the tom tom copyright */
+
+.mapboxgl-ctrl-bottom-right {
+    opacity: 0;
+}
+
+/* marker icon */
+
+.mapboxgl-marker>div {
+    display: none;
+}
+
+/* point marker */
+
+.mapboxgl-marker>svg {
+    width: 35px;
+    height: 45px;
+    cursor: pointer;
+    fill: var(--iconColor)
+}
+
+/* ! MODAL STYLE */
+
+/* ! ROBOT MODAL  */
+
+.robotModal {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 22rem;
+    padding: 1rem;
+    background: #3b4e74;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.robotModalCloseBtn {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #c75000;
+}
+
+/* error message p element */
+
+#robotModalMsg {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    color: #ffffff;
+}
+
+/** Overlay */
+
+.robotModalOverlay {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 12;
+}
+
+/** JS */
+
+.is-robot-modal-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* question input select */
+
+#question {
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    font-family: 'Mandatory Plaything';
+}
+
+/* submit the quote button inside the modal prompting the robot question */
+
+#submitForm {
+    font-family: 'Mandatory Plaything';
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#submitForm:focus {
+    outline: none;
+}
+
+/* terms of use text wrapper */
+
+.termsTextWrap {
+    color: white;
+    font-size: .7rem;
+    font-weight: 100;
+}
+
+/* terms text */
+
+.termsTextWrap>a {
+    text-decoration: underline;
+    color: white;
+}
+
+/* ! NEW ALERT  */
+
+.alert-success {
+    background-color: #3b4e74;
+    position: fixed;
+    width: 80%;
+    max-width: 40rem;
+    height: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    bottom: 5%;
+    left: 50%;
+    z-index: 99;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+    overflow: hidden;
+    display: none;
+    /* webkit animation */
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-name: alert-in;
+    /* moz animation */
+    -moz-animation-duration: 4s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-fill-mode: both;
+    -moz-animation-name: alert-in;
+    /* ms animation */
+    -ms-animation-duration: 4s;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-fill-mode: both;
+    -ms-animation-name: alert-in;
+    /* animation */
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-name: alert-in;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+/* alert text */
+
+#alertText {
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#alertIconWrap {
+    text-align: center;
+    width: 32px;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border: 1px solid #c75000;
+    border-radius: 3px;
+    background: #c75000;
+    color: white;
+}
+
+/* arrow tic */
+
+#alertIconWrap:after {
+    display: block;
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    border-left: 0;
+    border-bottom: 0;
+    top: 50%;
+    right: -2px;
+    z-index: 99;
+    background: #c75000;
+    margin-top: -6px;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+    -moz-transform: rotate(45deg) translateY(-50%);
+    -ms-transform: rotate(45deg) translateY(-50%);
+    -o-transform: rotate(45deg) translateY(-50%);
+    transform: rotate(45deg) translateY(-50%);
+}
+
+#alertIconWrap i {
+    font-size: 2rem;
+    color: #FFF;
+    position: absolute;
+    z-index: 100;
+    left: 66%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* ! keyframes for alert animations */
+
+@-webkit-keyframes alert-in {
+    0% {
+        transform: translateX(1000px)
+    }
+    30% {
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+@-moz-keyframes alert-in {
+    0% {
+        transform: translateX(1000px)
+    }
+    30% {
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+@-ms-keyframes alert-in {
+    0% {
+        transform: translateX(1000px)
+    }
+    30% {
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+@keyframes alert-in {
+    0% {
+        transform: translateX(1000px)
+    }
+    30% {
+        transform: translateX(-50%);
+    }
+    60% {
+        transform: translateX(-50%);
+    }
+    80% {
+        transform: translateX(-65%);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1263px) {
+    /* contact section article tag */
+    #contactSection {
+        height: auto;
+    }
+    /* wrapper around the map */
+    #mapWrapper {
+        margin: 5rem 0 3rem 0;
+    }
+    /* callisto background image for section */
+    #callistoBg {
+        bottom: 42rem;
+    }
+    /* image of callisto */
+    #callistoCanvas {
+        bottom: 47rem;
+    }
+}
+
+@media only screen and (max-width: 1055px) {
+    /* contact section article tag */
+    #contactSection {
+        margin-top: 5rem;
+    }
+}
+
+@media only screen and (max-width: 649px) {
+    /* map tag */
+    #mapWrapper {
+        margin: 5rem 1rem 3rem 1rem;
+        height: 26rem;
+    }
+}

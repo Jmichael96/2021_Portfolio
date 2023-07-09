@@ -2,14 +2,434 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pre-Production</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Jeffrey VanHorn's portfolio! Currently available for a full time position" />
+    <meta name="author" content="Jeffrey VanHorn" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="black">
+    <meta name="msapplication-navbutton-color" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Jeffrey VanHorn | Home</title>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Jeffrey VanHorn">
+    <meta itemprop="description" content="Jeffrey VanHorn's portfolio! Currently available for a full time position">
+    <meta itemprop="image" content="./assets/images/favicons/jack.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="https://codevh.com">
+    <meta name="twitter:title" content="Jeffrey VanHorn">
+    <meta name="twitter:description"
+        content="Jeffrey VanHorn's portfolio! Currently available for a full time position">
+    <meta name="twitter:creator" content="Jeffrey VanHorn">
+
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="./assets/images/favicons/jack.png">
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Jeffrey VanHorn" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:url" content="https://codevh.com" />
+    <meta property="og:image" content="./assets/images/favicons/jack.png" />
+    <meta property="og:description"
+        content="Jeffrey VanHorn's portfolio! Currently available for a full time position" />
+    <meta property="og:site_name" content="Code VH" />
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="./assets/images/favicons/jack.png" />
+    <!-- Safari favicon -->
+    <link rel="apple-touch-icon" href="./assets/images/favicons/jack.png">
+    <!-- font -->
+    <link rel="preload" href="./assets/fonts/MandatoryPlaything-nRRd0.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- CUSTOM CSS LINKS -->
+    <!-- <link rel="stylesheet" href="./assets/css/minified.css" /> -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <link rel="stylesheet" href="./assets/css/contact.css" />
+    <link rel="stylesheet" href="./assets/css/footer.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
+    <link rel="stylesheet" href="./assets/css/pageLoader.css" />
+    <link rel="stylesheet" href="./assets/css/projects.css" />
+    <link rel="stylesheet" href="./assets/css/specialties.css" />
+    <link rel="stylesheet" href="./assets/css/game.css" />
+
+    <!-- given to me from the adobe environment setup -->
+    <script type="text/javascript" src="./assets/libs/create.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <h1>This is a pre production instance!</h1>
+    <noscript>
+        Make sure your browser has JavaScript turned on :)
+    </noscript>
+
+    <div id="progressBarWrap">
+        <div id="progressBar"></div>
+    </div>
+
+    <!-- ! SCREEN LOADER -->
+    <!-- <div id="loader" class="center"> -->
+    <!-- <img id="loadingImg" alt="" src="./assets/images/bg/loading.gif" /> -->
+    <div id="portfolioLoader">
+        <div class="sun"></div>
+        <div class="orbitSpinner orbit1">
+            <div class="planetX planet1"></div>
+        </div>
+        <div class="orbitSpinner orbit2">
+            <div class="planetX planet2"></div>
+        </div>
+        <div class="orbitSpinner orbit3">
+            <div class="planetX planet3"></div>
+        </div>
+        <div class="orbitSpinner orbit4">
+            <div class="planetX planet4"></div>
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <nav id="nav">
+        <div id="desktopNav" class="navInnerContentWrap">
+            <img alt="Jack Attack" id="desktopJackAttack" src="./assets/images/favicons/jack.png" />
+            <section class="navLinkWrap">
+                <a href="#aboutSection" class="navLink js-link"><span class="navSpan">About</span></a>
+                <a href="#specialtiesSection" class="navLink js-link"><span class="navSpan">Specialties</span></a>
+                <a href="#projectSection" class="navLink js-link"><span class="navSpan">My Work</span></a>
+                <a href="#contactSection" class="navLink js-link"><span class="navSpan">Contact</span></a>
+                <a id="desktopGameLink" href="#gameWrap" class="navLink js-link"><span class="navSpan">Play
+                        Guardian</span></a>
+            </section>
+        </div>
+        <div id="mobileNav">
+            <div id="mobileNavBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <!-- side nav -->
+    <div id="sideNav" class="menu">
+        <div id="mobileLinkWrap">
+            <a href="#aboutSection" class="mobileLink js-link">About</a>
+            <a href="#specialtiesSection" class="mobileLink js-link">Specialties</a>
+            <a href="#projectSection" class="mobileLink js-link">My Work</a>
+            <a href="#contactSection" class="mobileLink js-link">Contact</a>
+            <a href="" id="mobileGameLink" class="mobileLink js-link">Play Guardian</a>
+            <img alt="Jack Attack" id="mobileJackAttack" src="./assets/images/favicons/jack.png" />
+        </div>
+    </div>
+
+    <a href="#header_section" class="js-link scrollTop"><i id="scrollTopIcon" class="fas fa-arrow-circle-up"></i></a>
+
+    <!-- ! header -->
+    <header id="header_section">
+        <div class="headerContentWrap wrapper">
+            <img id="neptuneBg" class="planetBg" alt="" src="./assets/images/bg/neptuneBg.png" />
+            <h1 id="headerName"></h1>
+            <div id="headerTextRender"></div>
+            <canvas id="neptuneCanvas"></canvas>
+            <!-- <canvas id="mobileCanvas"></canvas> -->
+        </div>
+    </header>
+    <!-- <p id="text"></p> -->
+    <!-- ! about -->
+    <article id="aboutSection" class="wrapper">
+        <section id="aboutCard">
+            <img id="personalImg" alt="space jeffrey" src="./assets/images/about/jeffreySuit.png" />
+            <p id="aboutTxt" class="aboutTxt animated"></p>
+        </section>
+        <img id="marsBg" class="planetBg" alt="" src="./assets/images/bg/marsBg.png" />
+        <canvas id="marsCanvas"></canvas>
+    </article>
+
+    <!-- ! specialties section -->
+    <article id="specialtiesSection">
+        <img id="moonBg" class="planetBg" alt="moon bg" src="./assets/images/bg/moonBg.png" />
+        <canvas id="moonCanvas"></canvas>
+        <section id="specialtiesWrap">
+            <div id="specialtiesContent">
+                <p id="specialtiesTitle" class="specialtiesTitle animated"></p>
+                <ul class="fa-ul">
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-laptop-code"></i>Front-End Software Development</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fas fa-server"></i>Back-End Software Development</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fa-brands fa-google"></i>Google Cloud Platform</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fa-solid fa-database"></i>SQL & NO-SQL Databases</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fa-solid fa-spinner"></i>REST API'S</li>
+                    <li class="specialtyList fade"><i class="fa-li specialtyIcon fa-brands fa-docker"></i>Docker</li>
+                </ul>
+            </div>
+            <div id="myCanvasContainer">
+                <canvas width="600" height="600" id="myCanvas">
+                    <p>Your browser does not support this</p>
+                </canvas>
+            </div>
+            <div id="tags">
+                <ul>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/html.png" alt="HTML" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/angular.png" alt="Angular.js" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/animate.png" alt="Adobe Animate" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/aws_logo.png" alt="AWS" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/bootstrap.png" alt="Bootstrap" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/c-sharp.png" alt="C#" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/css3.png" alt="CSS3" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/firebase.png" alt="Firebase" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/git.png" alt="Git" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/illustrator.png" alt="Adobe Illustrator" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/js.png" alt="JavaScript" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/linux.png" alt="Linux OS" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/materialize.png" alt="Materialize" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/materialui.png" alt="MaterialUi" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/mongodb.png" alt="MongoDB" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/mysql_PNG9.png" alt="MySQL" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/nodejs-icon.svg" alt="Node.js" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/photoshop.png" alt="Adobe Photoshop" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/php.png" alt="PHP" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/React.png" alt="React.js" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/vue.png" alt="Vue.js" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/github.png" alt="Github" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/graphql.png" alt="GraphQL" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/sass.png" alt="Sass" /></a></li>
+                    <li><a href="#!" class="specialtyAnchor"><img class="canvasImg"
+                                src="./assets/images/specialties/typescript.png" alt="TypeScript" /></a></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+
+    <!-- ! projects section -->
+    <article id="projectSection" class="wrapper">
+        <img id="jupiterBg" alt="jupiter bg" class="planetBg" src="./assets/images/bg/jupiterBg.png" />
+        <canvas id="jupiterCanvas"></canvas>
+        <section class="projectWrap wrapper">
+            <!-- JAYS IRON WORKS -->
+            <a style="outline: none;" class="fade" href="https://jays-ironworks.com" rel="noreferrer noopener"
+                target="_blank">
+                <div class="projectCard">
+                    <div class="cardCover">
+                        <div class="projectCardHeader"
+                            style="background-image: url(./assets/images/projects/jaysironworks.png)">
+                            <div class="projectCardSlant">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+                                    <path class="polygon" d="M-20,200,1000,0V200Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="projectCardBody">
+                            <h2 class="cardTitle">Jays Iron Works</h2>
+                            <div class="cardDesc">Service Website for Commercial Business specializing in wrought iron
+                                fence painting and repairs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- UPDATE WITH CAIT -->
+            <a style="outline: none;" class="fade" href="https://drive.google.com/drive/folders/1BtvCHq46NngF1BHihWXaURv238WYgVr8" rel="noreferrer noopener"
+                target="_blank">
+                <div class="projectCard">
+                    <div class="cardCover">
+                        <div class="projectCardHeader" style="background-image: url(./assets/images/projects/covertlocker.jpeg); background-size: contain; background-color: rgb(49, 0, 56);">
+                            <div class="projectCardSlant">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+                                    <path class="polygon" d="M-20,200,1000,0V200Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="projectCardBody">
+                            <h2 class="cardTitle">Covert Locker</h2>
+                            <div class="cardDesc">A place to store all your sensitive information. Everything is fully encrypted.</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- TOPLINE -->
+            <a style="outline: none;" class="fade" href="https://drive.google.com/drive/folders/1-1lbceNl5S_fnaV_6Y8rH3HJRlvs5k8F" rel="noreferrer noopener"
+                target="_blank">
+                <div class="projectCard ">
+                    <div class="cardCover">
+                        <div class="projectCardHeader"
+                            style="background-image: url(./assets/images/projects/undercovershopper.png); background-size: contain; background-color: rgb(0, 212, 215);">
+                            <div class="projectCardSlant">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+                                    <path class="polygon" d="M-20,200,1000,0V200Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="projectCardBody">
+                            <h2 class="cardTitle">Undercover Shopper</h2>
+                            <div class="cardDesc">
+                                Dumpster Rental Website for Commercial Business.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div id="moreProjectsWrap" class="wrapper">
+                <a style="outline: none;" href="/projects.html">
+                    <button id="moreProjectsBtn">View More</button>
+                </a>
+            </div>
+        </section>
+    </article>
+
+    <!-- ! CONTACT -->
+    <article id="contactSection">
+        <img alt="callisto bg" id="callistoBg" class="planetBg" src="./assets/images/bg/callistoBg.png" />
+        <canvas id="callistoCanvas"></canvas>
+        <form id="contactForm">
+            <p id="formTitle" class="formTitle animated"></p>
+            <div>
+                <div class="inputWrap">
+                    <input id="nameInput" class="input" name="name" type="text" required />
+                    <span class="inputBar"></span>
+                    <label>Full Name</label>
+                </div>
+                <div class="inputWrap">
+                    <input id="emailInput" class="input" name="email" type="text" required />
+                    <span class="inputBar"></span>
+                    <label>Email</label>
+                </div>
+                <div class="inputWrap">
+                    <textarea id="messageInput" rows="5" class="input" name="message" type="text" required></textarea>
+                    <span class="inputBar"></span>
+                    <label>Message</label>
+                </div>
+            </div>
+            <div class="submitWrap">
+                <button name="submit" id="submitFormBtn" type="button">Submit</button>
+            </div>
+            <p class="socialText">Let&#8217;s get social!</p>
+            <div class="divider"></div>
+            <div id="socialIconWrap">
+                <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
+                    href="https://www.codewars.com/users/JeffreyD196"><span class="tool" data-tip="Codewars"><i
+                            class="fas fa-terminal socialIcon"></i></span></a>
+                <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/jvh96/"><span class="tool" data-tip="LinkedIn"><i
+                            class="fab fa-linkedin socialIcon"></i></span></a>
+                <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
+                    href="https://codepen.io/jmichael96"><span class="tool" data-tip="Codepen;"><i
+                            class="fab fa-codepen socialIcon"></i></span></a>
+                <a class="iconWrapper" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/Jmichael96/"><span class="tool" data-tip="Github"><i
+                            class="fab fa-github-square socialIcon"></i></span></a>
+            </div>
+        </form>
+        <section id="mapWrapper" class="fade">
+            <div id="map"></div>
+            <img id="mapImg" src="./assets/images/bg/mobileMap.png" alt="mobile map" />
+            <div id="locationBox">
+                <div>
+                    <p class="locationText">Conroe, TX</p>
+                    <p class="locationEmailText">DM: <a href="#" class="locationEmail">myemail@codevh.com</a></p>
+                    <a href="./assets/files/Resume-2023.pdf" download><button type="button"
+                            id="resumeBtn">Resume</button></a>
+                </div>
+                </img>
+        </section>
+    </article>
+    <!-- ! ANTI-ROBOT MODAL -->
+    <div class="robotModalOverlay" id="robotModalOverlay"></div>
+    <div class="robotModal" id="robotModal">
+        <a class="robotModalCloseBtn" href="#!" id="robotModalCloseBtn" type="button"><i class="fa fa-times"></i></a>
+        <p id="robotModalMsg">Please choose the correct answer to confirm you are not alien</p>
+        <select name="question" id="question">
+            <option selected value="0">What is 10 - 13?</option>
+            <option value="-3">-3</option>
+            <option value="13">13</option>
+            <option value="-2">-2</option>
+        </select>
+        <button name="submit" id="submitForm" type="submit">Submit Answer</button>
+    </div>
+    <!-- ! GAME -->
+    <div class="wrapper">
+        <div id="gameWrap">
+            <canvas id="space-invaders"></canvas>
+            <button type="button" id="leftBtn" class="gameControls"><i class="fas fa-arrow-left"></i></button>
+            <button type="button" id="rightBtn" class="gameControls"><i class="fas fa-arrow-right"></i></button>
+            <button type="button" id="startBtn">Start Game</button>
+            <button type="button" id="restartBtn">Try Again</button>
+            <p id="kills"></p>
+            <p id="level"></p>
+            <p id="points"></p>
+            <p id="highScoreMessage"></p>
+        </div>
+    </div>
+    <section id="playBtnWrap" class="wrapper">
+        <button id="redirectGameBtn">Play Guardian</button>
+    </section>
+
+    <footer>
+        <a style="cursor: default;" href="https://www.hitwebcounter.com" target="_blank" rel="noreferrer noopener">
+            <img id="webCounter" src="https://hitwebcounter.com/counter/counter.php?page=7754399&style=0024&nbdigits=5&type=page&initCount=0"
+                title="Free Counter" Alt="web counter" /></a>
+        <p id="footerDateWrapper"><span id="copySign">&COPY;</span> Copyright <span id="footerDate"></span></p>
+        <p id="ownershipTextWrap">Built with <i class="ownershipHeart fas fa-heart"></i> by Jeffrey VanHorn</p>
+    </footer>
+
+    <!-- ! FORM ALERT -->
+    <div id="formAlert" class="alert-success rounded wrapper">
+        <div id="alertIconWrap"></div>
+        <p id="alertText"></p>
+    </div>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- rotating world canvas -->
+    <script type="text/javascript" src="./assets/libs/tagCanvas.js"></script>
+    <!-- CUSTOM JS LINKS -->
+    <!-- <script type="text/javascript" src="./assets/js/minified.js"></script> -->
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/about.js"></script>
+    <script type="text/javascript" src="./assets/js/specialties.js"></script>
+    <script type="text/javascript" src="./assets/js/contact.js"></script>
+    <script type="text/javascript" src="./assets/js/jupiter.js"></script>
+    <script type="text/javascript" src="./assets/js/callisto.js"></script>
+    <script type="text/javascript" src="./assets/js/mars.js"></script>
+    <script type="text/javascript" src="./assets/js/neptune.js"></script>
+    <script type="text/javascript" src="./assets/js/moon.js"></script>
+    <script type="text/javascript" src="./assets/js/planets.js"></script>
+    <script type="text/javascript" src="./assets/js/game.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ff480394be.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149535987-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-149535987-1');
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,150 @@
+/* the loader image */
+
+#loadingImg {
+    width: 100%;
+    max-width: 10rem;
+    height: auto;
+    margin: 1rem;
+}
+
+/* outer div surrounding the loading image */
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#portfolioLoader {
+    background-color: #00051a;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 200px;
+    position: fixed;
+    z-index: 100;
+}
+
+.sun {
+    background: radial-gradient(#ffd000, #ff9900);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.planetX {
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.planet1 {
+    left: 20px;
+    height: 13px;
+    width: 13px;
+    background-color: rgb(124, 124, 124);
+}
+
+.planet2 {
+    left: 28px;
+    height: 20px;
+    width: 20px;
+    background: linear-gradient(#004d00, rgb(0, 107, 179), rgb(0, 95, 158));
+    -webkit-animation: rotation 1s infinite linear;
+    animation: rotation 1s infinite linear;
+}
+
+.planet3 {
+    left: 49px;
+    height: 17px;
+    width: 17px;
+    background: radial-gradient(#ff9900, #d43900);
+}
+
+.planet4 {
+    left: 70px;
+    height: 18px;
+    width: 18px;
+    background: radial-gradient(#4e2600, #947752);
+}
+
+.orbitSpinner {
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.orbit1 {
+    height: 100px;
+    width: 100px;
+    -webkit-animation: rotation 2s infinite linear;
+    -moz-animation: rotation 2s infinite linear;
+    animation: rotation 2s infinite linear;
+}
+
+.orbit2 {
+    height: 150px;
+    width: 150px;
+    -webkit-animation: rotation 3s infinite linear;
+    -moz-animation: rotation 3s infinite linear;
+    animation: rotation 3s infinite linear;
+}
+
+.orbit3 {
+    height: 200px;
+    width: 200px;
+    -moz-animation: rotation 6s infinite linear;
+    -webkit-animation: rotation 6s infinite linear;
+    animation: rotation 6s infinite linear;
+}
+
+.orbit4 {
+    height: 250px;
+    width: 250px;
+    -moz-animation: rotation 8s infinite linear;
+    -webkit-animation: rotation 8s infinite linear;
+    animation: rotation 8s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+@-moz-keyframes rotation {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(359deg);
+    }
+}

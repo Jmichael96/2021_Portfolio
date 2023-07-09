@@ -1,0 +1,266 @@
+:root {
+    --cardBg: #3b4e74;
+}
+
+/* project section */
+
+#projectSection {
+    height: 100%;
+    min-height: 45rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* jupiter background */
+
+#jupiterBg {
+    position: absolute;
+    z-index: 1;
+    width: 34rem;
+    height: 31rem;
+    bottom: 0;
+    right: -3.5rem;
+}
+
+/* image of jupiter */
+
+#jupiterCanvas {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    right: 4rem;
+    bottom: 3rem;
+    opacity: .9;
+}
+
+/* wrapper around the projects */
+
+.projectWrap {
+    width: 100%;
+    background-color: rgba(97, 97, 97, 0);
+    height: 100%;
+    min-height: 30rem;
+    z-index: 2;
+    align-items: center;
+}
+
+/* card for each project */
+
+.projectCard {
+    position: relative;
+    width: 20rem;
+    height: 24rem;
+    margin: 2rem 1rem 1rem 1rem;
+    cursor: pointer;
+    perspective: 100vw;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+}
+
+/* the card cover which contains the glare and hover animation */
+
+.cardCover {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(120deg, var(--cardBg) 0%, var(--cardBg) 100%);
+    background-size: cover;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    transform-origin: top center;
+    will-change: transform;
+    transform: skewX(0.001deg);
+    -webkit-transition: transform 0.35s ease-in-out;
+    -moz-transition: transform 0.35s ease-in-out;
+    -o-transition: transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
+    border-radius: 3px;
+    /* ! to remove the jagged lines on edge of card when the angle is changed */
+    outline: 1px solid transparent;
+}
+
+/* the lighting effect */
+
+.cardCover::after {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(226deg, rgba(0, 0, 0, 0.1) 0%, rgba(131, 131, 131, 0.3) 35%, rgba(131, 131, 131, 0.1) 42%, rgba(255, 255, 255, 0) 60%);
+    transform: translateY(-30%);
+    will-change: transform;
+    -webkit-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    -moz-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    -o-transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+    transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+
+.projectCard:hover .cardCover {
+    -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+    -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+    -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+    transform: rotateX(12deg) scale(.98) translateY(2px);
+}
+
+.projectCard:hover .cardCover::after {
+    transform: translateY(0%);
+}
+
+.projectCard::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.4);
+    will-change: opacity;
+    transform-origin: top center;
+    transform: skewX(0.001deg);
+    transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.projectCard:hover::before {
+    opacity: 0.6;
+    transform: rotateX(7deg) translateY(-6px) scale(1.05);
+}
+
+/* header of each card */
+
+.projectCardHeader {
+    position: relative;
+    height: 220px;
+    background-color: black;
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.projectCardHeader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* change the color of the slant */
+
+svg .polygon {
+    fill: var(--cardBg);
+}
+
+/* div tag surrounding the svg slant */
+
+.projectCardSlant {
+    position: absolute;
+    bottom: -5px;
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
+/* card body */
+
+.projectCardBody {
+    text-align: center;
+    padding: .5rem;
+}
+
+/* title for each card */
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 0 auto;
+    color: white;
+    letter-spacing: .1rem;
+}
+
+/* card description text */
+
+.cardDesc {
+    font-size: .9rem;
+    color: #afafaf;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
+    letter-spacing: .1rem;
+}
+
+/* more project button wrapper */
+
+#moreProjectsWrap {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* view more projects button */
+
+#moreProjectsBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 9rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#moreProjectsBtn:focus {
+    outline: none;
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1055px) {
+    /* to make sure the cards do not rotate 3d when on smaller/mobile devices */
+    /* the lighting effect */
+    .cardCover::after {
+        background: none;
+    }
+    .projectCard::before {
+        display: none;
+    }
+    .projectCard:hover .cardCover {
+        -webkit-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -moz-transform: rotateX(12deg) scale(.98) translateY(2px);
+        -o-transform: rotateX(12deg) scale(.98) translateY(2px);
+        transform: none;
+    }
+    /* jupiter background */
+    #jupiterBg {
+        bottom: 12rem;
+    }
+    /* image of jupiter */
+    #jupiterCanvas {
+        bottom: 17rem;
+    }
+}
+
+@media only screen and (max-width: 703px) {
+    /* jupiter background */
+    #jupiterBg {
+        right: -10rem;
+        bottom: 32rem;
+    }
+    /* image of jupiter */
+    #jupiterCanvas {
+        right: -2rem;
+        bottom: 36rem;
+    }
+}

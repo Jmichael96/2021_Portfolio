@@ -1,0 +1,187 @@
+/* wrapper around the game content */
+
+#gameWrap {
+    position: relative;
+    /* box-shadow: 0 4px 12px rgb(0, 0, 0, .3); */
+    margin: 6rem 0;
+}
+
+/* wrapper around the redirect game button */
+
+#playBtnWrap {
+    display: none;
+    margin: 3rem 0 6rem 0;
+}
+
+/* redirect button for when a user is on a mobile device or firefox */
+
+#redirectGameBtn {
+    font-family: 'Mandatory Plaything';
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 12rem;
+    padding: .3rem;
+    border-radius: 3px;
+    border: 1px solid white;
+    background-color: white;
+    cursor: pointer;
+}
+
+#redirectGameBtn:focus {
+    outline: none;
+}
+
+/* game background image */
+
+#gameBg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* canvas that contains the game */
+
+#space-invaders {
+    margin: 0 auto;
+    display: block;
+    background: rgba(214, 214, 214, 0);
+    position: relative;
+}
+
+/* start button */
+
+#startBtn {
+    font-family: 'Mandatory Plaything';
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#startBtn:focus {
+    outline: none;
+}
+
+/* restart button */
+
+#restartBtn {
+    font-family: 'Mandatory Plaything';
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: white;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#restartBtn:focus {
+    outline: none;
+}
+
+/* rendering the kills in game */
+
+#kills {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 2.5rem;
+    right: .3rem;
+    margin: .5rem;
+    font-family: 'Mandatory Plaything';
+}
+
+/* rendering the level in game */
+
+#level {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 1.2rem;
+    right: .3rem;
+    margin: .5rem;
+    font-family: 'Mandatory Plaything';
+}
+
+/* point tracker while in game */
+
+#points {
+    position: absolute;
+    color: white;
+    font-size: .9rem;
+    bottom: 0;
+    right: .3rem;
+    margin: .5rem;
+    font-family: 'Mandatory Plaything';
+}
+
+/* high score message at end of the game */
+
+#highScoreMessage {
+    font-family: 'Mandatory Plaything';
+    text-align: center;
+    display: none;
+    position: absolute;
+    color: #c75000;
+    font-size: 2rem;
+    top: 1rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+/* for mobile devices */
+
+/* styles for both of the buttons */
+
+.gameControls {
+    cursor: pointer;
+    padding: .4rem;
+    width: 48%;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+.gameControls:focus {
+    outline: none;
+}
+
+#leftBtn {
+    display: none;
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    background-color: white;
+}
+
+#rightBtn {
+    display: none;
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+    background-color: white;
+}

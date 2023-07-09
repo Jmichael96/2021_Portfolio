@@ -1,0 +1,192 @@
+/* specialty section */
+
+#specialtiesSection {
+    overflow: hidden;
+    height: 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* moon background image */
+
+#moonBg {
+    position: absolute;
+    bottom: 0;
+    left: -4rem;
+    z-index: 1;
+    width: 34rem;
+    height: 31rem;
+}
+
+/* moon image */
+
+#moonCanvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 10rem;
+    z-index: 2;
+    left: 4rem;
+    bottom: 5rem;
+    opacity: .9;
+}
+
+/* inner wrap of cards */
+
+#specialtiesWrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    z-index: 3;
+}
+
+/* wrap around the content and text of the specialties section (title, cards, etc...) */
+
+#specialtiesContent {
+    margin: 1rem;
+    width: 100%;
+    max-width: 32rem;
+}
+
+/* title */
+
+.specialtiesTitle {
+    color: white;
+    font-size: 2.2rem;
+    margin: 0;
+    display: flex;
+}
+
+/* unordered list for all my specialties */
+
+#specialtiesContent>ul {
+    list-style-type: none;
+    color: white;
+    margin-left: 2.5rem;
+}
+
+/* each list item */
+
+.specialtyList {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* icon for each list item */
+
+.specialtyIcon {
+    color: #c75000;
+    font-size: 1.8rem;
+    margin-right: .5rem;
+}
+
+/* canvas container containing all the content for the canvas */
+
+/* #myCanvasContainer {} */
+
+#myCanvas {
+    width: 100%;
+}
+
+/* a tag around each image */
+
+/* .specialtyAnchor {} */
+
+/* each image inside the canvas */
+
+.canvasImg {
+    width: 75px;
+    height: 75px;
+}
+
+/* cursor for the title */
+
+.specialtyCursorBlinker {
+    -webkit-animation: 1s specialtyCursor step-end infinite;
+    -moz-animation: 1s specialtyCursor step-end infinite;
+    -ms-animation: 1s specialtyCursor step-end infinite;
+    -o-animation: 1s specialtyCursor step-end infinite;
+    animation: 1s specialtyCursor step-end infinite;
+}
+
+@keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-moz-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-webkit-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-ms-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+@-o-keyframes specialtyCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #a74300;
+    }
+}
+
+/* ! MEDIA QUERIES */
+
+@media only screen and (max-width: 1147px) {
+    /* specialty section */
+    #specialtiesSection {
+        height: auto;
+    }
+    /* moon background image */
+    #moonBg {
+        bottom: 19rem;
+    }
+    /* moon image */
+    #moonCanvas {
+        bottom: 26rem;
+    }
+}
+
+@media only screen and (max-width: 911px) {
+    /* specialty section */
+    #specialtiesSection {
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (max-width: 539px) {
+    /* title */
+    .specialtiesTitle {
+        display: block;
+    }
+}

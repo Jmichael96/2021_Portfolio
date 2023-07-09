@@ -1,0 +1,280 @@
+:root {
+    --desktop-primary-color: #181818;
+    --navTextAccent: #c75000;
+    --sideNavColor: #ffffff;
+    --sideNavBg: #3b4e74;
+    --scrollTopBg: #c75000;
+    --navBg: #000000b0;
+}
+
+/* scroll to top icon button wrapper */
+
+#scrollTopIcon {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+    z-index: 6;
+}
+
+#scrollTopIcon:focus {
+    outline: none;
+}
+
+/* the scroll top icon itself */
+
+#scrollTopIcon {
+    font-size: 3rem;
+    opacity: .5;
+    color: var(--scrollTopBg);
+    -o-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    -webkit-animation: fadeUp .5s ease;
+    -moz-animation: fadeUp .5s ease;
+    -ms-animation: fadeUp .5s ease;
+    -o-animation: fadeUp .5s ease;
+    animation: fadeUp .5s ease;
+}
+
+#scrollTopIcon:hover {
+    opacity: 1;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+    to {
+        opacity: .5;
+        transform: translateY(0px)
+    }
+}
+
+#nav {
+    height: 4rem;
+    width: 100%;
+    background-color: var(--navBg);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    -o-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    z-index: 50;
+}
+
+/* inner wrap surrounding all the content */
+
+.navInnerContentWrap {
+    display: none;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* logo image */
+
+#desktopJackAttack {
+    height: 4rem;
+    margin-left: .5rem;
+    -o-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+/* wrapper surrounding each of the nav links */
+
+.navLinkWrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+/* each navigation link */
+
+.navLink {
+    margin: 0 .5rem;
+    text-decoration: none;
+    cursor: pointer;
+    -o-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    color: white;
+}
+
+.navSpan {
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-decoration: none;
+    letter-spacing: .05rem;
+    display: inline-block;
+    padding: .3rem 0;
+    position: relative;
+}
+
+.navSpan:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--navTextAccent);
+    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -moz-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    -o-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navSpan:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* ! MOBILE NAV */
+
+/* navbar menu button */
+
+#mobileNavBtn {
+    width: 60px;
+    height: 35px;
+    position: relative;
+    margin-left: auto;
+    margin-right: .5rem;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#mobileNavBtn span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 74%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#mobileNavBtn span:nth-child(1) {
+    top: 0px;
+}
+
+#mobileNavBtn span:nth-child(2) {
+    top: 13px;
+}
+
+#mobileNavBtn span:nth-child(3) {
+    top: 26px;
+}
+
+#mobileNavBtn.open span:nth-child(1) {
+    top: 15px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+#mobileNavBtn.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+#mobileNavBtn.open span:nth-child(3) {
+    top: 15px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.menu {
+    height: 100vh;
+    width: 250px;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    transform: translateX(-100%);
+    z-index: 51;
+    box-shadow: 0 0 8px rgb(0, 0, 0);
+    background-color: var(--sideNavBg);
+}
+
+.activeNav {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.25s ease;
+    transform: translateX(0);
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+/* mobile nav links */
+
+.mobileLink {
+    display: block;
+    color: var(--sideNavColor);
+    margin: 1.5rem 0 1.5rem .5rem;
+    font-size: 1.7rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+#mobileJackAttack {
+    display: block;
+    width: 100%;
+    max-width: 15rem;
+    margin-top: 1rem;
+}
